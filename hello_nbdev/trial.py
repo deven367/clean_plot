@@ -8,5 +8,5 @@ def get_data(fname):
     This function gets all the text from the .txt file
     '''
     with open(fname, 'r') as f:
-        all = f.read()
-    return all
+        all_text = f.read()
+    return all_text

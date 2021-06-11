@@ -7,7 +7,7 @@ index = {"say_hello": "00_core.ipynb",
          "get_data": "01_trial.ipynb"}
 
 modules = ["core.py",
-           "try.py"]
+           "trial.py"]
 
 doc_url = "https://deven367.github.io/hello_nbdev/"
 

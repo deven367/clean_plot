@@ -10,8 +10,11 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: module name here
+      title: hello_nbdev
       url: core.html
+    - output: web,pdf
+      title: new module trial
+      url: trial.html
     output: web
     title: hello_nbdev
   output: web
