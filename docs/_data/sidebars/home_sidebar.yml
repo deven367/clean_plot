@@ -16,7 +16,7 @@ entries:
       title: new module trial
       url: trial.html
     - output: web,pdf
-      title: Title
+      title: VGG16 Feature Extractor and Logistic Regression Classifier
       url: featue_extractor.html
     output: web
     title: hello_nbdev
