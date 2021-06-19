@@ -320,6 +320,37 @@ no changes added to commit (use &#34;git add&#34; and/or &#34;git commit -a&#34;
 
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>nbdev_diff_nbs
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>nbdev_test_nbs
 </pre></div>
 
@@ -365,6 +396,29 @@ To view examples of installing some common dependencies, click the
 
 ModuleNotFoundError: No module named &#39;hello_nbdev&#39;
 
+Error in /content/drive/My Drive/nbdev/hello_nbdev/nbs/03_functions.ipynb:
+An error occurred while executing the following cell:
+------------------
+from 
+------------------
+
+<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">&#34;&lt;ipython-input-15-09c8a0c03c80&gt;&#34;</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">1</span>
+<span class="ansi-red-fg">    from</span>
+         ^
+<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> invalid syntax
+
+SyntaxError: invalid syntax (&lt;ipython-input-15-09c8a0c03c80&gt;, line 1)
+
+Traceback (most recent call last):
+  File &#34;/usr/local/bin/nbdev_test_nbs&#34;, line 8, in &lt;module&gt;
+    sys.exit(nbdev_test_nbs())
+  File &#34;/usr/local/lib/python3.7/dist-packages/fastcore/script.py&#34;, line 105, in _f
+    tfunc(**merge(args, args_from_prog(func, xtra)))
+  File &#34;/usr/local/lib/python3.7/dist-packages/nbdev/test.py&#34;, line 120, in nbdev_test_nbs
+    raise Exception(msg + &#39;\n&#39;.join([f.name for p,f in zip(passed,files) if not p]))
+Exception: The following notebooks failed:
+03_functions.ipynb
+index.ipynb
 </pre>
 </div>
 </div>
