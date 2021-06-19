@@ -364,60 +364,38 @@ no changes added to commit (use &#34;git add&#34; and/or &#34;git commit -a&#34;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>testing /content/drive/My Drive/nbdev/hello_nbdev/nbs/01_trial.ipynb
-testing /content/drive/My Drive/nbdev/hello_nbdev/nbs/00_core.ipynb
+<pre>testing /content/drive/My Drive/nbdev/hello_nbdev/nbs/00_core.ipynb
+testing /content/drive/My Drive/nbdev/hello_nbdev/nbs/01_trial.ipynb
 testing /content/drive/My Drive/nbdev/hello_nbdev/nbs/02_featue_extractor.ipynb
 testing /content/drive/My Drive/nbdev/hello_nbdev/nbs/03_functions.ipynb
 testing /content/drive/My Drive/nbdev/hello_nbdev/nbs/index.ipynb
-Process ForkProcess-3:
-Traceback (most recent call last):
-  File &#34;/usr/lib/python3.7/multiprocessing/process.py&#34;, line 297, in _bootstrap
-    self.run()
-  File &#34;/usr/lib/python3.7/multiprocessing/process.py&#34;, line 99, in run
-    self._target(*self._args, **self._kwargs)
-  File &#34;/usr/lib/python3.7/concurrent/futures/process.py&#34;, line 233, in _process_worker
-    call_item = call_queue.get(block=True)
-  File &#34;/usr/lib/python3.7/multiprocessing/queues.py&#34;, line 94, in get
-    res = self._recv_bytes()
-  File &#34;/usr/lib/python3.7/multiprocessing/connection.py&#34;, line 216, in recv_bytes
-    buf = self._recv_bytes(maxlength)
-  File &#34;/usr/lib/python3.7/multiprocessing/connection.py&#34;, line 407, in _recv_bytes
-    buf = self._recv(4)
-  File &#34;/usr/lib/python3.7/multiprocessing/connection.py&#34;, line 379, in _recv
-    chunk = read(handle, remaining)
-KeyboardInterrupt
-Traceback (most recent call last):
-  File &#34;/usr/lib/python3.7/concurrent/futures/_base.py&#34;, line 598, in result_iterator
-    yield fs.pop().result()
-  File &#34;/usr/lib/python3.7/concurrent/futures/_base.py&#34;, line 430, in result
-    self._condition.wait(timeout)
-  File &#34;/usr/lib/python3.7/threading.py&#34;, line 296, in wait
-    waiter.acquire()
-KeyboardInterrupt
+Error in /content/drive/My Drive/nbdev/hello_nbdev/nbs/index.ipynb:
+An error occurred while executing the following cell:
+------------------
+#hide
+from hello_nbdev.hello_nbdev.core import *
+from hello_nbdev.hello_nbdev.trial import *
+------------------
 
-During handling of the above exception, another exception occurred:
 
-Traceback (most recent call last):
-  File &#34;/usr/local/bin/nbdev_test_nbs&#34;, line 8, in &lt;module&gt;
-    sys.exit(nbdev_test_nbs())
-  File &#34;/usr/local/lib/python3.7/dist-packages/fastcore/script.py&#34;, line 105, in _f
-    tfunc(**merge(args, args_from_prog(func, xtra)))
-  File &#34;/usr/local/lib/python3.7/dist-packages/nbdev/test.py&#34;, line 115, in nbdev_test_nbs
-    results = parallel(_test_one, files, flags=flags, verbose=verbose, n_workers=n_workers, pause=pause)
-  File &#34;/usr/local/lib/python3.7/dist-packages/fastcore/parallel.py&#34;, line 123, in parallel
-    return L(r)
-  File &#34;/usr/local/lib/python3.7/dist-packages/fastcore/foundation.py&#34;, line 97, in __call__
-    return super().__call__(x, *args, **kwargs)
-  File &#34;/usr/local/lib/python3.7/dist-packages/fastcore/foundation.py&#34;, line 105, in __init__
-    items = listify(items, *rest, use_list=use_list, match=match)
-  File &#34;/usr/local/lib/python3.7/dist-packages/fastcore/basics.py&#34;, line 56, in listify
-    elif is_iter(o): res = list(o)
-  File &#34;/usr/lib/python3.7/concurrent/futures/process.py&#34;, line 483, in _chain_from_iterable_of_lists
-    for element in iterable:
-  File &#34;/usr/lib/python3.7/concurrent/futures/_base.py&#34;, line 603, in result_iterator
-    future.cancel()
-KeyboardInterrupt
-[IPKernelApp] WARNING | Parent appears to have exited, shutting down.
+<span class="ansi-red-fg">ModuleNotFoundError</span>Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-2-3d3165934d84&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg">#hide</span>
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> hello_nbdev<span class="ansi-blue-fg">.</span>hello_nbdev<span class="ansi-blue-fg">.</span>core <span class="ansi-green-fg">import</span> <span class="ansi-blue-fg">*</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-green-fg">from</span> hello_nbdev<span class="ansi-blue-fg">.</span>hello_nbdev<span class="ansi-blue-fg">.</span>trial <span class="ansi-green-fg">import</span> <span class="ansi-blue-fg">*</span>
+
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named &#39;hello_nbdev&#39;
+
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span><span class="ansi-green-fg">
+NOTE: If your import is failing due to a missing package, you can
+manually install dependencies using either !pip or !apt.
+
+To view examples of installing some common dependencies, click the
+&#34;Open Examples&#34; button below.
+</span><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+
+ModuleNotFoundError: No module named &#39;hello_nbdev&#39;
+
 </pre>
 </div>
 </div>
