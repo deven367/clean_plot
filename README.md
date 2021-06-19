@@ -2,7 +2,7 @@
 > This is an amazing tutorial
 
 
-```python
+```
 %load_ext autoreload
 %autoreload 2
 ```
@@ -17,7 +17,7 @@ Hoping this to work
 
 Let's see this now
 
-```python
+```
 say_hello('Deven')
 ```
 

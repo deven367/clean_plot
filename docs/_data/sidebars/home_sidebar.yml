@@ -18,6 +18,9 @@ entries:
     - output: web,pdf
       title: VGG16 Feature Extractor and Logistic Regression Classifier
       url: featue_extractor.html
+    - output: web,pdf
+      title: This module includes most of the functions
+      url: functions.html
     output: web
     title: hello_nbdev
   output: web
