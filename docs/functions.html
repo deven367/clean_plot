@@ -123,24 +123,228 @@ array([0.  , 0.25, 0.5 , 0.75, 1.  ])</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    The function takes an array, matrix as input and normalizes</span>
-<span class="sd">    it between 0 and 1</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        data (ndarray): any 1-D, or 2-D numpy array</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        (ndarray): normalized ndarray</span>
-
-<span class="sd">    Example:</span>
-<span class="sd">    &gt;&gt;&gt; x = [1,2,3,4,5]</span>
-<span class="sd">    &gt;&gt;&gt; normalize(x)</span>
-<span class="sd">    array([0.  , 0.25, 0.5 , 0.75, 1.  ])</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>nbdev_build_lib
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Converted 00_core.ipynb.
+Converted 01_trial.ipynb.
+Converted 02_featue_extractor.ipynb.
+Converted 03_functions.ipynb.
+Converted index.ipynb.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>nbdev_build_docs
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>converting: /content/drive/My Drive/nbdev/hello_nbdev/nbs/00_core.ipynb
+converting: /content/drive/My Drive/nbdev/hello_nbdev/nbs/03_functions.ipynb
+converting: /content/drive/My Drive/nbdev/hello_nbdev/nbs/01_trial.ipynb
+converting: /content/drive/My Drive/nbdev/hello_nbdev/nbs/02_featue_extractor.ipynb
+converting: /content/drive/My Drive/nbdev/hello_nbdev/nbs/index.ipynb
+converting /content/drive/My Drive/nbdev/hello_nbdev/nbs/index.ipynb to README.md
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git status
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>On branch master
+Your branch is up to date with &#39;origin/master&#39;.
+
+Changes not staged for commit:
+  (use &#34;git add/rm &lt;file&gt;...&#34; to update what will be committed)
+  (use &#34;git checkout -- &lt;file&gt;...&#34; to discard changes in working directory)
+
+	<span class="ansi-red-fg">modified:   README.md</span>
+	<span class="ansi-red-fg">deleted:    _not_finished.ipynb</span>
+	<span class="ansi-red-fg">modified:   docs/_data/sidebars/home_sidebar.yml</span>
+	<span class="ansi-red-fg">modified:   docs/core.html</span>
+	<span class="ansi-red-fg">modified:   docs/featue_extractor.html</span>
+	<span class="ansi-red-fg">modified:   docs/index.html</span>
+	<span class="ansi-red-fg">modified:   docs/sidebar.json</span>
+	<span class="ansi-red-fg">modified:   docs/trial.html</span>
+	<span class="ansi-red-fg">modified:   hello_nbdev/_nbdev.py</span>
+
+Untracked files:
+  (use &#34;git add &lt;file&gt;...&#34; to include in what will be committed)
+
+	<span class="ansi-red-fg">docs/functions.html</span>
+	<span class="ansi-red-fg">hello_nbdev/functions.py</span>
+	<span class="ansi-red-fg">nbs/03_functions.ipynb</span>
+	<span class="ansi-red-fg">nbs/_not_finished.ipynb</span>
+
+no changes added to commit (use &#34;git add&#34; and/or &#34;git commit -a&#34;)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git add -A
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git commit -am <span class="s2">&quot;add new notebook for functions&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[master 1a1e38d] add new notebook for functions
+ 12 files changed, 449 insertions(+), 14 deletions(-)
+ create mode 100644 docs/functions.html
+ create mode 100644 hello_nbdev/functions.py
+ create mode 100644 nbs/03_functions.ipynb
+ rename _not_finished.ipynb =&gt; nbs/_not_finished.ipynb (100%)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>nb
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git push
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Counting objects: 18, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (17/17), done.
+Writing objects: 100% (18/18), 4.34 KiB | 555.00 KiB/s, done.
+Total 18 (delta 10), reused 0 (delta 0)
+remote: Resolving deltas: 100% (10/10), completed with 10 local objects.
+To https://github.com/deven367/hello_nbdev.git
+   3286541..1a1e38d  master -&gt; master
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
