@@ -4,6 +4,14 @@
 
 ```python
 #hide
+%cd F:\AA Projects\clean-plot
+```
+
+    F:\AA Projects\clean-plot
+    
+
+```python
+#hide
 from clean_plot.core import *
 from clean_plot.trial import *
 ```
@@ -12,7 +20,7 @@ Hoping this to work
 
 ## Install
 
-`pip install clean-plotzz`
+`pip install clean-plot`
 
 ## How to use
 
