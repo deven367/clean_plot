@@ -2,22 +2,17 @@
 > This is an amazing tutorial
 
 
-```
-%load_ext autoreload
-%autoreload 2
-```
-
 Hoping this to work
 
 ## Install
 
-`pip install your_project_name`
+`pip install clean-plot`
 
 ## How to use
 
 Let's see this now
 
-```
+```python
 say_hello('Deven')
 ```
 
