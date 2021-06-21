@@ -6,7 +6,7 @@ Hoping this to work
 
 ## Install
 
-`pip install clean-plot`
+`pip install clean-plotz`
 
 ## How to use
 
