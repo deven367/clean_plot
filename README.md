@@ -2,17 +2,17 @@
 > This is an amazing tutorial
 
 
-```python
-#hide
+```
+#hide
 %cd F:\AA Projects\clean-plot
 ```
 
     F:\AA Projects\clean-plot
-    
 
-```python
-#hide
-from clean_plot.core import *
+
+```
+#hide
+from clean_plot.core import *
 from clean_plot.trial import *
 ```
 
@@ -26,7 +26,7 @@ Hoping this to work
 
 Let's see this now
 
-```python
+```
 say_hello('Deven')
 ```
 
