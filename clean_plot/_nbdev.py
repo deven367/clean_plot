@@ -13,8 +13,8 @@ modules = ["core.py",
            "feature_extractor.py",
            "functions.py"]
 
-doc_url = "https://deven367.github.io/hello_nbdev/"
+doc_url = "https://deven367.github.io/clean_plot/"
 
-git_url = "https://github.com/deven367/hello_nbdev/tree/master/"
+git_url = "https://github.com/deven367/clean_plot/tree/master/"
 
 def custom_doc_links(name): return None

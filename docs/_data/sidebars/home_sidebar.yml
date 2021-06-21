@@ -22,6 +22,6 @@ entries:
       title: This module includes most of the functions
       url: functions.html
     output: web
-    title: hello_nbdev
+    title: clean_plot
   output: web
   title: Sidebar

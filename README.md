@@ -2,6 +2,12 @@
 > This is an amazing tutorial
 
 
+```python
+#hide
+from clean_plot.core import *
+from clean_plot.trial import *
+```
+
 Hoping this to work
 
 ## Install
