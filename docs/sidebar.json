@@ -3,7 +3,7 @@
     "Overview": "/",
     "hello_nbdev": "core.html",
     "new module trial": "trial.html",
-    "VGG16 Feature Extractor and Logistic Regression Classifier": "featue_extractor.html",
+    "VGG16 Feature Extractor and Logistic Regression Classifier": "feature_extractor.html",
     "Functions": "functions.html"
   }
 }

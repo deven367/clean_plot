@@ -17,7 +17,7 @@ entries:
       url: trial.html
     - output: web,pdf
       title: VGG16 Feature Extractor and Logistic Regression Classifier
-      url: featue_extractor.html
+      url: feature_extractor.html
     - output: web,pdf
       title: Functions
       url: functions.html
