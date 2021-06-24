@@ -10,10 +10,10 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: hello_nbdev
+      title: clean-plot
       url: core.html
     - output: web,pdf
-      title: new module trial
+      title: Core
       url: trial.html
     - output: web,pdf
       title: VGG16 Feature Extractor and Logistic Regression Classifier
