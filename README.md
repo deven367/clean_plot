@@ -2,12 +2,6 @@
 > This is an amazing tutorial
 
 
-```python
-#hide
-from clean_plot.core import *
-from clean_plot.trial import *
-```
-
 Hoping this to work
 
 ## Install
@@ -26,5 +20,16 @@ say_hello('Deven')
 
 
     'Hello Deven!'
+
+
+
+```python
+normalize([1,2,3,4,5])
+```
+
+
+
+
+    array([0.  , 0.25, 0.5 , 0.75, 1.  ])
 
 

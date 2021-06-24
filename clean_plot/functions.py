@@ -3,6 +3,19 @@
 __all__ = ['normalize', 'split_by_newline', 'make_sentences']
 
 # Cell
+import os
+import pandas as pd
+import pickle
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.metrics.pairwise import cosine_similarity
+from nltk.tokenize import sent_tokenize
+from nltk.tokenize import word_tokenize
+import nltk
+# nltk.download('punkt')
+
+# Cell
 def normalize(data):
     """
     The function takes an array, matrix as input and normalizes
