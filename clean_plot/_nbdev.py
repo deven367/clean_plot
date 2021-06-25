@@ -8,7 +8,10 @@ index = {"say_hello": "00_core.ipynb",
          "get_features": "02_feature_extractor.ipynb",
          "normalize": "03_functions.ipynb",
          "split_by_newline": "03_functions.ipynb",
-         "make_sentences": "03_functions.ipynb"}
+         "rm_useless_spaces": "03_functions.ipynb",
+         "make_sentences": "03_functions.ipynb",
+         "write_to_file_cleaned": "03_functions.ipynb",
+         "clean": "03_functions.ipynb"}
 
 modules = ["core.py",
            "trial.py",
