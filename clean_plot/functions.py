@@ -10,12 +10,14 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.metrics.pairwise import cosine_similarity
+import nltk
+nltk.download('punkt')
 from nltk.tokenize import sent_tokenize
 from nltk.tokenize import word_tokenize
-import nltk
+
 import unidecode
 import re
-# nltk.download('punkt')
+
 
 # Cell
 def normalize(data):
