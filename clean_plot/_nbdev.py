@@ -11,7 +11,10 @@ index = {"say_hello": "00_core.ipynb",
          "rm_useless_spaces": "03_functions.ipynb",
          "make_sentences": "03_functions.ipynb",
          "write_to_file_cleaned": "03_functions.ipynb",
-         "clean": "03_functions.ipynb"}
+         "clean": "03_functions.ipynb",
+         "get_wordnet_pos": "03_functions.ipynb",
+         "remove_stopwords": "03_functions.ipynb",
+         "remove_punc_clean": "03_functions.ipynb"}
 
 modules = ["core.py",
            "trial.py",

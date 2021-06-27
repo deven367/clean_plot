@@ -2,11 +2,11 @@
 SHELL := /bin/bash
 SRC = $(wildcard ./*.ipynb)
 
-all: hello nbdev docs
+all: clean_plot docs
 
-hello nbdev: $(SRC)
+clean_plot: $(SRC)
 	nbdev_build_lib
-	touch hello nbdev
+	touch clean_plot
 
 sync:
 	nbdev_update_lib
@@ -22,7 +22,7 @@ test:
 	nbdev_test_nbs
 
 release: pypi conda_release
-	nbdev_bump_version
+	# nbdev_bump_version
 
 conda_release:
 	fastrelease_conda_package
@@ -35,3 +35,4 @@ dist: clean
 
 clean:
 	rm -rf dist
+	nbdev_bump_version
