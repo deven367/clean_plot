@@ -4,6 +4,7 @@ __all__ = ['normalize', 'split_by_newline', 'rm_useless_spaces', 'make_sentences
            'get_wordnet_pos', 'remove_stopwords', 'remove_punctuations', 'remove_punc_clean', 'process']
 
 # Cell
+#hide_output
 import os
 import pandas as pd
 import pickle
