@@ -1,7 +1,7 @@
-repository: deven367/hello nbdev
+repository: deven367/clean_plot
 output: web
-topnav_title: hello nbdev
-site_title: hello nbdev
+topnav_title: clean_plot
+site_title: clean_plot
 company_name: deven367
 description: This is a dummy project
 # Set to false to disable KaTeX math
