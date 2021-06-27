@@ -1,9 +1,9 @@
 package:
   name: clean_plot
-  version: 0.0.1
+  version: 0.0.7
 source:
-  sha256: 91cec463470b6919f652331ddd2a2a964ea516af9c240615a04fbeee799beea6
-  url: https://files.pythonhosted.org/packages/4d/dd/f3147c52dd7950682145ab2857857104c6d4968f21131ed279fb37482e93/clean_plot-0.0.1.tar.gz
+  sha256: e89df652f177d681543cacfa056a38bdef6501fdc0080aed1c4fda71541e4db6
+  url: https://files.pythonhosted.org/packages/06/d0/8074b43bf2b96cf7a072bf38e61513829d25a2f46790ec8a3fe76edcd1eb/clean_plot-0.0.7.tar.gz
 about:
   dev_url: https://deven367.github.io
   doc_url: https://deven367.github.io
@@ -23,10 +23,22 @@ requirements:
   - pip
   - python
   - packaging
+  - numpy
+  - pandas
+  - seaborn
+  - sklearn
+  - nltk
+  - unidecode
   run:
   - pip
   - python
   - packaging
+  - numpy
+  - pandas
+  - seaborn
+  - sklearn
+  - nltk
+  - unidecode
 test:
   imports:
   - clean_plot
