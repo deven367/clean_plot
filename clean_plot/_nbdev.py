@@ -14,6 +14,7 @@ index = {"say_hello": "00_core.ipynb",
          "clean": "03_functions.ipynb",
          "get_wordnet_pos": "03_functions.ipynb",
          "remove_stopwords": "03_functions.ipynb",
+         "remove_punctuations": "03_functions.ipynb",
          "remove_punc_clean": "03_functions.ipynb",
          "process": "03_functions.ipynb"}
 
