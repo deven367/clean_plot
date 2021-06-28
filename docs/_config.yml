@@ -1,7 +1,7 @@
 repository: deven367/clean_plot
 output: web
-topnav_title: Welcome to clean_plot
-site_title: Welcome to clean_plot
+topnav_title: clean_plot
+site_title: clean_plot
 company_name: deven367
 description: This is a dummy project
 # Set to false to disable KaTeX math

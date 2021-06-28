@@ -18,7 +18,11 @@ index = {"say_hello": "00_core.ipynb",
          "remove_punc_clean": "03_functions.ipynb",
          "process": "03_functions.ipynb",
          "label": "04_pickle.ipynb",
-         "cos_sim": "04_pickle.ipynb"}
+         "cos_sim": "04_pickle.ipynb",
+         "create_dict_whole_book": "04_pickle.ipynb",
+         "create_label_whole_book": "04_pickle.ipynb",
+         "create_label": "04_pickle.ipynb",
+         "get_embed_method_and_name": "04_pickle.ipynb"}
 
 modules = ["core.py",
            "trial.py",
