@@ -16,12 +16,15 @@ index = {"say_hello": "00_core.ipynb",
          "remove_stopwords": "03_functions.ipynb",
          "remove_punctuations": "03_functions.ipynb",
          "remove_punc_clean": "03_functions.ipynb",
-         "process": "03_functions.ipynb"}
+         "process": "03_functions.ipynb",
+         "label": "04_pickle.ipynb",
+         "cos_sim": "04_pickle.ipynb"}
 
 modules = ["core.py",
            "trial.py",
            "feature_extractor.py",
-           "functions.py"]
+           "functions.py",
+           "pickle.py"]
 
 doc_url = "https://deven367.github.io/clean_plot/"
 

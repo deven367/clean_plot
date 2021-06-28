@@ -21,6 +21,9 @@ entries:
     - output: web,pdf
       title: Functions
       url: functions.html
+    - output: web,pdf
+      title: Exporting to pickle
+      url: pickle.html
     output: web
     title: clean_plot
   output: web

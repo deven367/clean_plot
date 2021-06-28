@@ -1,7 +1,7 @@
 repository: deven367/clean_plot
 output: web
-topnav_title: clean_plot
-site_title: clean_plot
+topnav_title: Welcome to clean_plot
+site_title: Welcome to clean_plot
 company_name: deven367
 description: This is a dummy project
 # Set to false to disable KaTeX math
@@ -20,7 +20,7 @@ exclude:
   - .idea/
   - .gitignore
   - vendor
- 
+
 exclude: [vendor]
 
 highlighter: rouge
@@ -61,6 +61,6 @@ sidebars:
 
 plugins:
     - jekyll-remote-theme
-    
+
 remote_theme: fastai/nbdev-jekyll-theme
 baseurl: /clean_plot/
