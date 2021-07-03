@@ -23,13 +23,17 @@ index = {"say_hello": "00_core.ipynb",
          "create_dict_whole_book": "04_pickle.ipynb",
          "create_label_whole_book": "04_pickle.ipynb",
          "create_label": "04_pickle.ipynb",
-         "get_embed_method_and_name": "04_pickle.ipynb"}
+         "get_embed_method_and_name": "04_pickle.ipynb",
+         "interpolate": "05_lexical.ipynb",
+         "load_pmi": "05_lexical.ipynb",
+         "load_dictionary": "05_lexical.ipynb"}
 
 modules = ["core.py",
            "trial.py",
            "feature_extractor.py",
            "functions.py",
-           "pickle.py"]
+           "pickle.py",
+           "lexical.py"]
 
 doc_url = "https://deven367.github.io/clean_plot/"
 

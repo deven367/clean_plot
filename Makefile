@@ -21,8 +21,8 @@ docs: $(SRC)
 test:
 	nbdev_test_nbs
 
-release: pypi 
-	# nbdev_bump_version
+release: pypi
+	nbdev_bump_version
 
 conda_release:
 	fastrelease_conda_package
@@ -35,7 +35,6 @@ dist: clean
 
 clean:
 	rm -rf dist
-	nbdev_bump_version
 
 do:
 	nbdev_build_lib
