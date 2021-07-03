@@ -4,6 +4,16 @@ __all__ = ['STOPWORDS', 'normalize', 'split_by_newline', 'rm_useless_spaces', 'm
            'clean', 'get_wordnet_pos', 'remove_stopwords', 'remove_punctuations', 'remove_punc_clean', 'process']
 
 # Cell
+import nltk
+
+# Cell
+#export
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('averaged_perceptron_tagger')
+nltk.download('wordnet')
+
+# Cell
 import os
 import pandas as pd
 import pickle
@@ -11,7 +21,6 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.metrics.pairwise import cosine_similarity
-import nltk
 from nltk.tokenize import sent_tokenize
 from nltk.tokenize import word_tokenize
 from nltk.corpus import wordnet, stopwords
