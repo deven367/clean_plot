@@ -2,9 +2,11 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"say_hello": "00_core.ipynb",
+index = {"get_data": "01_trial.ipynb",
+         "load_pmi": "05_lexical.ipynb",
+         "load_dictionary": "05_lexical.ipynb",
+         "say_hello": "00_core.ipynb",
          "HelloSayer": "00_core.ipynb",
-         "get_data": "01_trial.ipynb",
          "get_features": "02_feature_extractor.ipynb",
          "STOPWORDS": "03_functions.ipynb",
          "normalize": "03_functions.ipynb",
@@ -24,9 +26,7 @@ index = {"say_hello": "00_core.ipynb",
          "create_label_whole_book": "04_pickle.ipynb",
          "create_label": "04_pickle.ipynb",
          "get_embed_method_and_name": "04_pickle.ipynb",
-         "interpolate": "05_lexical.ipynb",
-         "load_pmi": "05_lexical.ipynb",
-         "load_dictionary": "05_lexical.ipynb"}
+         "interpolate": "05_lexical.ipynb"}
 
 modules = ["core.py",
            "trial.py",

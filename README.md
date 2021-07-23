@@ -12,7 +12,7 @@ Hoping this to work
 
 Let's see this now
 
-```
+```python
 say_hello('Deven')
 ```
 
@@ -23,7 +23,7 @@ say_hello('Deven')
 
 
 
-```
+```python
 normalize([1,2,2,2,4,565,31])
 ```
 

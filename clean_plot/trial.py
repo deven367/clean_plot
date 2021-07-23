@@ -4,9 +4,9 @@ __all__ = ['get_data']
 
 # Cell
 def get_data(fname):
-    '''
+    """
     This function gets all the text from the .txt file
-    '''
+    """
     with open(fname, 'r') as f:
         all_text = f.read()
     return all_text
