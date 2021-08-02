@@ -6,8 +6,8 @@ title: Functions
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "This includes majority of the functions"
-description: "This includes majority of the functions"
+summary: "This includes majority of the functions for cleaning text files"
+description: "This includes majority of the functions for cleaning text files"
 nb_path: "03_functions.ipynb"
 ---
 <!--
@@ -32,16 +32,18 @@ nb_path: "03_functions.ipynb"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>[nltk_data] Downloading package punkt to /home/deven367/nltk_data...
+<pre>[nltk_data] Downloading package punkt to C:\Users\Deven
+[nltk_data]     Mistry\AppData\Roaming\nltk_data...
 [nltk_data]   Package punkt is already up-to-date!
-[nltk_data] Downloading package stopwords to
-[nltk_data]     /home/deven367/nltk_data...
+[nltk_data] Downloading package stopwords to C:\Users\Deven
+[nltk_data]     Mistry\AppData\Roaming\nltk_data...
 [nltk_data]   Package stopwords is already up-to-date!
 [nltk_data] Downloading package averaged_perceptron_tagger to
-[nltk_data]     /home/deven367/nltk_data...
+[nltk_data]     C:\Users\Deven Mistry\AppData\Roaming\nltk_data...
 [nltk_data]   Package averaged_perceptron_tagger is already up-to-
 [nltk_data]       date!
-[nltk_data] Downloading package wordnet to /home/deven367/nltk_data...
+[nltk_data] Downloading package wordnet to C:\Users\Deven
+[nltk_data]     Mistry\AppData\Roaming\nltk_data...
 [nltk_data]   Package wordnet is already up-to-date!
 </pre>
 </div>
@@ -70,16 +72,19 @@ nb_path: "03_functions.ipynb"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>[nltk_data] Downloading package punkt to /home/deven367/nltk_data...
-[nltk_data]   Unzipping tokenizers/punkt.zip.
-[nltk_data] Downloading package stopwords to
-[nltk_data]     /home/deven367/nltk_data...
-[nltk_data]   Unzipping corpora/stopwords.zip.
+<pre>[nltk_data] Downloading package punkt to C:\Users\Deven
+[nltk_data]     Mistry\AppData\Roaming\nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+[nltk_data] Downloading package stopwords to C:\Users\Deven
+[nltk_data]     Mistry\AppData\Roaming\nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
 [nltk_data] Downloading package averaged_perceptron_tagger to
-[nltk_data]     /home/deven367/nltk_data...
-[nltk_data]   Unzipping taggers/averaged_perceptron_tagger.zip.
-[nltk_data] Downloading package wordnet to /home/deven367/nltk_data...
-[nltk_data]   Unzipping corpora/wordnet.zip.
+[nltk_data]     C:\Users\Deven Mistry\AppData\Roaming\nltk_data...
+[nltk_data]   Package averaged_perceptron_tagger is already up-to-
+[nltk_data]       date!
+[nltk_data] Downloading package wordnet to C:\Users\Deven
+[nltk_data]     Mistry\AppData\Roaming\nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!
 </pre>
 </div>
 </div>
@@ -96,6 +101,13 @@ nb_path: "03_functions.ipynb"
 
 </div>
 </div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
 
 </div>
     {% endraw %}
@@ -124,7 +136,7 @@ nb_path: "03_functions.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="normalize" class="doc_header"><code>normalize</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L33" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>normalize</code>(<strong><code>data</code></strong>)</p>
+<h4 id="normalize" class="doc_header"><code>normalize</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L35" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>normalize</code>(<strong><code>data</code></strong>)</p>
 </blockquote>
 <p>The function takes an array, matrix as input and normalizes
 it between 0 and 1</p>
@@ -194,7 +206,7 @@ it between 0 and 1</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="split_by_newline" class="doc_header"><code>split_by_newline</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L47" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>split_by_newline</code>(<strong><code>all</code></strong>)</p>
+<h4 id="split_by_newline" class="doc_header"><code>split_by_newline</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L49" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>split_by_newline</code>(<strong><code>text</code></strong>:<code>str</code>)</p>
 </blockquote>
 <p>Only use when sentences are already tokenized
 returns sentences split by '\n' if len(line) &gt; 0</p>
@@ -227,8 +239,8 @@ returns sentences split by '\n' if len(line) &gt; 0</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">all</span> <span class="o">=</span> <span class="s2">&quot;Hello there!</span><span class="se">\n</span><span class="s2">This is how this functions works!&quot;</span>
-<span class="n">split_by_newline</span><span class="p">(</span><span class="nb">all</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Hello there!</span><span class="se">\n</span><span class="s2">This is how this functions works!&quot;</span>
+<span class="n">split_by_newline</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -243,7 +255,7 @@ returns sentences split by '\n' if len(line) &gt; 0</p>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&#39;hello there!&#39;, &#39;this is how this functions works!&#39;]</pre>
+<pre>[&#39;Hello there!&#39;, &#39;This is how this functions works!&#39;]</pre>
 </div>
 
 </div>
@@ -265,7 +277,7 @@ returns sentences split by '\n' if len(line) &gt; 0</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="rm_useless_spaces" class="doc_header"><code>rm_useless_spaces</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L61" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>rm_useless_spaces</code>(<strong><code>t</code></strong>)</p>
+<h4 id="rm_useless_spaces" class="doc_header"><code>rm_useless_spaces</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L63" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>rm_useless_spaces</code>(<strong><code>t</code></strong>:<code>str</code>)</p>
 </blockquote>
 <p>Remove multiple spaces</p>
 
@@ -293,7 +305,7 @@ returns sentences split by '\n' if len(line) &gt; 0</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rm_useless_spaces</span><span class="p">(</span><span class="s1">&#39;This is      test sentence.  This removes  all the extra  spaces .&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rm_useless_spaces</span><span class="p">(</span><span class="s1">&#39;This is      test sentence.  This removes  all the extra  spaces.&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -308,7 +320,7 @@ returns sentences split by '\n' if len(line) &gt; 0</p>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;This is test sentence. This removes all the extra spaces .&#39;</pre>
+<pre>&#39;This is test sentence. This removes all the extra spaces.&#39;</pre>
 </div>
 
 </div>
@@ -330,39 +342,9 @@ returns sentences split by '\n' if len(line) &gt; 0</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="make_sentences" class="doc_header"><code>make_sentences</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L67" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>make_sentences</code>(<strong><code>all</code></strong>)</p>
+<h4 id="make_sentences" class="doc_header"><code>make_sentences</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L71" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>make_sentences</code>(<strong><code>text</code></strong>:<code>str</code>)</p>
 </blockquote>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="write_to_file_cleaned" class="doc_header"><code>write_to_file_cleaned</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L76" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>write_to_file_cleaned</code>(<strong><code>sentences</code></strong>, <strong><code>fname</code></strong>)</p>
-</blockquote>
+<p>Converts given bulk into sentences</p>
 
 </div>
 
@@ -392,8 +374,41 @@ returns sentences split by '\n' if len(line) &gt; 0</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="clean" class="doc_header"><code>clean</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L83" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>clean</code>(<strong><code>fname</code></strong>)</p>
+<h4 id="write_to_file_cleaned" class="doc_header"><code>write_to_file_cleaned</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L83" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>write_to_file_cleaned</code>(<strong><code>sentences</code></strong>:<code>List</code>[<code>str</code>], <strong><code>fname</code></strong>:<code>str</code>)</p>
 </blockquote>
+<p>Writes the sentences to a .txt file</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="clean" class="doc_header"><code>clean</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L93" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>clean</code>(<strong><code>fname</code></strong>:<code>str</code>)</p>
+</blockquote>
+<p>Takes name of a txt file and writes the tokenized sentences into a new txt file</p>
 
 </div>
 
@@ -414,7 +429,7 @@ returns sentences split by '\n' if len(line) &gt; 0</p>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>All functions mentioned above are merged into a single function called clean. 
+<p>All functions mentioned above are merged into a single function called <a href="/clean_plot/functions.html#clean"><code>clean</code></a>. 
 You only need to give it the name of the .txt file that you want to clean and call the function</p>
 
 </div>
@@ -428,7 +443,8 @@ You only need to give it the name of the .txt file that you want to clean and ca
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="s1">&#39;dummy.txt&#39;</span>
-<span class="n">get_data</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+<span class="n">text</span>
 </pre></div>
 
     </div>
@@ -512,7 +528,7 @@ You only need to give it the name of the .txt file that you want to clean and ca
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Let's-move-on-to-further-cleaning">Let's move on to further cleaning<a class="anchor-link" href="#Let's-move-on-to-further-cleaning"> </a></h2>
+<h2 id="Lets-move-on-to-further-cleaning">Lets move on to further cleaning<a class="anchor-link" href="#Lets-move-on-to-further-cleaning"> </a></h2>
 </div>
 </div>
 </div>
@@ -526,6 +542,23 @@ You only need to give it the name of the .txt file that you want to clean and ca
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">STOPWORDS</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
 
 <div class="output_wrapper">
 <div class="output">
@@ -534,7 +567,7 @@ You only need to give it the name of the .txt file that you want to clean and ca
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_wordnet_pos" class="doc_header"><code>get_wordnet_pos</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L90" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_wordnet_pos</code>(<strong><code>word</code></strong>)</p>
+<h4 id="get_wordnet_pos" class="doc_header"><code>get_wordnet_pos</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L103" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_wordnet_pos</code>(<strong><code>word</code></strong>:<code>str</code>)</p>
 </blockquote>
 <p>Map POS tag to first character lemmatize() accepts</p>
 
@@ -566,8 +599,9 @@ You only need to give it the name of the .txt file that you want to clean and ca
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="remove_stopwords" class="doc_header"><code>remove_stopwords</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L101" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>remove_stopwords</code>(<strong><code>sentence</code></strong>)</p>
+<h4 id="remove_stopwords" class="doc_header"><code>remove_stopwords</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L114" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>remove_stopwords</code>(<strong><code>sentence</code></strong>:<code>str</code>)</p>
 </blockquote>
+<p>Takes a sentence and removes stopwords from it</p>
 
 </div>
 
@@ -597,8 +631,9 @@ You only need to give it the name of the .txt file that you want to clean and ca
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="remove_punctuations" class="doc_header"><code>remove_punctuations</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L109" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>remove_punctuations</code>(<strong><code>sentence</code></strong>)</p>
+<h4 id="remove_punctuations" class="doc_header"><code>remove_punctuations</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L125" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>remove_punctuations</code>(<strong><code>sentence</code></strong>:<code>str</code>)</p>
 </blockquote>
+<p>Takes a sentence and removes punctuations from it</p>
 
 </div>
 
@@ -628,8 +663,10 @@ You only need to give it the name of the .txt file that you want to clean and ca
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="remove_punc_clean" class="doc_header"><code>remove_punc_clean</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L119" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>remove_punc_clean</code>(<strong><code>sentence</code></strong>)</p>
+<h4 id="remove_punc_clean" class="doc_header"><code>remove_punc_clean</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L138" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>remove_punc_clean</code>(<strong><code>sentence</code></strong>:<code>str</code>, <strong><code>lemmatize</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
 </blockquote>
+<p>Takes a sentence and removes punctuations and stopwords from it</p>
+<p>Will lemmatize words if <code>lemmatize = True</code></p>
 
 </div>
 
@@ -659,7 +696,7 @@ You only need to give it the name of the .txt file that you want to clean and ca
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="process" class="doc_header"><code>process</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L129" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>process</code>(<strong><code>fname</code></strong>)</p>
+<h4 id="process" class="doc_header"><code>process</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L154" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>process</code>(<strong><code>fname</code></strong>:<code>str</code>)</p>
 </blockquote>
 
 </div>
@@ -732,9 +769,15 @@ You only need to give it the name of the .txt file that you want to clean and ca
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Here, the <a href="/clean_plot/functions.html#remove_punc_clean"><code>remove_punc_clean</code></a> function removes punctuations, STOPWORDS and lemmatizes the word and returns the cleaned sentence.</p>
-<p><strong>NOTE</strong> It is possible that a sentence gets removed completely as it may contain only STOPWORDS. 
-This method is to be used for methods involving lexical analysis.</p>
+<p>Here, the <a href="/clean_plot/functions.html#remove_punc_clean"><code>remove_punc_clean</code></a> function removes punctuations, STOPWORDS and lemmatizes the word and returns the cleaned sentence. 
+{% include note.html content='It is possible that a sentence may be removed completely as it may contain only STOPWORDS. ' %}This method is to be used for methods involving lexical analysis.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Without lemmatization</p>
 
 </div>
 </div>
@@ -748,6 +791,54 @@ This method is to be used for methods involving lexical analysis.</p>
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="n">sentences</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">remove_punc_clean</span><span class="p">(</span><span class="n">sentence</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>MARLEY dead begin
+doubt whatever
+register burial signed clergyman clerk undertaker chief mourner
+Scrooge signed Scrooge name good upon Change anything chose put hand
+Old Marley dead door nail
+Mind
+mean say know knowledge particularly dead door nail
+might inclined regard coffin nail deadest piece ironmongery trade
+wisdom ancestors simile unhallowed hands shall disturb Country done
+therefore permit repeat emphatically Marley dead door nail
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>With Lemmatization</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="n">sentences</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">remove_punc_clean</span><span class="p">(</span><span class="n">sentence</span><span class="p">,</span> <span class="n">lemmatize</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 
     </div>

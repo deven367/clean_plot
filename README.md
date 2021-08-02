@@ -1,8 +1,6 @@
 # Welcome to clean_plot
-> This is an amazing tutorial
+> The library simplifies cleaning text file for creation of embeddings and making plots from it
 
-
-Hoping this to work
 
 ## Install
 

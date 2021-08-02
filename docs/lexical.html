@@ -32,16 +32,18 @@ nb_path: "05_lexical.ipynb"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>[nltk_data] Downloading package punkt to /home/deven367/nltk_data...
+<pre>[nltk_data] Downloading package punkt to C:\Users\Deven
+[nltk_data]     Mistry\AppData\Roaming\nltk_data...
 [nltk_data]   Package punkt is already up-to-date!
-[nltk_data] Downloading package stopwords to
-[nltk_data]     /home/deven367/nltk_data...
+[nltk_data] Downloading package stopwords to C:\Users\Deven
+[nltk_data]     Mistry\AppData\Roaming\nltk_data...
 [nltk_data]   Package stopwords is already up-to-date!
 [nltk_data] Downloading package averaged_perceptron_tagger to
-[nltk_data]     /home/deven367/nltk_data...
+[nltk_data]     C:\Users\Deven Mistry\AppData\Roaming\nltk_data...
 [nltk_data]   Package averaged_perceptron_tagger is already up-to-
 [nltk_data]       date!
-[nltk_data] Downloading package wordnet to /home/deven367/nltk_data...
+[nltk_data] Downloading package wordnet to C:\Users\Deven
+[nltk_data]     Mistry\AppData\Roaming\nltk_data...
 [nltk_data]   Package wordnet is already up-to-date!
 </pre>
 </div>
@@ -104,8 +106,9 @@ Substitutes the missing values based on the previous value in the array</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="load_pmi" class="doc_header"><code>load_pmi</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/lexical.py#L24" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_pmi</code>(<strong><code>path</code></strong>)</p>
+<h4 id="load_pmi" class="doc_header"><code>load_pmi</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/core.py#L26" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_pmi</code>(<strong><code>fname</code></strong>:<code>Union</code>[<code>str</code>, <code>Path</code>])</p>
 </blockquote>
+<p>Loads the PMI matrix</p>
 
 </div>
 
@@ -135,8 +138,15 @@ Substitutes the missing values based on the previous value in the array</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="load_dictionary" class="doc_header"><code>load_dictionary</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/lexical.py#L30" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_dictionary</code>(<strong><code>path</code></strong>)</p>
+<h4 id="load_dictionary" class="doc_header"><code>load_dictionary</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/core.py#L37" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_dictionary</code>(<strong><code>fname</code></strong>)</p>
 </blockquote>
+<p>Given a fname, function loads a <code>pkl</code> dictionary
+from the current directory</p>
+<p>Args:
+    fname ([str]): Enter the filename</p>
+<p>Returns:
+    [dict]: Returns the loaded pkl file as a
+            dict</p>
 
 </div>
 
