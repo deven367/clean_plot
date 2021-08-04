@@ -32,7 +32,7 @@ from nltk.stem import WordNetLemmatizer
 from typing import Callable, Iterator, Union, Optional, List
 
 # Cell
-def normalize(data):
+def normalize(data: np.ndarray) -> np.ndarray:
     """
     The function takes an array, matrix as input and normalizes
     it between 0 and 1

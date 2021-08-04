@@ -1,16 +1,17 @@
 package:
   name: clean_plot
-  version: 0.0.7
+  version: 0.0.9
 source:
-  sha256: e89df652f177d681543cacfa056a38bdef6501fdc0080aed1c4fda71541e4db6
-  url: https://files.pythonhosted.org/packages/06/d0/8074b43bf2b96cf7a072bf38e61513829d25a2f46790ec8a3fe76edcd1eb/clean_plot-0.0.7.tar.gz
+  sha256: e864935b372cb3c7185f15392910fb57ea88a2a2f447c1a5a858967c4857b16b
+  url: https://files.pythonhosted.org/packages/c0/49/51a6525ee7863c380f065872a26d5802945b20265be351337636f2dac72e/clean_plot-0.0.9.tar.gz
 about:
   dev_url: https://deven367.github.io
   doc_url: https://deven367.github.io
   home: https://deven367.github.io
   license: Apache Software
   license_family: APACHE
-  summary: This is a dummy project
+  summary: clean_plot simplifies cleaning text file for creation of embeddings and
+    making plots from it
 build:
   noarch: python
   number: '0'
