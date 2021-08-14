@@ -66,20 +66,6 @@ nb_path: "03_functions.ipynb"
     
 <div class="cell border-box-sizing code_cell rendered">
 
-<pre>[nltk_data] Downloading package punkt to C:\Users\Deven
-[nltk_data]     Mistry\AppData\Roaming\nltk_data...
-[nltk_data]   Package punkt is already up-to-date!
-[nltk_data] Downloading package stopwords to C:\Users\Deven
-[nltk_data]     Mistry\AppData\Roaming\nltk_data...
-[nltk_data]   Package stopwords is already up-to-date!
-[nltk_data] Downloading package averaged_perceptron_tagger to
-[nltk_data]     C:\Users\Deven Mistry\AppData\Roaming\nltk_data...
-[nltk_data]   Package averaged_perceptron_tagger is already up-to-
-[nltk_data]       date!
-[nltk_data] Downloading package wordnet to C:\Users\Deven
-[nltk_data]     Mistry\AppData\Roaming\nltk_data...
-[nltk_data]   Package wordnet is already up-to-date!
-</pre>
 </div>
     {% endraw %}
 
@@ -520,16 +506,6 @@ You only need to give it the name of the .txt file that you want to clean and ca
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">STOPWORDS</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 </div>
     {% endraw %}
@@ -545,7 +521,7 @@ You only need to give it the name of the .txt file that you want to clean and ca
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_wordnet_pos" class="doc_header"><code>get_wordnet_pos</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L103" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_wordnet_pos</code>(<strong><code>word</code></strong>:<code>str</code>)</p>
+<h4 id="get_wordnet_pos" class="doc_header"><code>get_wordnet_pos</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L106" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_wordnet_pos</code>(<strong><code>word</code></strong>:<code>str</code>)</p>
 </blockquote>
 <p>Map POS tag to first character lemmatize() accepts</p>
 
@@ -577,7 +553,7 @@ You only need to give it the name of the .txt file that you want to clean and ca
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="remove_stopwords" class="doc_header"><code>remove_stopwords</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L114" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>remove_stopwords</code>(<strong><code>sentence</code></strong>:<code>str</code>)</p>
+<h4 id="remove_stopwords" class="doc_header"><code>remove_stopwords</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L117" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>remove_stopwords</code>(<strong><code>sentence</code></strong>:<code>str</code>)</p>
 </blockquote>
 <p>Takes a sentence and removes stopwords from it</p>
 
@@ -609,7 +585,7 @@ You only need to give it the name of the .txt file that you want to clean and ca
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="remove_punctuations" class="doc_header"><code>remove_punctuations</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L125" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>remove_punctuations</code>(<strong><code>sentence</code></strong>:<code>str</code>)</p>
+<h4 id="remove_punctuations" class="doc_header"><code>remove_punctuations</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L128" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>remove_punctuations</code>(<strong><code>sentence</code></strong>:<code>str</code>)</p>
 </blockquote>
 <p>Takes a sentence and removes punctuations from it</p>
 
@@ -641,7 +617,7 @@ You only need to give it the name of the .txt file that you want to clean and ca
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="remove_punc_clean" class="doc_header"><code>remove_punc_clean</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L138" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>remove_punc_clean</code>(<strong><code>sentence</code></strong>:<code>str</code>, <strong><code>lemmatize</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
+<h4 id="remove_punc_clean" class="doc_header"><code>remove_punc_clean</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L141" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>remove_punc_clean</code>(<strong><code>sentence</code></strong>:<code>str</code>, <strong><code>lemmatize</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
 </blockquote>
 <p>Takes a sentence and removes punctuations and stopwords from it</p>
 <p>Will lemmatize words if <code>lemmatize = True</code></p>
@@ -674,7 +650,7 @@ You only need to give it the name of the .txt file that you want to clean and ca
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="process" class="doc_header"><code>process</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L154" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>process</code>(<strong><code>fname</code></strong>:<code>str</code>)</p>
+<h4 id="process" class="doc_header"><code>process</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L157" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>process</code>(<strong><code>fname</code></strong>:<code>str</code>)</p>
 </blockquote>
 
 </div>
