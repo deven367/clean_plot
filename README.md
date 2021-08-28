@@ -11,7 +11,7 @@
 The library contains easy to use methods for cleaning text, tokenizing sentences and lemmatizing sentences. These sentences can then be easily fed to a sentence encoder to create sentence embeddings.
 
 ```python
-fname = 'dummy.txt'
+fname = '../files/dummy.txt'
 text = get_data(fname)
 text
 ```
