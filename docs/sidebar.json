@@ -3,7 +3,6 @@
     "Overview": "/",
     "Core": "core.html",
     "Trial": "trial.html",
-    "VGG16 Feature Extractor and Logistic Regression Classifier": "feature_extractor.html",
     "Functions": "functions.html",
     "Exporting to pickle": "pickle.html",
     "Lexical": "lexical.html"
