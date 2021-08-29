@@ -2,7 +2,6 @@
   "clean_plot": {
     "Overview": "/",
     "Core": "core.html",
-    "Trial": "trial.html",
     "Functions": "functions.html",
     "Exporting to pickle": "pickle.html",
     "Lexical": "lexical.html"
