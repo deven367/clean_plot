@@ -14,7 +14,7 @@ import glob
 from glob import glob
 
 # Cell
-def get_data(fname: str) -> str:
+def get_data(fname: Union[str, pathlib.Path]) -> str:
     """
     Reads from a txt file
     """
