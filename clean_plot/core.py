@@ -6,6 +6,7 @@ __all__ = ['get_data', 'load_pmi', 'load_dictionary', 'loader']
 import pickle
 import numpy as np
 from pathlib import Path
+from fastcore.foundation import L
 
 # Cell
 from typing import Callable, Iterator, Union, Optional, List
@@ -57,15 +58,14 @@ def loader(path: Union[str, pathlib.Path], extension: str) -> Union[None, List[p
     """
     #`Note` Recursive not supported yet
     p = Path(path)
-    files = []
+    files = L()
     for file_ in p.glob(f'*{extension}'):
         files.append(file_)
 
     if files == []:
         print(f'Directory does not contain files ending in {extension}')
         return
-    elif len(files) == 1:
-        return files[0]
+
     return files
 
 
