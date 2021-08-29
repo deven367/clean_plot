@@ -13,9 +13,6 @@ entries:
       title: Core
       url: core.html
     - output: web,pdf
-      title: Trial
-      url: trial.html
-    - output: web,pdf
       title: Functions
       url: functions.html
     - output: web,pdf
