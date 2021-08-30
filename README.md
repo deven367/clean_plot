@@ -4,7 +4,19 @@
 
 ## Install
 
-`pip install clean-plot`
+The easiest way to install the library is to simply do a `pip` install. 
+
+```
+pip install clean-plot
+```
+
+Another way to install the library would be to build from source. It is more likely that the released version may contain bugs. The source would get updated more often. If you plan to add features to `clean_plot` yourself, or want to be on the cutting edge, you can use an editable install.
+
+```
+git clone https://github.com/deven367/clean_plot.git
+cd clean_plot
+pip install -e . 
+```
 
 ## How to use
 
@@ -85,3 +97,15 @@ no_punctuations
      'You will therefore permit me to repeat emphatically that Marley was as dead as a door nail']
 
 
+
+## Contributing
+
+This library has come into existence because of [nbdev](https://nbdev.fast.ai/) (one of many amazing tools made by [fast.ai](https://www.fast.ai/)). PRs and Issues are encouraged. 
+
+After you clone this repository, please run `nbdev_install_git_hooks` in your terminal. This sets up git hooks, which clean up the notebooks to remove the extraneous stuff stored in the notebooks (e.g. which cells you ran) which causes unnecessary merge conflicts.
+
+Before submitting a PR, check that the local library and notebooks match. The script `nbdev_diff_nbs` can let you know if there is a difference between the local library and the notebooks.
+
+If you made a change to the notebooks in one of the exported cells, you can export it to the library with `nbdev_build_lib` or `make clean_plot`.
+
+If you made a change to the library, you can export it back to the notebooks with `nbdev_update_lib`.
