@@ -4,6 +4,7 @@
     "Core": "/core",
     "Functions": "/functions",
     "Exporting to pickle": "/pickle",
-    "Lexical": "/lexical"
+    "Lexical": "/lexical",
+    "Heatmaps": "/heatmaps_novels"
   }
 }
