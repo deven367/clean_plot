@@ -11,16 +11,19 @@ entries:
       url: /
     - output: web,pdf
       title: Core
-      url: core.html
+      url: /core
     - output: web,pdf
       title: Functions
-      url: functions.html
+      url: /functions
     - output: web,pdf
       title: Exporting to pickle
-      url: pickle.html
+      url: /pickle
     - output: web,pdf
       title: Lexical
-      url: lexical.html
+      url: /lexical
+    - output: web,pdf
+      title: Heatmaps
+      url: /heatmaps_novels
     output: web
     title: clean_plot
   output: web
