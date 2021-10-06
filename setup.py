@@ -59,6 +59,6 @@ setuptools.setup(
     long_description = long_description,
     long_description_content_type = 'text/markdown',
     zip_safe = False,
-    entry_points = { 'console_scripts': cfg.get('console_scripts','').split() },
+    entry_points = { 'console_scripts': cfg.get('console_scripts','heatmaps=clean_plot.heatmaps_novels:plot_novels').split() },
     **setup_cfg)
 
