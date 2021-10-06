@@ -25,12 +25,14 @@ index = {"get_data": "00_core.ipynb",
          "create_label_whole_book": "02_pickle.ipynb",
          "create_label": "02_pickle.ipynb",
          "get_embed_method_and_name": "02_pickle.ipynb",
-         "interpolate": "03_lexical.ipynb"}
+         "interpolate": "03_lexical.ipynb",
+         "plot_novels": "04_heatmaps_novels.ipynb"}
 
 modules = ["core.py",
            "functions.py",
            "pickle.py",
-           "lexical.py"]
+           "lexical.py",
+           "heatmaps_novels.py"]
 
 doc_url = "https://deven367.github.io/clean_plot/"
 
