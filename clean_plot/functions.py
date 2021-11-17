@@ -91,7 +91,7 @@ def write_to_file_cleaned(sentences: List[str], fname: str) -> None:
     """
     Writes the sentences to a .txt file
     """
-    with open(fname[:-4]+'_cleaned.txt', 'w') as f:
+    with open(f'{fname.stem}_cleaned.txt', 'w') as f:
         for line in sentences:
             f.write(f'{line}\n')
     f.close()
