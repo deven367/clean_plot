@@ -78,7 +78,8 @@ def make_sentences(text: str) -> List[str]:
     """
     Converts given bulk into sentences
     """
-    all_cleaned = text.replace('\n',' ')
+#     all_cleaned = re.sub('\n', ' ', text)
+    all_cleaned = text.replace('\n', ' ')
     all_cleaned = rm_useless_spaces(all_cleaned)
     all_cleaned = all_cleaned.strip()
     all_cleaned = unidecode.unidecode(all_cleaned)
