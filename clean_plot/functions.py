@@ -163,7 +163,7 @@ def remove_punc_clean(sentence: str, lemmatize: bool = False) -> str:
 
 # Cell
 def process(fname: str) -> List[str]:
-
+    fname = Path(fname)
     all_data = get_data(fname)
     all_data = unidecode.unidecode(all_data)
     sentences = make_sentences(all_data)
@@ -177,5 +177,5 @@ def process(fname: str) -> List[str]:
             removed_sentences.append(i)
 
     # write_to_file_lexical(clean_sentences, fname)
-    print('Done processing', fname)
+    print('Done processing', fname.name)
     return L(removed_sentences)
