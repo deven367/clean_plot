@@ -35,9 +35,6 @@ def download_ntlk_dep():
     nltk.download('wordnet')
 
 # Cell
-download_ntlk_dep()
-
-# Cell
 def normalize(data: np.ndarray) -> np.ndarray:
     """
     The function takes an array, matrix as input and normalizes
