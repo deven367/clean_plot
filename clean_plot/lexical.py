@@ -31,3 +31,10 @@ def load_dictionary(path):
     fname = open(path, 'rb')
     data = pickle.load(fname)
     return data
+
+# Cell
+def write_to_file_lexical(sentences, fname):
+    with open(fname[:-4]+'_lexical.txt', 'w') as f:
+        for line in sentences:
+            f.write(line + '\n')
+    f.close()
