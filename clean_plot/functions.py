@@ -101,9 +101,10 @@ def clean(fname: str) -> None:
     """
     Takes name of a txt file and writes the tokenized sentences into a new txt file
     """
+    fname = Path(fname)
     text = get_data(fname)
-    sentences = make_sentences(all)
-    print(f'{fname[:-4].title()} contains {len(sentences)} sentences')
+    sentences = make_sentences(text)
+    print(f'{fname.name} contains {len(sentences)} sentences')
     write_to_file_cleaned(sentences, fname)
 
 # Cell
