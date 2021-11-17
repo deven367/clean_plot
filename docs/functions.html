@@ -26,29 +26,6 @@ nb_path: "nbs/01_functions.ipynb"
     
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>[nltk_data] Downloading package punkt to /home/deven/nltk_data...
-[nltk_data]   Package punkt is already up-to-date!
-[nltk_data] Downloading package stopwords to /home/deven/nltk_data...
-[nltk_data]   Package stopwords is already up-to-date!
-[nltk_data] Downloading package averaged_perceptron_tagger to
-[nltk_data]     /home/deven/nltk_data...
-[nltk_data]   Package averaged_perceptron_tagger is already up-to-
-[nltk_data]       date!
-[nltk_data] Downloading package wordnet to /home/deven/nltk_data...
-[nltk_data]   Package wordnet is already up-to-date!
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
@@ -90,7 +67,7 @@ nb_path: "nbs/01_functions.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="download_ntlk_dep" class="doc_header"><code>download_ntlk_dep</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L30" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>download_ntlk_dep</code>()</p>
+<h4 id="download_ntlk_dep" class="doc_header"><code>download_ntlk_dep</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L31" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>download_ntlk_dep</code>()</p>
 </blockquote>
 
 </div>
@@ -99,13 +76,6 @@ nb_path: "nbs/01_functions.ipynb"
 
 </div>
 </div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
 
 </div>
     {% endraw %}
@@ -128,14 +98,17 @@ nb_path: "nbs/01_functions.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="normalize" class="doc_header"><code>normalize</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L40" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>normalize</code>(<strong><code>data</code></strong>:<code>ndarray</code>)</p>
+<h4 id="normalize" class="doc_header"><code>normalize</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L38" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>normalize</code>(<strong><code>data</code></strong>:<code>ndarray</code>)</p>
 </blockquote>
-<p>The function takes an array, matrix as input and normalizes
-it between 0 and 1</p>
-<p>Args:
-    data (ndarray): any 1-D, or 2-D numpy array</p>
-<p>Returns:
-    (ndarray): normalized ndarray</p>
+
+<pre><code>The function takes an array, matrix as input and normalizes
+it between 0 and 1
+
+Args:
+    data (ndarray): any 1-D, or 2-D numpy array
+
+Returns:
+    (ndarray): normalized ndarray</code></pre>
 
 </div>
 
@@ -190,6 +163,23 @@ it between 0 and 1</p>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_eq</span><span class="p">(</span><span class="n">normalize</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]),</span> <span class="p">[</span><span class="mf">0.</span>  <span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span> <span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">1.</span>  <span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
 
 <div class="output_wrapper">
 <div class="output">
@@ -198,14 +188,17 @@ it between 0 and 1</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="split_by_newline" class="doc_header"><code>split_by_newline</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L54" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>split_by_newline</code>(<strong><code>text</code></strong>:<code>str</code>)</p>
+<h4 id="split_by_newline" class="doc_header"><code>split_by_newline</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L52" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>split_by_newline</code>(<strong><code>text</code></strong>:<code>str</code>)</p>
 </blockquote>
-<p>Only use when sentences are already tokenized
-returns sentences split by '\n' if len(line) &gt; 0</p>
-<p>Args:
-    all (str): tokenized string to be split by '\n'</p>
-<p>Returns:
-    list: list of sentences split by '\n'</p>
+
+<pre><code>Only use when sentences are already tokenized
+returns sentences split by '\n' if len(line) &gt; 0
+
+Args:
+    all (str): tokenized string to be split by '\n'
+
+Returns:
+    list: list of sentences split by '\n'</code></pre>
 
 </div>
 
@@ -269,9 +262,10 @@ returns sentences split by '\n' if len(line) &gt; 0</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="rm_useless_spaces" class="doc_header"><code>rm_useless_spaces</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L68" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>rm_useless_spaces</code>(<strong><code>t</code></strong>:<code>str</code>)</p>
+<h4 id="rm_useless_spaces" class="doc_header"><code>rm_useless_spaces</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L66" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>rm_useless_spaces</code>(<strong><code>t</code></strong>:<code>str</code>)</p>
 </blockquote>
-<p>Remove multiple spaces</p>
+
+<pre><code>Remove multiple spaces</code></pre>
 
 </div>
 
@@ -334,9 +328,10 @@ returns sentences split by '\n' if len(line) &gt; 0</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="make_sentences" class="doc_header"><code>make_sentences</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L76" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>make_sentences</code>(<strong><code>text</code></strong>:<code>str</code>)</p>
+<h4 id="make_sentences" class="doc_header"><code>make_sentences</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L74" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>make_sentences</code>(<strong><code>text</code></strong>:<code>str</code>)</p>
 </blockquote>
-<p>Converts given bulk into sentences</p>
+
+<pre><code>Converts given bulk into sentences</code></pre>
 
 </div>
 
@@ -366,9 +361,10 @@ returns sentences split by '\n' if len(line) &gt; 0</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="write_to_file_cleaned" class="doc_header"><code>write_to_file_cleaned</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L88" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>write_to_file_cleaned</code>(<strong><code>sentences</code></strong>:<code>List</code>[<code>str</code>], <strong><code>fname</code></strong>:<code>str</code>)</p>
+<h4 id="write_to_file_cleaned" class="doc_header"><code>write_to_file_cleaned</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L87" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>write_to_file_cleaned</code>(<strong><code>sentences</code></strong>:<code>List</code>[<code>str</code>], <strong><code>fname</code></strong>:<code>str</code>)</p>
 </blockquote>
-<p>Writes the sentences to a .txt file</p>
+
+<pre><code>Writes the sentences to a .txt file</code></pre>
 
 </div>
 
@@ -398,9 +394,10 @@ returns sentences split by '\n' if len(line) &gt; 0</p>
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="clean" class="doc_header"><code>clean</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L98" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>clean</code>(<strong><code>fname</code></strong>:<code>str</code>)</p>
+<h4 id="clean" class="doc_header"><code>clean</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L97" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>clean</code>(<strong><code>fname</code></strong>:<code>str</code>)</p>
 </blockquote>
-<p>Takes name of a txt file and writes the tokenized sentences into a new txt file</p>
+
+<pre><code>Takes name of a txt file and writes the tokenized sentences into a new txt file</code></pre>
 
 </div>
 
@@ -451,7 +448,7 @@ You only need to give it the name of the .txt file that you want to clean and ca
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#34;MARLEY was dead: to begin with. There is no doubt\nwhatever about that. The register of his burial was\nsigned by the clergyman, the clerk, the undertaker,\nand the chief mourner. Scrooge signed it: and\nScrooge&#39;s name was good upon &#39;Change, for anything he\nchose to put his hand to. Old Marley was as dead as a\ndoor-nail.\n\nMind! I don&#39;t mean to say that I know, of my\nown knowledge, what there is particularly dead about\na door-nail. I might have been inclined, myself, to\nregard a coffin-nail as the deadest piece of ironmongery\nin the trade. But the wisdom of our ancestors\nis in the simile; and my unhallowed hands\nshall not disturb it, or the Country&#39;s done for. You\nwill therefore permit me to repeat, emphatically, that\nMarley was as dead as a door-nail.&#34;</pre>
+<pre>&#34;MARLEY was dead: to begin with. There is no doubt\nwhatever about that. The register of his burial was\nsigned by the clergyman, the clerk, the undertaker,\nand the chief mourner. Scrooge signed it: and\nScrooge&#39;s name was good upon &#39;Change, for anything he\nchose to put his hand to. Old Marley was as dead as a\ndoor-nail.\n\nMind! I don&#39;t mean to say that I know, of my\nown knowledge, what there is particularly dead about\na door-nail. I might have been inclined, myself, to\nregard a coffin-nail as the deadest piece of ironmongery\nin the trade. But the wisdom of our ancestors\nis in the simile; and my unhallowed hands\nshall not disturb it, or the Country&#39;s done for. You\nwill therefore permit me to repeat, emphatically, that\nMarley was as dead as a door-nail.\n\nThis is a new sentence.&#34;</pre>
 </div>
 
 </div>
@@ -491,7 +488,7 @@ You only need to give it the name of the .txt file that you want to clean and ca
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>(#10) [&#39;MARLEY was dead: to begin with.&#39;,&#39;There is no doubt whatever about that.&#39;,&#39;The register of his burial was signed by the clergyman, the clerk, the undertaker, and the chief mourner.&#39;,&#34;Scrooge signed it: and Scrooge&#39;s name was good upon &#39;Change, for anything he chose to put his hand to.&#34;,&#39;Old Marley was as dead as a door-nail.&#39;,&#39;Mind!&#39;,&#34;I don&#39;t mean to say that I know, of my own knowledge, what there is particularly dead about a door-nail.&#34;,&#39;I might have been inclined, myself, to regard a coffin-nail as the deadest piece of ironmongery in the trade.&#39;,&#34;But the wisdom of our ancestors is in the simile; and my unhallowed hands shall not disturb it, or the Country&#39;s done for.&#34;,&#39;You will therefore permit me to repeat, emphatically, that Marley was as dead as a door-nail.&#39;]</pre>
+<pre>(#11) [&#39;MARLEY was dead: to begin with.&#39;,&#39;There is no doubt whatever about that.&#39;,&#39;The register of his burial was signed by the clergyman, the clerk, the undertaker, and the chief mourner.&#39;,&#34;Scrooge signed it: and Scrooge&#39;s name was good upon &#39;Change, for anything he chose to put his hand to.&#34;,&#39;Old Marley was as dead as a door-nail.&#39;,&#39;Mind!&#39;,&#34;I don&#39;t mean to say that I know, of my own knowledge, what there is particularly dead about a door-nail.&#34;,&#39;I might have been inclined, myself, to regard a coffin-nail as the deadest piece of ironmongery in the trade.&#39;,&#34;But the wisdom of our ancestors is in the simile; and my unhallowed hands shall not disturb it, or the Country&#39;s done for.&#34;,&#39;You will therefore permit me to repeat, emphatically, that Marley was as dead as a door-nail.&#39;...]</pre>
 </div>
 
 </div>
@@ -542,7 +539,8 @@ You only need to give it the name of the .txt file that you want to clean and ca
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="get_wordnet_pos" class="doc_header"><code>get_wordnet_pos</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L111" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_wordnet_pos</code>(<strong><code>word</code></strong>:<code>str</code>)</p>
 </blockquote>
-<p>Map POS tag to first character lemmatize() accepts</p>
+
+<pre><code>Map POS tag to first character lemmatize() accepts</code></pre>
 
 </div>
 
@@ -574,7 +572,8 @@ You only need to give it the name of the .txt file that you want to clean and ca
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="remove_stopwords" class="doc_header"><code>remove_stopwords</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L122" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>remove_stopwords</code>(<strong><code>sentence</code></strong>:<code>str</code>)</p>
 </blockquote>
-<p>Takes a sentence and removes stopwords from it</p>
+
+<pre><code>Takes a sentence and removes stopwords from it</code></pre>
 
 </div>
 
@@ -606,7 +605,8 @@ You only need to give it the name of the .txt file that you want to clean and ca
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="remove_punctuations" class="doc_header"><code>remove_punctuations</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L133" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>remove_punctuations</code>(<strong><code>sentence</code></strong>:<code>str</code>)</p>
 </blockquote>
-<p>Takes a sentence and removes punctuations from it</p>
+
+<pre><code>Takes a sentence and removes punctuations from it</code></pre>
 
 </div>
 
@@ -638,8 +638,10 @@ You only need to give it the name of the .txt file that you want to clean and ca
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="remove_punc_clean" class="doc_header"><code>remove_punc_clean</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L146" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>remove_punc_clean</code>(<strong><code>sentence</code></strong>:<code>str</code>, <strong><code>lemmatize</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
 </blockquote>
-<p>Takes a sentence and removes punctuations and stopwords from it</p>
-<p>Will lemmatize words if <code>lemmatize = True</code></p>
+
+<pre><code>Takes a sentence and removes punctuations and stopwords from it
+
+Will lemmatize words if `lemmatize = True`</code></pre>
 
 </div>
 
@@ -720,7 +722,7 @@ You only need to give it the name of the .txt file that you want to clean and ca
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>(#10) [&#39;MARLEY was dead: to begin with.&#39;,&#39;There is no doubt whatever about that.&#39;,&#39;The register of his burial was signed by the clergyman, the clerk, the undertaker, and the chief mourner.&#39;,&#34;Scrooge signed it: and Scrooge&#39;s name was good upon &#39;Change, for anything he chose to put his hand to.&#34;,&#39;Old Marley was as dead as a door-nail.&#39;,&#39;Mind!&#39;,&#34;I don&#39;t mean to say that I know, of my own knowledge, what there is particularly dead about a door-nail.&#34;,&#39;I might have been inclined, myself, to regard a coffin-nail as the deadest piece of ironmongery in the trade.&#39;,&#34;But the wisdom of our ancestors is in the simile; and my unhallowed hands shall not disturb it, or the Country&#39;s done for.&#34;,&#39;You will therefore permit me to repeat, emphatically, that Marley was as dead as a door-nail.&#39;]</pre>
+<pre>(#11) [&#39;MARLEY was dead: to begin with.&#39;,&#39;There is no doubt whatever about that.&#39;,&#39;The register of his burial was signed by the clergyman, the clerk, the undertaker, and the chief mourner.&#39;,&#34;Scrooge signed it: and Scrooge&#39;s name was good upon &#39;Change, for anything he chose to put his hand to.&#34;,&#39;Old Marley was as dead as a door-nail.&#39;,&#39;Mind!&#39;,&#34;I don&#39;t mean to say that I know, of my own knowledge, what there is particularly dead about a door-nail.&#34;,&#39;I might have been inclined, myself, to regard a coffin-nail as the deadest piece of ironmongery in the trade.&#39;,&#34;But the wisdom of our ancestors is in the simile; and my unhallowed hands shall not disturb it, or the Country&#39;s done for.&#34;,&#39;You will therefore permit me to repeat, emphatically, that Marley was as dead as a door-nail.&#39;...]</pre>
 </div>
 
 </div>
@@ -777,6 +779,7 @@ mean say know knowledge particularly dead door nail
 might inclined regard coffin nail deadest piece ironmongery trade
 wisdom ancestors simile unhallowed hands shall disturb Country done
 therefore permit repeat emphatically Marley dead door nail
+new sentence
 </pre>
 </div>
 </div>
@@ -825,8 +828,114 @@ mean say know knowledge particularly dead door nail
 might inclined regard coffin nail deadest piece ironmongery trade
 wisdom ancestor simile unhallowed hand shall disturb Country do
 therefore permit repeat emphatically Marley dead door nail
+new sentence
 </pre>
 </div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">clean</span><span class="p">(</span><span class="s1">&#39;../files/dummy.txt&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>dummy.txt contains 11 sentences
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">process</span><span class="p">(</span><span class="s1">&#39;../files/dummy.txt&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Done processing dummy.txt
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(#0) []</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../files/&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">ls</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(#2) [Path(&#39;../files/dummy.txt&#39;),Path(&#39;../files/dummy_cleaned.txt&#39;)]</pre>
+</div>
+
 </div>
 
 </div>
