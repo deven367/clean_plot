@@ -38,3 +38,21 @@ def write_to_file_lexical(sentences, fname):
         for line in sentences:
             f.write(line + '\n')
     f.close()
+
+# Cell
+def process_v2(fname):
+    all_data = get_data(fname)
+    all_data = unidecode.unidecode(all_data)
+    sentences = make_sentences(all_data)
+    clean_sentences = []
+    removed_sentences = []
+    for i, sentence in enumerate(sentences):
+        t = remove_punc_clean(sentence)
+        if len(t) > 0:
+            clean_sentences.append(t)
+        else:
+            removed_sentences.append(i)
+
+    write_to_file_lexical(clean_sentences, fname)
+    print('Done processing', fname)
+    return removed_sentences
