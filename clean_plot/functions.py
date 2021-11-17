@@ -8,20 +8,21 @@ __all__ = ['download_ntlk_dep', 'normalize', 'split_by_newline', 'rm_useless_spa
 import nltk
 
 # Cell
+from .core import *
+from pathlib import Path
 import os
 import pandas as pd
 import pickle
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
-from sklearn.metrics.pairwise import cosine_similarity
-from nltk.tokenize import sent_tokenize
-from nltk.tokenize import word_tokenize
+from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk.corpus import wordnet, stopwords
 import unidecode
 import re
 from nltk.stem import WordNetLemmatizer
 from fastcore.foundation import L
+from fastcore.test import test_eq, test_ne
 
 # Cell
 from typing import Callable, Iterator, Union, Optional, List
