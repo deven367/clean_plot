@@ -29,7 +29,10 @@ index = {"get_data": "00_core.ipynb",
          "write_to_file_lexical": "03_lexical.ipynb",
          "process_v2": "03_lexical.ipynb",
          "plot_novels": "04_heatmaps_novels.ipynb",
-         }
+         "corr_heatmaps": "04_heatmaps_novels.ipynb",
+         "corr_ts": "04_heatmaps_novels.ipynb",
+         "lex_ts": "04_heatmaps_novels.ipynb",
+         "plot_standardized": "04_heatmaps_novels.ipynb"}
 
 modules = ["core.py",
            "functions.py",
