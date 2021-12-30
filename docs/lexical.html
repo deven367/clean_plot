@@ -56,40 +56,15 @@ nb_path: "nbs/03_lexical.ipynb"
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="interpolate" class="doc_header"><code>interpolate</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/lexical.py#L15" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>interpolate</code>(<strong><code>lex</code></strong>, <strong><code>removed_indices</code></strong>=<em><code>[]</code></em>)</p>
 </blockquote>
-
-<pre><code>Method does interpolation based on the removed indices.
-Substitutes the missing values based on the previous value in the array</code></pre>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="load_pmi" class="doc_header"><code>load_pmi</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/lexical.py#L26" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_pmi</code>(<strong><code>path</code></strong>)</p>
-</blockquote>
+<p>Method does interpolation based on the removed indices.
+Substitutes the missing values based on the previous value in the array</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><p><strong><code>lex</code></strong> : <em><code>&lt;class 'inspect._empty'&gt;</code></em></p>
+</li>
+<li><p><strong><code>removed_indices</code></strong> : <em><code>&lt;class 'list'&gt;</code></em>, <em>optional</em></p>
+</li>
+</ul>
 
 </div>
 
@@ -119,8 +94,59 @@ Substitutes the missing values based on the previous value in the array</code></
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="load_dictionary" class="doc_header"><code>load_dictionary</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/lexical.py#L32" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_dictionary</code>(<strong><code>path</code></strong>)</p>
+<h4 id="load_pmi" class="doc_header"><code>load_pmi</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/core.py#L27" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_pmi</code>(<strong><code>fname</code></strong>:<code>Union</code>[<code>str</code>, <code>Path</code>])</p>
 </blockquote>
+<p>Loads the PMI matrix</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><strong><code>fname</code></strong> : <em><code>typing.Union[str, pathlib.Path]</code></em></li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<ul>
+<li><em><code>&lt;class 'numpy.ndarray'&gt;</code></em></li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="load_dictionary" class="doc_header"><code>load_dictionary</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/core.py#L38" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_dictionary</code>(<strong><code>fname</code></strong>)</p>
+</blockquote>
+<p>Given a fname, function loads a <code>pkl</code> dictionary
+from the current directory</p>
+<p>Args:
+    fname ([str]): Enter the filename</p>
+<p>Returns:
+    [dict]: Returns the loaded pkl file as a
+            dict</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><strong><code>fname</code></strong> : <em><code>&lt;class 'inspect._empty'&gt;</code></em></li>
+</ul>
 
 </div>
 
@@ -152,6 +178,13 @@ Substitutes the missing values based on the previous value in the array</code></
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="write_to_file_lexical" class="doc_header"><code>write_to_file_lexical</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/lexical.py#L38" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>write_to_file_lexical</code>(<strong><code>sentences</code></strong>, <strong><code>fname</code></strong>)</p>
 </blockquote>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><p><strong><code>sentences</code></strong> : <em><code>&lt;class 'inspect._empty'&gt;</code></em></p>
+</li>
+<li><p><strong><code>fname</code></strong> : <em><code>&lt;class 'inspect._empty'&gt;</code></em></p>
+</li>
+</ul>
 
 </div>
 
@@ -183,6 +216,10 @@ Substitutes the missing values based on the previous value in the array</code></
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="process_v2" class="doc_header"><code>process_v2</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/lexical.py#L45" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>process_v2</code>(<strong><code>fname</code></strong>)</p>
 </blockquote>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><strong><code>fname</code></strong> : <em><code>&lt;class 'inspect._empty'&gt;</code></em></li>
+</ul>
 
 </div>
 
@@ -197,25 +234,6 @@ Substitutes the missing values based on the previous value in the array</code></
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="s1">&#39;.txt file&#39;</span>
-<span class="n">removed_indices</span> <span class="o">=</span> <span class="n">process_v2</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
-<span class="o">!</span><span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$removed_indices</span><span class="s2">&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="nv">$fname</span><span class="s2">&quot;</span>.txt
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 </div>
     {% endraw %}
