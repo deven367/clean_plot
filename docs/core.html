@@ -62,8 +62,15 @@ nb_path: "nbs/00_core.ipynb"
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="get_data" class="doc_header"><code>get_data</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/core.py#L18" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_data</code>(<strong><code>fname</code></strong>:<code>Union</code>[<code>str</code>, <code>Path</code>])</p>
 </blockquote>
-
-<pre><code>Reads from a txt file</code></pre>
+<p>Reads from a txt file</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><strong><code>fname</code></strong> : <em><code>typing.Union[str, pathlib.Path]</code></em></li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<ul>
+<li><em><code>&lt;class 'str'&gt;</code></em></li>
+</ul>
 
 </div>
 
@@ -95,8 +102,15 @@ nb_path: "nbs/00_core.ipynb"
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="load_pmi" class="doc_header"><code>load_pmi</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/core.py#L27" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_pmi</code>(<strong><code>fname</code></strong>:<code>Union</code>[<code>str</code>, <code>Path</code>])</p>
 </blockquote>
-
-<pre><code>Loads the PMI matrix</code></pre>
+<p>Loads the PMI matrix</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><strong><code>fname</code></strong> : <em><code>typing.Union[str, pathlib.Path]</code></em></li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<ul>
+<li><em><code>&lt;class 'numpy.ndarray'&gt;</code></em></li>
+</ul>
 
 </div>
 
@@ -128,16 +142,17 @@ nb_path: "nbs/00_core.ipynb"
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="load_dictionary" class="doc_header"><code>load_dictionary</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/core.py#L38" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_dictionary</code>(<strong><code>fname</code></strong>)</p>
 </blockquote>
-
-<pre><code>Given a fname, function loads a `pkl` dictionary
-from the current directory
-
-Args:
-    fname ([str]): Enter the filename
-
-Returns:
+<p>Given a fname, function loads a <code>pkl</code> dictionary
+from the current directory</p>
+<p>Args:
+    fname ([str]): Enter the filename</p>
+<p>Returns:
     [dict]: Returns the loaded pkl file as a
-            dict</code></pre>
+            dict</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><strong><code>fname</code></strong> : <em><code>&lt;class 'inspect._empty'&gt;</code></em></li>
+</ul>
 
 </div>
 
@@ -169,8 +184,18 @@ Returns:
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="loader" class="doc_header"><code>loader</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/core.py#L55" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>loader</code>(<strong><code>path</code></strong>:<code>Union</code>[<code>str</code>, <code>Path</code>], <strong><code>extension</code></strong>:<code>str</code>)</p>
 </blockquote>
-
-<pre><code>Given a Path and an extension, returns all files with the extension in the path</code></pre>
+<p>Given a Path and an extension, returns all files with the extension in the path</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><p><strong><code>path</code></strong> : <em><code>typing.Union[str, pathlib.Path]</code></em></p>
+</li>
+<li><p><strong><code>extension</code></strong> : <em><code>&lt;class 'str'&gt;</code></em></p>
+</li>
+</ul>
+<p><strong>Returns</strong>:</p>
+<ul>
+<li><em><code>typing.Optional[fastcore.foundation.L]</code></em></li>
+</ul>
 
 </div>
 
@@ -212,7 +237,7 @@ Returns:
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>(#6) [Path(&#39;03_lexical.ipynb&#39;),Path(&#39;01_functions.ipynb&#39;),Path(&#39;_not_finished.ipynb&#39;),Path(&#39;02_pickle.ipynb&#39;),Path(&#39;index.ipynb&#39;),Path(&#39;00_core.ipynb&#39;)]</pre>
+<pre>(#7) [Path(&#39;03_lexical.ipynb&#39;),Path(&#39;01_functions.ipynb&#39;),Path(&#39;_not_finished.ipynb&#39;),Path(&#39;02_pickle.ipynb&#39;),Path(&#39;04_heatmaps_novels.ipynb&#39;),Path(&#39;index.ipynb&#39;),Path(&#39;00_core.ipynb&#39;)]</pre>
 </div>
 
 </div>
@@ -223,13 +248,6 @@ Returns:
 </div>
     {% endraw %}
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Function lets you say hello to anyone! Refresh</p>
-
-</div>
-</div>
-</div>
 </div>
  
 
