@@ -52,7 +52,7 @@ def load_dictionary(fname):
     return data
 
 # Cell
-def loader(path: Union[str, pathlib.Path], extension: str) -> Union[None, List[pathlib.PosixPath]]:
+def loader(path: Union[str, pathlib.Path], extension: str) -> Union[None, L]:
     """
     Given a Path and an extension, returns all files with the extension in the path
     """
