@@ -35,8 +35,29 @@ def plot_novels(path: Param("path for embeddings"),
         title = f'{book.title()} {method}'
 
         em = np.load(f)
-        sim = cosine_similarity(em, em)
-        n = normalize(sim)
+
+        if end == -1:
+            end = len(em)
+
+
+        ticks = np.linspace(1, end - start, 5, dtype=int)
+
+        if start == 0:
+            labels = np.linspace(start + 1, end, 5, dtype=int)
+        else:
+            labels = np.linspace(start, end, 5, dtype=int)
+
+        if fname[1] == 'lexical_wt_ssm':
+            sim = em
+            print(em.shape)
+            n = normalize(sim)
+            np.fill_diagonal(sim, 1)
+        else:
+            sim = cosine_similarity(em, em)
+            n = normalize(sim)
+
+
+
         sns.heatmap(n[start:end, start:end], cmap='hot',
                     vmin=0, vmax=1, square=True,
                     xticklabels=20, yticklabels=20)
