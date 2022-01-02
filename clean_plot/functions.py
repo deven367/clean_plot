@@ -32,6 +32,9 @@ STOPWORDS = set(stopwords.words('english'))
 
 # Cell
 def download_ntlk_dep():
+    """
+    Downloads the `nltk` dependencies
+    """
     nltk.download('punkt')
     nltk.download('stopwords')
     nltk.download('averaged_perceptron_tagger')
