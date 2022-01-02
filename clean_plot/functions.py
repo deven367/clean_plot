@@ -177,7 +177,6 @@ def remove_punc_clean(sentence: str, lemmatize: bool = False) -> str:
 def process(fname: str) -> List[str]:
     fname = Path(fname)
     all_data = get_data(fname)
-    all_data = unidecode.unidecode(all_data)
     sentences = make_sentences(all_data)
     clean_sentences = []
     removed_sentences = []
