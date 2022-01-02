@@ -17,8 +17,18 @@ from pathlib import Path
 @call_parse
 def plot_novels(path: Param("path for embeddings"),
                 start: Param("start for section", default=0, type=int),
-                end: Param("end for section", default=-1, type=int)):
+                end: Param("end for section", default=-1, type=int),
+                x: Param("x-ticks", default=50, type=int),
+                y: Param("y-ticks", default=50, type=int)):
     "Generates plots for embeddings in the folder"
+
+    assert start < end, 'Incorrect bounds'
+
+    # Marker for xticks and yticks
+    if x == -1:
+        x = False
+    if y == -1:
+        y = False
 
     files = loader(path, '.npy')
     curr = Path.cwd()
@@ -32,6 +42,7 @@ def plot_novels(path: Param("path for embeddings"),
     for f in files:
         fname = f.stem.split('_cleaned_')
         book, method = fname[0], label(fname[1])
+
         title = f'{book.title()} {method}'
 
         em = np.load(f)
