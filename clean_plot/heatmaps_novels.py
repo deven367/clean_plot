@@ -60,11 +60,13 @@ def plot_novels(path: Param("path for embeddings"),
 
         sns.heatmap(n[start:end, start:end], cmap='hot',
                     vmin=0, vmax=1, square=True,
-                    xticklabels=20, yticklabels=20)
+                    xticklabels=False)
 
-        plt.yticks(rotation = 0)
-        plt.title(title)
 
+        plt.yticks(ticks, labels, rotation = 0)
+#         plt.title(title)
+        plt.ylabel('sentence number')
         plt.savefig(new_path/f'{title}.png', dpi = 300, bbox_inches='tight')
+        print(f'Done plotting {title}.png')
         plt.clf()
         del em, sim, n
