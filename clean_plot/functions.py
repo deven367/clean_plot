@@ -70,10 +70,10 @@ def split_by_newline(text: str) -> List[str]:
 # Cell
 def rm_useless_spaces(t: str) -> str:
     """
-    Remove multiple spaces
+    Removes useless spaces
     """
     _re_space = re.compile(' {2,}')
-    return _re_space.sub(' ', t)
+    return _re_space.sub(' ', t).lstrip().rstrip()
 
 # Cell
 def make_sentences(text: str) -> List[str]:
