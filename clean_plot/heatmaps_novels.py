@@ -81,3 +81,101 @@ def plot_novels(path: Param("path for embeddings"),
         print(f'Done plotting {title}.png')
         plt.clf()
         del em, sim, n
+
+# Cell
+import pandas as pd
+
+# Cell
+@call_parse
+def corr_heatmaps(path: Param("path for embeddings"),
+                 std: Param("standardize or not", type=int, default=0)):
+    """
+    Generates correlation plots from normalized SSMs
+    """
+
+    files = loader(path, '.npy')
+    curr = Path.cwd()
+
+    new_path = curr/f'corr_ssm'
+    new_path.mkdir(exist_ok=True)
+
+    d = {}
+    for f in files:
+        fname = f.stem.split('_cleaned_')
+        book, method = fname[0], label(fname[1])
+
+        em = np.load(f)
+
+        if fname[1] == 'lexical_wt_ssm':
+#             print(em.shape)
+            sim = em
+        else:
+            sim = cosine_similarity(em, em)
+
+        n = normalize(sim)
+
+        # condition to standardize the
+        if std:
+            numerator = n - np.mean(n)
+            denominator = np.sqrt(np.sum(numerator**2) / (numerator.size - 1) )
+
+            ab1 = numerator / denominator
+            d[method] = ab1.flatten()
+        else:
+            d[method] = n.flatten()
+
+        print(f'{method}: {n.shape}')
+        del em, sim, n
+
+    organized_labels = ['DeCLUTR Base','DeCLUTR Small', 'InferSent FastText',
+                        'InferSent GloVe','DistilBERT', 'RoBERTa', 'USE',
+                        'Lexical Weights']
+    df = pd.DataFrame(d)
+
+    df = df[organized_labels]
+
+    corr = df.corr()
+
+    sns.heatmap(corr, cmap='hot', vmin=0, vmax=1,
+                square=True, annot = True,
+                xticklabels=False,
+                yticklabels=df.columns,
+                fmt = '.2f'
+               )
+
+
+    title = f'{book.title()}'
+
+    if std:
+        np.save(new_path/f'{title}_corr_std_ssm.npy', corr)
+        plt.savefig(new_path/f'{title}_corr_std_ssm.png', dpi = 300, bbox_inches='tight')
+    else:
+        np.save(new_path/f'{title}_corr_ssm.npy', corr)
+#     plt.title(title)
+#     plt.savefig(new_path/f'{title}_corr_ssm.png', dpi = 300, bbox_inches='tight')
+    print(f'Done plotting {title}_corr_ssm.png')
+#     plt.clf()
+
+
+
+
+
+# Cell
+@call_parse
+def corr_ts(path: Param("path for embeddings")):
+    """
+    Generates correlation plots from time series
+    """
+    files = loader(path, '.pkl')
+    curr = Path.cwd()
+
+    new_path = curr/f'corr_ts'
+    new_path.mkdir(exist_ok=True)
+
+    d = {}
+    for f in files:
+        fname = f.stem.split('_cleaned_')
+        fname = open(f, 'rb')
+        data = pickle.load(fname)
+        _plot(embedding_path, data, name)
+
