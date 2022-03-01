@@ -179,3 +179,26 @@ def corr_ts(path: Param("path for embeddings")):
         data = pickle.load(fname)
         _plot(embedding_path, data, name)
 
+# Cell
+@call_parse
+def lex_ts(path: Param("path for embeddings")):
+    """
+    Generate lexical TS from Lexical SSM
+    """
+
+    files = loader(path, 'wt_ssm.npy')
+    curr = Path.cwd()
+
+    for f in files:
+        em = np.load(f)
+        x = normalize(em)
+        np.fill_diagonal(x, 1)
+
+        z = []
+        for i in range(len(x) - 1):
+            z.append(x[i][i+1])
+
+        print(len(x))
+        np.save(f'{f.stem[:-3]}ts', z)
+        print(len(z))
+
