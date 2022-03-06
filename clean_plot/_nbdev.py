@@ -31,13 +31,15 @@ index = {"get_data": "00_core.ipynb",
          "corr_heatmaps": "04_heatmaps_novels.ipynb",
          "corr_ts": "04_heatmaps_novels.ipynb",
          "lex_ts": "04_heatmaps_novels.ipynb",
-         "plot_standardized": "04_heatmaps_novels.ipynb"}
+         "plot_standardized": "04_heatmaps_novels.ipynb",
+         "Plot": "05_plot.ipynb"}
 
 modules = ["core.py",
            "functions.py",
            "pickle.py",
            "lexical.py",
-           "heatmaps_novels.py"]
+           "heatmaps_novels.py",
+           "plot.py"]
 
 doc_url = "https://deven367.github.io/clean_plot/"
 
