@@ -83,6 +83,7 @@ def make_sentences(text: str) -> List[str]:
     try:
         sent_tokenize('')
     except Exception as error:
+        download_ntlk_dep()
         print(f'Run download_nltk_dep() first')
 #     all_cleaned = re.sub('\n', ' ', text)
     all_cleaned = text.replace('\n', ' ')
