@@ -69,7 +69,8 @@ nb_path: "nbs/01_functions.ipynb"
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="download_ntlk_dep" class="doc_header"><code>download_ntlk_dep</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L33" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>download_ntlk_dep</code>()</p>
 </blockquote>
-<p>Downloads the <code>nltk</code> dependencies</p>
+
+<pre><code>Downloads the `nltk` dependencies</code></pre>
 
 </div>
 
@@ -101,20 +102,15 @@ nb_path: "nbs/01_functions.ipynb"
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="normalize" class="doc_header"><code>normalize</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L43" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>normalize</code>(<strong><code>data</code></strong>:<code>ndarray</code>)</p>
 </blockquote>
-<p>The function takes an array, matrix as input and normalizes
-it between 0 and 1</p>
-<p>Args:
-    data (ndarray): any 1-D, or 2-D numpy array</p>
-<p>Returns:
-    (ndarray): normalized ndarray</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li><strong><code>data</code></strong> : <em><code>&lt;class 'numpy.ndarray'&gt;</code></em></li>
-</ul>
-<p><strong>Returns</strong>:</p>
-<ul>
-<li><em><code>&lt;class 'numpy.ndarray'&gt;</code></em></li>
-</ul>
+
+<pre><code>The function takes an array, matrix as input and normalizes
+it between 0 and 1
+
+Args:
+    data (ndarray): any 1-D, or 2-D numpy array
+
+Returns:
+    (ndarray): normalized ndarray</code></pre>
 
 </div>
 
@@ -196,20 +192,15 @@ it between 0 and 1</p>
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="split_by_newline" class="doc_header"><code>split_by_newline</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L57" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>split_by_newline</code>(<strong><code>text</code></strong>:<code>str</code>)</p>
 </blockquote>
-<p>Only use when sentences are already tokenized
-returns sentences split by '\n' if len(line) &gt; 0</p>
-<p>Args:
-    all (str): tokenized string to be split by '\n'</p>
-<p>Returns:
-    list: list of sentences split by '\n'</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li><strong><code>text</code></strong> : <em><code>&lt;class 'str'&gt;</code></em></li>
-</ul>
-<p><strong>Returns</strong>:</p>
-<ul>
-<li><em><code>typing.List[str]</code></em></li>
-</ul>
+
+<pre><code>Only use when sentences are already tokenized
+returns sentences split by '\n' if len(line) &gt; 0
+
+Args:
+    all (str): tokenized string to be split by '\n'
+
+Returns:
+    list: list of sentences split by '\n'</code></pre>
 
 </div>
 
@@ -275,15 +266,8 @@ returns sentences split by '\n' if len(line) &gt; 0</p>
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="rm_useless_spaces" class="doc_header"><code>rm_useless_spaces</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L71" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>rm_useless_spaces</code>(<strong><code>t</code></strong>:<code>str</code>)</p>
 </blockquote>
-<p>Removes useless spaces</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li><strong><code>t</code></strong> : <em><code>&lt;class 'str'&gt;</code></em></li>
-</ul>
-<p><strong>Returns</strong>:</p>
-<ul>
-<li><em><code>&lt;class 'str'&gt;</code></em></li>
-</ul>
+
+<pre><code>Removes useless spaces</code></pre>
 
 </div>
 
@@ -348,15 +332,8 @@ returns sentences split by '\n' if len(line) &gt; 0</p>
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="make_sentences" class="doc_header"><code>make_sentences</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L79" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>make_sentences</code>(<strong><code>text</code></strong>:<code>str</code>)</p>
 </blockquote>
-<p>Converts given bulk into sentences</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li><strong><code>text</code></strong> : <em><code>&lt;class 'str'&gt;</code></em></li>
-</ul>
-<p><strong>Returns</strong>:</p>
-<ul>
-<li><em><code>typing.List[str]</code></em></li>
-</ul>
+
+<pre><code>Converts given bulk into sentences</code></pre>
 
 </div>
 
@@ -388,18 +365,8 @@ returns sentences split by '\n' if len(line) &gt; 0</p>
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="write_to_file_cleaned" class="doc_header"><code>write_to_file_cleaned</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L96" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>write_to_file_cleaned</code>(<strong><code>sentences</code></strong>:<code>List</code>[<code>str</code>], <strong><code>fname</code></strong>:<code>str</code>)</p>
 </blockquote>
-<p>Writes the sentences to a .txt file</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li><p><strong><code>sentences</code></strong> : <em><code>typing.List[str]</code></em></p>
-</li>
-<li><p><strong><code>fname</code></strong> : <em><code>&lt;class 'str'&gt;</code></em></p>
-</li>
-</ul>
-<p><strong>Returns</strong>:</p>
-<ul>
-<li><em><code>None</code></em></li>
-</ul>
+
+<pre><code>Writes the sentences to a .txt file</code></pre>
 
 </div>
 
@@ -431,15 +398,8 @@ returns sentences split by '\n' if len(line) &gt; 0</p>
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="clean" class="doc_header"><code>clean</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L106" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>clean</code>(<strong><code>fname</code></strong>:<code>str</code>)</p>
 </blockquote>
-<p>Takes name of a txt file and writes the tokenized sentences into a new txt file</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li><strong><code>fname</code></strong> : <em><code>&lt;class 'str'&gt;</code></em></li>
-</ul>
-<p><strong>Returns</strong>:</p>
-<ul>
-<li><em><code>None</code></em></li>
-</ul>
+
+<pre><code>Takes name of a txt file and writes the tokenized sentences into a new txt file</code></pre>
 
 </div>
 
@@ -583,15 +543,8 @@ This is a new sentence.
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="get_wordnet_pos" class="doc_header"><code>get_wordnet_pos</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L117" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_wordnet_pos</code>(<strong><code>word</code></strong>:<code>str</code>)</p>
 </blockquote>
-<p>Map POS tag to first character lemmatize() accepts</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li><strong><code>word</code></strong> : <em><code>&lt;class 'str'&gt;</code></em></li>
-</ul>
-<p><strong>Returns</strong>:</p>
-<ul>
-<li><em><code>&lt;class 'str'&gt;</code></em></li>
-</ul>
+
+<pre><code>Map POS tag to first character lemmatize() accepts</code></pre>
 
 </div>
 
@@ -623,15 +576,8 @@ This is a new sentence.
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="remove_stopwords" class="doc_header"><code>remove_stopwords</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L132" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>remove_stopwords</code>(<strong><code>sentence</code></strong>:<code>str</code>)</p>
 </blockquote>
-<p>Takes a sentence and removes stopwords from it</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li><strong><code>sentence</code></strong> : <em><code>&lt;class 'str'&gt;</code></em></li>
-</ul>
-<p><strong>Returns</strong>:</p>
-<ul>
-<li><em><code>&lt;class 'str'&gt;</code></em></li>
-</ul>
+
+<pre><code>Takes a sentence and removes stopwords from it</code></pre>
 
 </div>
 
@@ -663,15 +609,8 @@ This is a new sentence.
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="remove_punctuations" class="doc_header"><code>remove_punctuations</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L148" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>remove_punctuations</code>(<strong><code>sentence</code></strong>:<code>str</code>)</p>
 </blockquote>
-<p>Takes a sentence and removes punctuations from it</p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li><strong><code>sentence</code></strong> : <em><code>&lt;class 'str'&gt;</code></em></li>
-</ul>
-<p><strong>Returns</strong>:</p>
-<ul>
-<li><em><code>&lt;class 'str'&gt;</code></em></li>
-</ul>
+
+<pre><code>Takes a sentence and removes punctuations from it</code></pre>
 
 </div>
 
@@ -703,19 +642,10 @@ This is a new sentence.
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="remove_punc_clean" class="doc_header"><code>remove_punc_clean</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L161" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>remove_punc_clean</code>(<strong><code>sentence</code></strong>:<code>str</code>, <strong><code>lemmatize</code></strong>:<code>bool</code>=<em><code>False</code></em>)</p>
 </blockquote>
-<p>Takes a sentence and removes punctuations and stopwords from it</p>
-<p>Will lemmatize words if <code>lemmatize = True</code></p>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li><p><strong><code>sentence</code></strong> : <em><code>&lt;class 'str'&gt;</code></em></p>
-</li>
-<li><p><strong><code>lemmatize</code></strong> : <em><code>&lt;class 'bool'&gt;</code></em>, <em>optional</em></p>
-</li>
-</ul>
-<p><strong>Returns</strong>:</p>
-<ul>
-<li><em><code>&lt;class 'str'&gt;</code></em></li>
-</ul>
+
+<pre><code>Takes a sentence and removes punctuations and stopwords from it
+
+Will lemmatize words if `lemmatize = True`</code></pre>
 
 </div>
 
@@ -747,14 +677,6 @@ This is a new sentence.
 <div class="output_markdown rendered_html output_subarea ">
 <h4 id="process" class="doc_header"><code>process</code><a href="https://github.com/deven367/clean_plot/tree/master/clean_plot/functions.py#L177" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>process</code>(<strong><code>fname</code></strong>:<code>str</code>)</p>
 </blockquote>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li><strong><code>fname</code></strong> : <em><code>&lt;class 'str'&gt;</code></em></li>
-</ul>
-<p><strong>Returns</strong>:</p>
-<ul>
-<li><em><code>typing.List[str]</code></em></li>
-</ul>
 
 </div>
 
