@@ -38,6 +38,7 @@ def download_ntlk_dep():
     nltk.download('stopwords')
     nltk.download('averaged_perceptron_tagger')
     nltk.download('wordnet')
+    nltk.download('omw-1.4')
 
 # Cell
 def normalize(data: np.ndarray) -> np.ndarray:
