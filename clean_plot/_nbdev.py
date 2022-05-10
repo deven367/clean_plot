@@ -28,18 +28,19 @@ index = {"get_data": "00_core.ipynb",
          "write_to_file_lexical": "03_lexical.ipynb",
          "process_v2": "03_lexical.ipynb",
          "plot_novels": "04_heatmaps_novels.ipynb",
+         "ssms_from_pkl": "04_heatmaps_novels.ipynb",
          "corr_heatmaps": "04_heatmaps_novels.ipynb",
          "corr_ts": "04_heatmaps_novels.ipynb",
          "lex_ts": "04_heatmaps_novels.ipynb",
          "plot_standardized": "04_heatmaps_novels.ipynb",
-         "Plot": "05_plot.ipynb"}
+         "Plot": "05_plot.utils.ipynb"}
 
 modules = ["core.py",
            "functions.py",
            "pickle.py",
            "lexical.py",
            "heatmaps_novels.py",
-           "plot.py"]
+           "plot/utils.py"]
 
 doc_url = "https://deven367.github.io/clean_plot/"
 
