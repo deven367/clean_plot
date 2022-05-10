@@ -24,9 +24,13 @@ entries:
     - output: web,pdf
       title: Heatmaps
       url: /heatmaps_novels
-    - output: web,pdf
-      title: Plot
-      url: /plot
+      subfolders:
+      - output: web
+        subfolderitems:
+        - output: web,pdf
+          title: Utils
+          url: /plot.utils
+        title: Plot
     output: web
     title: clean_plot
   output: web
