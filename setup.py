@@ -60,10 +60,7 @@ setuptools.setup(
     long_description_content_type = 'text/markdown',
     zip_safe = False,
     entry_points = { 'console_scripts':
-                        cfg.get('console_scripts',
-                                'heatmaps=clean_plot.heatmaps_novels:plot_novels \
-                                 corr_hm=clean_plot.heatmaps_novels:corr_heatmaps \
-                                 lex_ts=clean_plot.heatmaps_novels:lex_ts').split()
+                        cfg.get('console_scripts', '').split()
                     },
     **setup_cfg)
 
