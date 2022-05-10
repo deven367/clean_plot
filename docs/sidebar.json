@@ -6,6 +6,6 @@
     "Exporting to pickle": "/pickle",
     "Lexical": "/lexical",
     "Heatmaps": "/heatmaps_novels",
-    "Plot": "/plot"
+    "Plot": "/plot.utils"
   }
 }
