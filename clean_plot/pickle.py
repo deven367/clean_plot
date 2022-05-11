@@ -29,7 +29,8 @@ def label(arg):
         'lexical_wt': 'Lexical Weights',
         'lexical_wt_ssm': 'Lexical Weights',
         'lex_vect': 'Lexical Vectors',
-        'lex_vect_corr_ts': 'Lexical Vectors (Corr)'
+        'lex_vect_corr_ts': 'Lexical Vectors (Corr)',
+        'mpnet': 'MPNet'
     }
     return switcher.get(arg)
 
