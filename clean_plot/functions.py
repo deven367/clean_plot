@@ -19,6 +19,7 @@ import re
 
 from fastcore.foundation import L
 from fastcore.test import test_eq, test_ne
+from fastcore.script import call_parse
 
 # Cell
 from typing import Callable, Iterator, Union, Optional, List
@@ -105,6 +106,7 @@ def write_to_file_cleaned(sentences: List[str], fname: str) -> None:
     f.close()
 
 # Cell
+@call_parse
 def clean(fname: str) -> None:
     """
     Takes name of a txt file and writes the tokenized sentences into a new txt file
