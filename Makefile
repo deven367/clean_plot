@@ -36,6 +36,3 @@ dist: clean
 clean:
 	rm -rf dist
 
-do:
-	nbdev_build_lib
-	nbdev_build_docs
