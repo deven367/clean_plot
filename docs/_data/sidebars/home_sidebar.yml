@@ -10,6 +10,9 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
+      title: Utils
+      url: /utils
+    - output: web,pdf
       title: Core
       url: /core
     - output: web,pdf

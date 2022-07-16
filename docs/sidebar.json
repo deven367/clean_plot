@@ -1,6 +1,7 @@
 {
   "clean_plot": {
     "Overview": "/",
+    "Utils": "/utils",
     "Core": "/core",
     "Functions": "/functions",
     "Exporting to pickle": "/pickle",
