@@ -22,7 +22,7 @@ pip install -e .
 
 The library contains easy to use methods for cleaning text, tokenizing and lemmatizing sentences. These sentences can then be easily fed to a sentence encoder to create sentence embeddings.
 
-```python
+```
 fname = '../files/dummy.txt'
 text = get_data(fname)
 print(text)
@@ -47,11 +47,11 @@ print(text)
     Marley was as dead as a door-nail.
 
 
-```python
+```
 sentences = make_sentences(text)
 ```
 
-```python
+```
 sentences
 ```
 
@@ -71,14 +71,14 @@ sentences
 
 
 
-```python
+```
 no_punctuations = []
 for sentence in sentences:
     new_sentence = remove_punctuations(sentence)
     no_punctuations.append(new_sentence)
 ```
 
-```python
+```
 no_punctuations
 ```
 

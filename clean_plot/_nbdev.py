@@ -2,12 +2,13 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"get_data": "00_core.ipynb",
+index = {"get_data": "00_utils.ipynb",
          "load_pmi": "03_lexical.ipynb",
          "load_dictionary": "03_lexical.ipynb",
-         "loader": "00_core.ipynb",
-         "download_ntlk_dep": "01_functions.ipynb",
+         "loader": "00_utils.ipynb",
+         "foo": "00_utils.ipynb",
          "normalize": "01_functions.ipynb",
+         "download_ntlk_dep": "01_functions.ipynb",
          "split_by_newline": "01_functions.ipynb",
          "rm_useless_spaces": "01_functions.ipynb",
          "make_sentences": "01_functions.ipynb",
@@ -33,9 +34,11 @@ index = {"get_data": "00_core.ipynb",
          "corr_ts": "04_heatmaps_novels.ipynb",
          "lex_ts": "04_heatmaps_novels.ipynb",
          "plot_standardized": "04_heatmaps_novels.ipynb",
-         "Plot": "05_plot.utils.ipynb"}
+         "Plot": "05_plot.utils.ipynb",
+         "Plot.get_normalized": "05_plot.utils.ipynb"}
 
 modules = ["core.py",
+           "utils.py",
            "functions.py",
            "pickle.py",
            "lexical.py",
