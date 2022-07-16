@@ -35,4 +35,5 @@ dist: clean
 
 clean:
 	rm -rf dist
-
+jup:
+	jupyter notebook --no-browser
