@@ -3,10 +3,9 @@
 __all__ = ['Plot']
 
 # Cell
-from fastcore.basics import store_attr
+from fastcore.basics import store_attr, patch_to, patch
 from fastcore.xtras import globtastic
 from fastcore.meta import delegates
-from fastcore.basics import patch_to, patch
 from pathlib import Path
 import os
 import numpy as np
@@ -53,16 +52,48 @@ class Plot:
             del norm_ssm
 
 
-    def get_standardized(self):
+    def get_standardized(self, start, end):
         pass
+
 
     def get_corr_plots(self):
         pass
 
-    def get_sectional_ssms(self):
-        pass
+    def get_sectional_ssms(self, start, end):
+        import gc
+        if start == 0 and end == -1:
+            pass
+        else:
+            assert start < end, 'Incorrect bounds'
+        new_path = self.path/f'sections_{start} {end}'
+        new_path.mkdir(exist_ok=True)
+
+        if start == 0:
+            labels = np.linspace(start + 1, end, y, dtype=int)
+        else:
+            labels = np.linspace(start, end, y, dtype=int)
+
+        ticks = np.linspace(1, end - start, y, dtype=int)
+
+        for method, norm_ssm in self.norm.items():
+            title = f'{self.book_name} {method}'
+            sns.heatmap(norm_ssm[start:end, start:end], cmap='hot',
+                        vmin=0, vmax=1, square=True,
+                        xticklabels=False)
+            length = norm_ssm.shape[0]
+
+
+
+            plt.yticks(ticks, ticks, rotation = 0)
+            plt.ylabel('sentence number')
+            plt.savefig(new_path/f'{title}.png', dpi = 300, bbox_inches='tight')
+            print(f'Done plotting {title}.png')
+            plt.clf()
+            del norm_ssm
+            _ = gc.collect()
 
     def __repr__(self):
+        # remember __str__ calls the __repr_ internally
         dir_path = os.path.dirname(os.path.realpath(self.path))
         return f'This object contains the path to `{dir_path}`'
 
@@ -71,6 +102,7 @@ class Plot:
 def get_normalized(self:Plot):
     "Returns the normalized ssms"
     files = self.view_all_files(file_glob='*.npy')
+
     for f in files:
         f = Path(f)
         fname = f.stem.split('_cleaned_')
