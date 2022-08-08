@@ -7,6 +7,7 @@ d = { 'settings': { 'allowed_cell_metadata_keys': '',
                 'author_email': 'masterdeven@gmail.com',
                 'black_formatting': 'False',
                 'branch': 'master',
+                'clean_ids': 'True',
                 'console_scripts': 'heatmaps=clean_plot.heatmaps_novels:plot_novels\n'
                                    'corr_hm=clean_plot.heatmaps_novels:corr_heatmaps\n'
                                    'lex_ts=clean_plot.heatmaps_novels:lex_ts\n'
@@ -20,6 +21,7 @@ d = { 'settings': { 'allowed_cell_metadata_keys': '',
                 'doc_path': '_docs',
                 'git_url': 'https://github.com/deven367/clean_plot/tree/master/',
                 'host': 'github',
+                'jupyter_hooks': 'True',
                 'keywords': 'cleaning tokenizing embeddings plotting',
                 'language': 'English',
                 'lib_name': 'clean_plot',
