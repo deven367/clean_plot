@@ -17,11 +17,12 @@ import pickle
 
 # %% ../nbs/04_heatmaps_novels.ipynb 3
 @call_parse
-def plot_novels(path: Param("path for embeddings"),
-                start: Param("start for section", default=0, type=int),
-                end: Param("end for section", default=-1, type=int),
-                x: Param("x-ticks", default=False, type=int),
-                y: Param("y-ticks", default=5, type=int)):
+def plot_novels(path: str, # path for embeddings
+                start: int=0, # start for section
+                end: int= -1, # end for section
+                x: bool=False, # x-ticks
+                y: int=5, # y-ticks
+               ):
     "Generates plots for embeddings in the folder"
     
     d = {}
@@ -97,12 +98,13 @@ import pandas as pd
 
 # %% ../nbs/04_heatmaps_novels.ipynb 5
 @call_parse
-def ssms_from_pkl(path: Param("path for pkl file"),
-                  start: Param("start for section", default=0, type=int),
-                  end: Param("end for section", default=-1, type=int),
-                  x: Param("x-ticks", default=False, type=int),
-                  y: Param("y-ticks", default=5, type=int)):
-    
+def ssms_from_pkl(path: str, # path for pkl file
+                  start: int=0, # start for section
+                  end: int=-1, # end for section
+                  x: bool=False, # x-ticks
+                  y: int=5, # y-ticks
+                 ):
+    "Generates SSMs from pkl files"
     if start == 0 and end == -1:
         pass
     else:
@@ -141,8 +143,9 @@ def ssms_from_pkl(path: Param("path for pkl file"),
 
 # %% ../nbs/04_heatmaps_novels.ipynb 6
 @call_parse
-def corr_heatmaps(path: Param("path for embeddings"), 
-                 std: Param("standardize or not", type=int, default=0)):
+def corr_heatmaps(path: str, # path for embeddings
+                 std: bool=False, # standardize or not
+                 ):
     """
     Generates correlation plots from normalized SSMs
     """
@@ -216,7 +219,8 @@ def corr_heatmaps(path: Param("path for embeddings"),
 
 # %% ../nbs/04_heatmaps_novels.ipynb 7
 @call_parse
-def corr_ts(path: Param("path for embeddings")):
+def corr_ts(path: str, # path for embeddings
+           ):
     """
     Generates correlation plots from time series
     """
@@ -235,7 +239,8 @@ def corr_ts(path: Param("path for embeddings")):
 
 # %% ../nbs/04_heatmaps_novels.ipynb 8
 @call_parse
-def lex_ts(path: Param("path for embeddings")):
+def lex_ts(path: str, # path for embeddings
+          ):
     """
     Generate lexical TS from Lexical SSM
     """
@@ -258,11 +263,12 @@ def lex_ts(path: Param("path for embeddings")):
 
 # %% ../nbs/04_heatmaps_novels.ipynb 9
 @call_parse
-def plot_standardized(path: Param("path for embeddings"),
-                start: Param("start for section", default=0, type=int),
-                end: Param("end for section", default=-1, type=int),
-                x: Param("x-ticks", default=50, type=int),
-                y: Param("y-ticks", default=50, type=int)):
+def plot_standardized(path: str, # path for embeddings
+                start: int=0, # start for section
+                end: int= -1, # end for section
+                x: bool=False, # x-ticks
+                y: int=5, # y-ticks
+               ):
     "Generates plots for embeddings in the folder"
     
     if start > end:
