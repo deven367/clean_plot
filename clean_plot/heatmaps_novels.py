@@ -4,9 +4,8 @@
 __all__ = ['plot_novels', 'ssms_from_pkl', 'corr_heatmaps', 'corr_ts', 'lex_ts', 'plot_standardized']
 
 # %% ../nbs/04_heatmaps_novels.ipynb 2
-from .core import loader, load_dictionary
+from .utils import *
 from .pickle import label
-from .functions import normalize
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
