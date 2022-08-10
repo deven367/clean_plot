@@ -3,9 +3,9 @@ website:
     contents:
       - index.ipynb
       - 00_utils.ipynb
-      - 02_pickle.ipynb
-      - 03_lexical.ipynb
-      - 04_heatmaps_novels.ipynb
+      - 01_pickle.ipynb
+      - 02_lexical.ipynb
+      - 03_heatmaps_novels.ipynb
       - section: Plot
         contents:
-          - 05_plot.utils.ipynb
+          - 04_plot.utils.ipynb
