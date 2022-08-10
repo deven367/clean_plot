@@ -48,7 +48,7 @@ def loader(
 # %% ../nbs/00_utils.ipynb 7
 def load_dictionary(
     fname: str , # path to the pkl file
-    )->dict: # returns the contents
+    )->dict: # returns the contents 
     """
     Given a fname, function loads a `pkl` dictionary
     from the current directory
@@ -118,7 +118,7 @@ def make_sentences(
         sent_tokenize('')
     except Exception as error:
         download_nltk_dep()
-        print(f'Run download_nltk_dep() first')
+        print(f'Run download_nltk_dep() first') 
 #     all_cleaned = re.sub('\n', ' ', text)
     all_cleaned = text.replace('\n', ' ')
     all_cleaned = rm_useless_spaces(all_cleaned)
@@ -129,7 +129,7 @@ def make_sentences(
 
 # %% ../nbs/00_utils.ipynb 19
 def write_to_file_cleaned(
-    sentences: list, # list of sentences
+    sentences: list, # list of sentences 
     fname: str, # name of output file
     ) -> None:
     """
@@ -188,7 +188,7 @@ def remove_stopwords(
     Takes a sentence and removes stopwords from it
     """
     sentences = []
-
+    
     for word in sentence.split():
         if word.lower() not in STOPWORDS:
             sentences.append(word)
@@ -216,13 +216,13 @@ def remove_punc_clean(
     ) -> str:
     """
     Takes a sentence and removes punctuations and stopwords from it
-
+    
     Will lemmatize words if `lemmatize = True`
     """
     doc = remove_punctuations(sentence)
     doc = remove_stopwords(doc)
-
-
+    
+    
     if lemmatize:
         lemmatizer = WordNetLemmatizer()
         doc = ' '.join([lemmatizer.lemmatize(w, get_wordnet_pos(w)) for w in doc.split()])
@@ -231,7 +231,7 @@ def remove_punc_clean(
 # %% ../nbs/00_utils.ipynb 34
 def process_for_lexical(
     fname: str, # name of the input txt file
-    ) -> L: #
+    ) -> L: # 
     "Given an input txt file, return removed sentences"
     fname = Path(fname)
     all_data = get_data(fname)
