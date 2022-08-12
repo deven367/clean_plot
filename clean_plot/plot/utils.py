@@ -24,13 +24,10 @@ import inspect
 
 # %% ../nbs/04_plot.utils.ipynb 6
 class Plot:
-    "Plotting module"
-    def __init__(self, 
-                 path: str, # path to embeddings
-                ):
+    def __init__(self, path):
         self.path = Path(path)
         self.norm = {}
-        self.book_name = self.path.stem.split('_cleaned')[0].replace('_', ' ').title()
+        self.book_name = self.path.stem.replace('_', ' ')
         
     @delegates(globtastic)
     def view_all_files(self, **kwargs):
@@ -62,10 +59,7 @@ class Plot:
     def get_corr_plots(self):
         pass
     
-    def get_sectional_ssms(self, 
-                           start, # start of the cross section 
-                           end, # end of the cross section
-                          )->None:
+    def get_sectional_ssms(self, start, end):
         import gc
         if start == 0 and end == -1:
             pass
@@ -100,8 +94,8 @@ class Plot:
     
     def __repr__(self):
         # remember __str__ calls the __repr_ internally
-#         dir_path = os.path.dirname(os.path.realpath(self.path))
-        return f'This object contains the path to `{self.path.absolute()}`'
+        dir_path = os.path.dirname(os.path.realpath(self.path))
+        return f'This object contains the path to `{dir_path}`'
 
 # %% ../nbs/04_plot.utils.ipynb 7
 @patch
@@ -127,8 +121,7 @@ def get_normalized(self:Plot):
         else:
             sim = cosine_similarity(em, em)
             n = normalize(sim)
-            
-#         yield method, n
+        
         self.norm[method] = n
         del em, sim, n
     return self.norm
