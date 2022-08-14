@@ -3,7 +3,7 @@
 # %% auto 0
 __all__ = ['get_data', 'load_pmi', 'loader', 'load_dictionary', 'normalize', 'download_nltk_dep', 'split_by_newline',
            'rm_useless_spaces', 'make_sentences', 'write_to_file_cleaned', 'clean', 'get_wordnet_pos',
-           'remove_stopwords', 'remove_punctuations', 'remove_punc_clean', 'process_for_lexical']
+           'remove_stopwords', 'remove_punctuations', 'remove_punc_clean', 'process_for_lexical', 'num_words']
 
 # %% ../nbs/00_utils.ipynb 3
 import pickle
@@ -248,3 +248,9 @@ def process_for_lexical(
     # write_to_file_lexical(clean_sentences, fname)
     print('Done processing', fname.name)
     return L(removed_sentences)
+
+# %% ../nbs/00_utils.ipynb 46
+def num_words(
+    sentence: str, # input sentence
+    )->int: # number of words
+    return len(remove_punctuations(sentence).split())
