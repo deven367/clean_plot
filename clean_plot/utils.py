@@ -253,4 +253,5 @@ def process_for_lexical(
 def num_words(
     sentence: str, # input sentence
     )->int: # number of words
+    "Returns the number of words in a sentence"
     return len(remove_punctuations(sentence).split())
