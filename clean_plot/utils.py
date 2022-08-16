@@ -115,12 +115,6 @@ def make_sentences(
     """
     Converts given bulk into sentences
     """
-    try:
-        sent_tokenize('')
-    except Exception as error:
-        download_nltk_dep()
-        print(f'Run download_nltk_dep() first') 
-#     all_cleaned = re.sub('\n', ' ', text)
     all_cleaned = text.replace('\n', ' ')
     all_cleaned = rm_useless_spaces(all_cleaned)
     all_cleaned = all_cleaned.strip()
