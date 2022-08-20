@@ -12,7 +12,8 @@ d = { 'settings': { 'allowed_cell_metadata_keys': '',
                                    'corr_hm=clean_plot.heatmaps_novels:corr_heatmaps\n'
                                    'lex_ts=clean_plot.heatmaps_novels:lex_ts\n'
                                    'heatmaps_pkl=clean_plot.heatmaps_novels:ssms_from_pkl\n'
-                                   'check_len=clean_plot.functions:clean',
+                                   'check_len=clean_plot.functions:clean\n'
+                                   'histograms=clean_plot.heatmaps_novels:plot_histograms',
                 'copyright': 'Deven Mistry',
                 'custom_sidebar': 'True',
                 'description': 'clean_plot simplifies cleaning text files for creation of embeddings and making plots from it',
@@ -41,6 +42,7 @@ d = { 'settings': { 'allowed_cell_metadata_keys': '',
   'syms': { 'clean_plot.heatmaps_novels': { 'clean_plot.heatmaps_novels.corr_heatmaps': 'https://deven367.github.io/clean_plot/heatmaps_novels.html#corr_heatmaps',
                                             'clean_plot.heatmaps_novels.corr_ts': 'https://deven367.github.io/clean_plot/heatmaps_novels.html#corr_ts',
                                             'clean_plot.heatmaps_novels.lex_ts': 'https://deven367.github.io/clean_plot/heatmaps_novels.html#lex_ts',
+                                            'clean_plot.heatmaps_novels.plot_histograms': 'https://deven367.github.io/clean_plot/heatmaps_novels.html#plot_histograms',
                                             'clean_plot.heatmaps_novels.plot_novels': 'https://deven367.github.io/clean_plot/heatmaps_novels.html#plot_novels',
                                             'clean_plot.heatmaps_novels.plot_standardized': 'https://deven367.github.io/clean_plot/heatmaps_novels.html#plot_standardized',
                                             'clean_plot.heatmaps_novels.ssms_from_pkl': 'https://deven367.github.io/clean_plot/heatmaps_novels.html#ssms_from_pkl'},

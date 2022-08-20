@@ -110,7 +110,9 @@ def create_label(index, method, parent_dir):
 
 
 # %% ../nbs/01_pickle.ipynb 9
-def get_embed_method_and_name(fname):
+def get_embed_method_and_name(
+    fname, # name of the file
+    )->(str, str): # name of file, embeddding method
     """
     Returns the name of the file and the method by 
     splitting on the word '_cleaned_'
