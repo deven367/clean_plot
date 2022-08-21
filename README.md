@@ -90,18 +90,17 @@ This library has come into existence because of
 [nbdev](https://nbdev.fast.ai/) (one of many amazing tools made by
 [fast.ai](https://www.fast.ai/)). PRs and Issues are encouraged.
 
-After you clone this repository, please run `nbdev_install_git_hooks` in
+After you clone this repository, please run `nbdev_install_hooks` in
 your terminal. This sets up git hooks, which clean up the notebooks to
 remove the extraneous stuff stored in the notebooks (e.g. which cells
 you ran) which causes unnecessary merge conflicts.
 
 Before submitting a PR, check that the local library and notebooks
-match. The script `nbdev_diff_nbs` can let you know if there is a
-difference between the local library and the notebooks.
+match. The script `nbdev_fix` can let you know if there is a difference
+between the local library and the notebooks.
 
 If you made a change to the notebooks in one of the exported cells, you
-can export it to the library with `nbdev_build_lib` or
-`make clean_plot`.
+can export it to the library with `nbdev_export`.
 
 If you made a change to the library, you can export it back to the
-notebooks with `nbdev_update_lib`.
+notebooks with `nbdev_update`.
