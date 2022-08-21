@@ -17,7 +17,7 @@ import pickle
 
 # %% ../nbs/03_heatmaps_novels.ipynb 3
 @call_parse
-def plot_novels(path: str, # path for embeddings
+def plot_novels(path: str='.', # path for embeddings
                 start: int=0, # start for section
                 end: int= -1, # end for section
                 x: bool=False, # x-ticks

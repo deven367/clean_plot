@@ -37,7 +37,10 @@ def label(arg):
     return switcher.get(arg)
 
 # %% ../nbs/01_pickle.ipynb 5
-def cos_sim(a, b):
+def cos_sim(
+    a: np.ndarray, # vector 1 
+    b: np.ndarray, # vector 2
+    ):
     """
     Returns the cosine similarity between 2 vectors. 
     """
