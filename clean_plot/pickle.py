@@ -122,7 +122,7 @@ def create_dict_whole_book(
     
     new_path = p/'pkl'
     new_path.mkdir(exist_ok = True)
-    pickle.dump(mdict, open(new_path/f'{book_name}_{k}_whole.pkl', 'wb'))
+    pickle.dump(mdict, open(new_path/f'{book_name}_whole.pkl', 'wb'))
     print('-'*45)
     print(f'Saved pkl at {new_path}')
 
