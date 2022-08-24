@@ -5,7 +5,7 @@ __all__ = ['get_data', 'load_pmi', 'loader', 'load_dictionary', 'normalize', 'do
            'rm_useless_spaces', 'make_sentences', 'write_to_file_cleaned', 'clean', 'get_wordnet_pos',
            'remove_stopwords', 'remove_punctuations', 'remove_punc_clean', 'process_for_lexical', 'num_words']
 
-# %% ../nbs/00_utils.ipynb 3
+# %% ../nbs/00_utils.ipynb 4
 import pickle
 import numpy as np
 from pathlib import Path
@@ -14,7 +14,26 @@ from fastcore.xtras import globtastic
 import pathlib
 from fastcore.test import test_eq
 
-# %% ../nbs/00_utils.ipynb 4
+# %% ../nbs/00_utils.ipynb 6
+def check_files(
+    files, # files to validate
+    ):
+    flen = files.__len__()
+    if flen <= 0:
+        print(f'Found {flen} files')
+        print(f'Check `path` and try again')
+        return False
+    
+    if isinstance(files[0], str):
+        _type =  'npy' if files[0].endswith('npy') else 'pkl'
+    elif isinstance(files[0], Path):
+        _type =  'npy' if files[0].name.endswith('npy') else 'pkl'
+        
+    print(f'Found {flen} {_type} files')
+    print('-'*45)
+    return True
+
+# %% ../nbs/00_utils.ipynb 9
 def get_data(
     fname: (str, Path) # path to the file
     )->str: # returns content of the file
@@ -23,7 +42,7 @@ def get_data(
         all_text = f.read()
     return all_text
 
-# %% ../nbs/00_utils.ipynb 5
+# %% ../nbs/00_utils.ipynb 10
 def load_pmi(
     fname: (str, Path)  # name of pmi file
 ) -> np.ndarray:  # pmi matrix
@@ -35,7 +54,7 @@ def load_pmi(
     print(f'Loaded {name}')
     return pmi
 
-# %% ../nbs/00_utils.ipynb 6
+# %% ../nbs/00_utils.ipynb 11
 def loader(
     path: [str, pathlib.Path],  # path to a given folder,
     extension: str,  # extension of the file you want
@@ -45,7 +64,7 @@ def loader(
 
     return files
 
-# %% ../nbs/00_utils.ipynb 7
+# %% ../nbs/00_utils.ipynb 12
 def load_dictionary(
     fname: str , # path to the pkl file
     )->dict: # returns the contents 
@@ -57,7 +76,7 @@ def load_dictionary(
     data = pickle.load(fname)
     return data
 
-# %% ../nbs/00_utils.ipynb 8
+# %% ../nbs/00_utils.ipynb 13
 def normalize(
     data: np.ndarray,  # input array
 ) -> np.ndarray:  # normalized array
@@ -66,11 +85,11 @@ def normalize(
     """
     return (data - np.min(data)) / (np.max(data) - np.min(data))
 
-# %% ../nbs/00_utils.ipynb 11
+# %% ../nbs/00_utils.ipynb 16
 import re
 from fastcore.script import call_parse
 
-# %% ../nbs/00_utils.ipynb 13
+# %% ../nbs/00_utils.ipynb 18
 def download_nltk_dep():
     """
     Downloads the `nltk` dependencies
@@ -82,7 +101,7 @@ def download_nltk_dep():
     nltk.download('wordnet')
     nltk.download('omw-1.4')
 
-# %% ../nbs/00_utils.ipynb 14
+# %% ../nbs/00_utils.ipynb 19
 def split_by_newline(
     text: str, # sentences separated by \n
     ) -> L: # list of sentences
@@ -98,7 +117,7 @@ def split_by_newline(
     """
     return L([line for line in text.split('\n') if len(line) > 0])
 
-# %% ../nbs/00_utils.ipynb 16
+# %% ../nbs/00_utils.ipynb 21
 def rm_useless_spaces(
     t: str, # sentence with extra spaces
     ) -> str: # sentence without extra spaces
@@ -108,7 +127,7 @@ def rm_useless_spaces(
     _re_space = re.compile(' {2,}')
     return _re_space.sub(' ', t).lstrip().rstrip()
 
-# %% ../nbs/00_utils.ipynb 18
+# %% ../nbs/00_utils.ipynb 23
 def make_sentences(
     text: str, # bulk text
     ) -> L: # list of sentences
@@ -122,7 +141,7 @@ def make_sentences(
     sentences = sent_tokenize(all_cleaned)
     return L(sentences)
 
-# %% ../nbs/00_utils.ipynb 19
+# %% ../nbs/00_utils.ipynb 24
 def write_to_file_cleaned(
     sentences: list, # list of sentences 
     fname: str, # name of output file
@@ -135,7 +154,7 @@ def write_to_file_cleaned(
             f.write(f'{line}\n')
     f.close()
 
-# %% ../nbs/00_utils.ipynb 20
+# %% ../nbs/00_utils.ipynb 25
 @call_parse
 def clean(
     fname: str, # name of input txt file
@@ -149,16 +168,16 @@ def clean(
     print(f'{fname.name} contains {len(sentences)} sentences')
     write_to_file_cleaned(sentences, fname)
 
-# %% ../nbs/00_utils.ipynb 21
+# %% ../nbs/00_utils.ipynb 26
 import nltk
 from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk.corpus import wordnet, stopwords
 from nltk.stem import WordNetLemmatizer
 
-# %% ../nbs/00_utils.ipynb 25
+# %% ../nbs/00_utils.ipynb 30
 import unidecode
 
-# %% ../nbs/00_utils.ipynb 28
+# %% ../nbs/00_utils.ipynb 33
 def get_wordnet_pos(
     word: str, # input word token
     ) -> str: # POS of the given word
@@ -171,10 +190,10 @@ def get_wordnet_pos(
 
     return tag_dict.get(tag, wordnet.NOUN)
 
-# %% ../nbs/00_utils.ipynb 29
+# %% ../nbs/00_utils.ipynb 34
 from nltk.corpus import stopwords
 
-# %% ../nbs/00_utils.ipynb 30
+# %% ../nbs/00_utils.ipynb 35
 def remove_stopwords(
     sentence: str, # input sentence
     ) -> str: # output sentence
@@ -188,7 +207,7 @@ def remove_stopwords(
             sentences.append(word)
     return ' '.join(sentences)
 
-# %% ../nbs/00_utils.ipynb 31
+# %% ../nbs/00_utils.ipynb 36
 def remove_punctuations(
     sentence: str, # input sentence
     ) -> str: # output sentence
@@ -203,7 +222,7 @@ def remove_punctuations(
     doc = doc.strip()
     return doc
 
-# %% ../nbs/00_utils.ipynb 32
+# %% ../nbs/00_utils.ipynb 37
 def remove_punc_clean(
     sentence: str, # input sentence
     lemmatize: bool = False, # flag to `lemmatize`
@@ -222,7 +241,7 @@ def remove_punc_clean(
         doc = ' '.join([lemmatizer.lemmatize(w, get_wordnet_pos(w)) for w in doc.split()])
     return doc
 
-# %% ../nbs/00_utils.ipynb 34
+# %% ../nbs/00_utils.ipynb 39
 def process_for_lexical(
     fname: str, # name of the input txt file
     ) -> L: # 
@@ -243,7 +262,7 @@ def process_for_lexical(
     print('Done processing', fname.name)
     return L(removed_sentences)
 
-# %% ../nbs/00_utils.ipynb 46
+# %% ../nbs/00_utils.ipynb 51
 def num_words(
     sentence: str, # input sentence
     )->int: # number of words
