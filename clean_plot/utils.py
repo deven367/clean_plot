@@ -11,6 +11,7 @@ import numpy as np
 from pathlib import Path
 from fastcore.foundation import L
 from fastcore.xtras import globtastic
+from fastcore.meta import delegates
 import pathlib
 from fastcore.test import test_eq
 
@@ -55,12 +56,14 @@ def load_pmi(
     return pmi
 
 # %% ../nbs/00_utils.ipynb 11
+@delegates(globtastic)
 def loader(
     path: [str, pathlib.Path],  # path to a given folder,
     extension: str,  # extension of the file you want
+    **kwargs
 ) -> L:  # returns `L`
     "Given a Path and an extension, returns all files with the extension in the path"
-    files = L([Path(f) for f in globtastic(path, file_glob=f'*{extension}')])
+    files = globtastic(path, file_glob=f'*{extension}', **kwargs).map(Path)
 
     return files
 
