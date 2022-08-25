@@ -4,8 +4,9 @@
 __all__ = ['heatmap_from_pkl', 'plot_novels', 'plot_histograms', 'ssms_from_pkl', 'corr_heatmaps', 'corr_ts', 'lex_ts',
            'plot_standardized']
 
-# %% ../nbs/03_heatmaps_novels.ipynb 2
+# %% ../nbs/03_heatmaps_novels.ipynb 3
 from .utils import *
+from .utils import check_files
 from .pickle import label
 import numpy as np
 import pandas as pd
@@ -13,11 +14,12 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics.pairwise import cosine_similarity
 from fastcore.all import *
+from fastcore.xtras import *
 from pathlib import Path
 import pickle
 from scipy.stats import zscore
 
-# %% ../nbs/03_heatmaps_novels.ipynb 5
+# %% ../nbs/03_heatmaps_novels.ipynb 6
 @call_parse
 def heatmap_from_pkl(
     path:str='.', # path to pkl files 
@@ -28,18 +30,11 @@ def heatmap_from_pkl(
     "Plot timeseries from the pkl file"
     p = Path(path).absolute()
     files = globtastic(p, recursive=False, file_glob='*.pkl').map(Path)
-    print(p)
-    flen = files.__len__()
-    if flen <= 0:
-        print(f'Found {flen} pkl files')
-        print(f'Check `pkl path` and try again')
+    print(f'Current path {p}')
+    
+    if not check_files(files):
         return
-    
-    book_name = p.stem.replace('_', ' ').title()
-    print(f'Book Name: {book_name}')
-    print(f'Found {flen} pkl files')
-    print('-'*45)
-    
+        
     for f in files:
         title = f.stem.split('_whole')[0].replace('_', ' ').title()
         print(title)
@@ -100,9 +95,9 @@ def heatmap_from_pkl(
         print('-'*45)
             
 
-# %% ../nbs/03_heatmaps_novels.ipynb 8
+# %% ../nbs/03_heatmaps_novels.ipynb 9
 @call_parse
-def plot_novels(path: str='.', # path for embeddings
+def plot_novels(path: str=None, # path for embeddings
                 start: int=0, # start for section
                 end: int= -1, # end for section
                 x: bool=False, # x-ticks
@@ -111,9 +106,11 @@ def plot_novels(path: str='.', # path for embeddings
                ):
     "Generates plots for embeddings in the folder"
     
-    d = {}
+#     d = {}
     
     if start == 0 and end == -1:
+        pass
+    elif start>= 0 and end == -1:
         pass
     else:
         assert start < end, 'Incorrect bounds'
@@ -124,7 +121,10 @@ def plot_novels(path: str='.', # path for embeddings
     if y == -1:
         y = False
     
-    files = loader(path, '.npy')
+    files = globtastic(path, recursive=False, file_glob='*.npy').map(Path)
+    if not check_files(files):
+        return
+    
     curr = Path.cwd()
     if std:
         if start > 0:
@@ -141,10 +141,19 @@ def plot_novels(path: str='.', # path for embeddings
             new_path = curr/'full_plots'
             new_path.mkdir(exist_ok=True)
             
-        
+    for f in files:
+        arr = np.load(f)
+        if 'use' in f.stem:
+            b = arr.shape[0]
+            assert b > end, f"Incorrect bounds, book only contains {b} sentences"
+        elif 'xlm' in f.stem:
+            b = arr.shape[0]
+            assert b > end, f"Incorrect bounds, book only contains {b} sentences"
+                
     for f in files:
         fname = f.stem.split('_cleaned_')
         book, method = fname[0], label(fname[1])
+        book = book.replace('_', ' ')
                
         title = f'{book.title()} {method}'
 
@@ -199,7 +208,7 @@ def plot_novels(path: str='.', # path for embeddings
                 sns.heatmap(n[start:end, start:end], cmap='hot', 
                         vmin=0, vmax=1, square=True, 
                         xticklabels=False)
-        d[method] = n
+#         d[method] = n
         plt.yticks(ticks, labels, rotation = 0)
 #         plt.title(title)
         plt.ylabel('sentence number')
@@ -208,10 +217,10 @@ def plot_novels(path: str='.', # path for embeddings
         plt.clf()
         del em, sim, n
 
-# %% ../nbs/03_heatmaps_novels.ipynb 9
+# %% ../nbs/03_heatmaps_novels.ipynb 11
 from scipy.stats import zscore
 
-# %% ../nbs/03_heatmaps_novels.ipynb 10
+# %% ../nbs/03_heatmaps_novels.ipynb 12
 @call_parse
 def plot_histograms(
     path: str, # path for embeddings
@@ -282,10 +291,10 @@ def plot_histograms(
     print(f"Done plotting {title}.png")
         
 
-# %% ../nbs/03_heatmaps_novels.ipynb 11
+# %% ../nbs/03_heatmaps_novels.ipynb 13
 import pandas as pd
 
-# %% ../nbs/03_heatmaps_novels.ipynb 12
+# %% ../nbs/03_heatmaps_novels.ipynb 14
 @call_parse
 def ssms_from_pkl(path: str, # path for pkl file
                   start: int=0, # start for section
@@ -330,7 +339,7 @@ def ssms_from_pkl(path: str, # path for pkl file
             print(f'Done plotting {title}')
             plt.clf()
 
-# %% ../nbs/03_heatmaps_novels.ipynb 13
+# %% ../nbs/03_heatmaps_novels.ipynb 15
 @call_parse
 def corr_heatmaps(path: str, # path for embeddings
                  std: bool=False, # standardize or not
@@ -406,7 +415,7 @@ def corr_heatmaps(path: str, # path for embeddings
     
     
 
-# %% ../nbs/03_heatmaps_novels.ipynb 14
+# %% ../nbs/03_heatmaps_novels.ipynb 16
 @call_parse
 def corr_ts(path: str, # path for embeddings
            ):
@@ -426,7 +435,7 @@ def corr_ts(path: str, # path for embeddings
         data = pickle.load(fname)
         _plot(embedding_path, data, name)
 
-# %% ../nbs/03_heatmaps_novels.ipynb 15
+# %% ../nbs/03_heatmaps_novels.ipynb 17
 @call_parse
 def lex_ts(path: str, # path for embeddings
           ):
@@ -450,7 +459,7 @@ def lex_ts(path: str, # path for embeddings
         np.save(f'{f.stem[:-3]}ts', z)
         print(len(z))
 
-# %% ../nbs/03_heatmaps_novels.ipynb 16
+# %% ../nbs/03_heatmaps_novels.ipynb 18
 @call_parse
 def plot_standardized(path: str, # path for embeddings
                 start: int=0, # start for section
