@@ -141,3 +141,5 @@ checklink/cookies.txt
 
 _docs/
 token
+05_*.ipynb
+06_*.ipynb
