@@ -110,13 +110,7 @@ def split_by_newline(
     ) -> L: # list of sentences
     """
     Only use when sentences are already tokenized
-    returns sentences split by '\\n' if len(line) > 0
-
-    Args:
-        all (str): tokenized string to be split by '\\n'
-
-    Returns:
-        list: list of sentences split by '\\n'
+    returns sentences split by `\n`
     """
     return L([line for line in text.split('\n') if len(line) > 0])
 
