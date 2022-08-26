@@ -72,15 +72,16 @@ def heatmap_from_pkl(
                 plt.savefig(corr_path/f'{title}_corr.png', dpi = 300, bbox_inches='tight')
                 plt.clf()
                 
-            ts = p.parent/'ts'
-            ts.mkdir(exist_ok=True)
-            
             if std:
                 vmin = np.min(df2.values) - 1
                 vmax = np.max(df2.values) + 1
+                ts = p.parent/'ts_std'
+                ts.mkdir(exist_ok=True)
             else:
                 vmin = 0
                 vmax = 1
+                ts = p.parent/'ts'
+                ts.mkdir(exist_ok=True)
 
             ax = sns.heatmap(df2.T, cmap = 'hot', vmin=vmin, vmax=vmax, 
                              xticklabels = 100, yticklabels=df2.columns)
