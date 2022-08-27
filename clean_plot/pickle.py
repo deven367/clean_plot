@@ -67,7 +67,7 @@ def create_dict_whole_book(
     embedding_path:str = '.', # path to the embeddings
     k:int=1, # consecutive index
     ):
-    
+    "Create pkl for time series from embeddings"
     p = Path(embedding_path).absolute()
     book_name = p.stem.replace('_', ' ').title()
     

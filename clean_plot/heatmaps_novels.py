@@ -345,9 +345,7 @@ def ssms_from_pkl(path: str, # path for pkl file
 def corr_heatmaps(path: str, # path for embeddings
                  std: bool=False, # standardize or not
                  ):
-    """
-    Generates correlation plots from normalized SSMs
-    """
+    "Generates correlation plots from normalized SSMs"
     
     files = loader(path, '.npy')
     curr = Path.cwd()
@@ -420,9 +418,7 @@ def corr_heatmaps(path: str, # path for embeddings
 @call_parse
 def corr_ts(path: str, # path for embeddings
            ):
-    """
-    Generates correlation plots from time series
-    """
+    "Generates correlation plots from time series"
     files = loader(path, '.pkl')
     curr = Path.cwd()
     
@@ -440,9 +436,7 @@ def corr_ts(path: str, # path for embeddings
 @call_parse
 def lex_ts(path: str, # path for embeddings
           ):
-    """
-    Generate lexical TS from Lexical SSM
-    """
+    "Generate lexical TS from Lexical SSM"
     
     files = loader(path, 'wt_ssm.npy')
     curr = Path.cwd()
