@@ -104,7 +104,7 @@ def download_nltk_dep():
     nltk.download('wordnet')
     nltk.download('omw-1.4')
 
-# %% ../nbs/00_utils.ipynb 19
+# %% ../nbs/00_utils.ipynb 20
 def split_by_newline(
     text: str, # sentences separated by \n
     ) -> L: # list of sentences
@@ -114,7 +114,7 @@ def split_by_newline(
     """
     return L([line for line in text.split('\n') if len(line) > 0])
 
-# %% ../nbs/00_utils.ipynb 21
+# %% ../nbs/00_utils.ipynb 22
 def rm_useless_spaces(
     t: str, # sentence with extra spaces
     ) -> str: # sentence without extra spaces
@@ -124,7 +124,7 @@ def rm_useless_spaces(
     _re_space = re.compile(' {2,}')
     return _re_space.sub(' ', t).lstrip().rstrip()
 
-# %% ../nbs/00_utils.ipynb 23
+# %% ../nbs/00_utils.ipynb 24
 def make_sentences(
     text: str, # bulk text
     ) -> L: # list of sentences
@@ -138,7 +138,7 @@ def make_sentences(
     sentences = sent_tokenize(all_cleaned)
     return L(sentences)
 
-# %% ../nbs/00_utils.ipynb 24
+# %% ../nbs/00_utils.ipynb 25
 def write_to_file_cleaned(
     sentences: list, # list of sentences 
     fname: str, # name of output file
@@ -151,7 +151,7 @@ def write_to_file_cleaned(
             f.write(f'{line}\n')
     f.close()
 
-# %% ../nbs/00_utils.ipynb 25
+# %% ../nbs/00_utils.ipynb 26
 @call_parse
 def clean(
     fname: str, # name of input txt file
@@ -165,16 +165,16 @@ def clean(
     print(f'{fname.name} contains {len(sentences)} sentences')
     write_to_file_cleaned(sentences, fname)
 
-# %% ../nbs/00_utils.ipynb 26
+# %% ../nbs/00_utils.ipynb 27
 import nltk
 from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk.corpus import wordnet, stopwords
 from nltk.stem import WordNetLemmatizer
 
-# %% ../nbs/00_utils.ipynb 30
+# %% ../nbs/00_utils.ipynb 32
 import unidecode
 
-# %% ../nbs/00_utils.ipynb 33
+# %% ../nbs/00_utils.ipynb 35
 def get_wordnet_pos(
     word: str, # input word token
     ) -> str: # POS of the given word
@@ -187,10 +187,10 @@ def get_wordnet_pos(
 
     return tag_dict.get(tag, wordnet.NOUN)
 
-# %% ../nbs/00_utils.ipynb 34
+# %% ../nbs/00_utils.ipynb 36
 from nltk.corpus import stopwords
 
-# %% ../nbs/00_utils.ipynb 35
+# %% ../nbs/00_utils.ipynb 37
 def remove_stopwords(
     sentence: str, # input sentence
     ) -> str: # output sentence
@@ -204,7 +204,7 @@ def remove_stopwords(
             sentences.append(word)
     return ' '.join(sentences)
 
-# %% ../nbs/00_utils.ipynb 36
+# %% ../nbs/00_utils.ipynb 38
 def remove_punctuations(
     sentence: str, # input sentence
     ) -> str: # output sentence
@@ -219,7 +219,7 @@ def remove_punctuations(
     doc = doc.strip()
     return doc
 
-# %% ../nbs/00_utils.ipynb 37
+# %% ../nbs/00_utils.ipynb 39
 def remove_punc_clean(
     sentence: str, # input sentence
     lemmatize: bool = False, # flag to `lemmatize`
@@ -238,7 +238,7 @@ def remove_punc_clean(
         doc = ' '.join([lemmatizer.lemmatize(w, get_wordnet_pos(w)) for w in doc.split()])
     return doc
 
-# %% ../nbs/00_utils.ipynb 39
+# %% ../nbs/00_utils.ipynb 41
 def process_for_lexical(
     fname: str, # name of the input txt file
     ) -> L: # 
@@ -259,7 +259,7 @@ def process_for_lexical(
     print('Done processing', fname.name)
     return L(removed_sentences)
 
-# %% ../nbs/00_utils.ipynb 51
+# %% ../nbs/00_utils.ipynb 53
 def num_words(
     sentence: str, # input sentence
     )->int: # number of words
