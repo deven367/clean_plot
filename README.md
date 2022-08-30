@@ -84,6 +84,25 @@ no_punctuations
      'You will therefore permit me to repeat emphatically that Marley was as dead as a door nail',
      'This is a new sentence']
 
+## Help
+
+To see the various CLI available in the library, use the function
+`cp_help`
+
+``` python
+!cp_help
+```
+
+    check_len                       Takes name of a txt file and writes the tokenized sentences into a new txt file
+    corr_hm                         Generates correlation plots from normalized SSMs
+    cp_help                         Show help for all console scripts
+    heatmaps                        Generates plots for embeddings in the folder
+    heatmaps_pkl                    Generates SSMs from pkl files
+    histograms                      Generates histograms for embeddings in the folder
+    lex_ts                          Generate lexical TS from Lexical SSM
+    make_pkl                        Create pkl for time series from embeddings
+    ts_pkl                          Plot timeseries from the pkl file
+
 ## Contributing
 
 This library has come into existence because of
