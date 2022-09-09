@@ -3,7 +3,7 @@
 d = { 'settings': { 'branch': 'master',
                 'doc_baseurl': '/clean_plot/',
                 'doc_host': 'https://deven367.github.io',
-                'git_url': 'https://github.com/deven367/clean_plot/tree/master/',
+                'git_url': 'https://github.com/deven367/clean_plot/',
                 'lib_path': 'clean_plot'},
   'syms': { 'clean_plot.errors': { 'clean_plot.errors.MyException': ('errors.html#myexception', 'clean_plot/errors.py'),
                                    'clean_plot.errors.MyException.__init__': ('errors.html#__init__', 'clean_plot/errors.py'),
