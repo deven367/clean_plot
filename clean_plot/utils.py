@@ -37,7 +37,7 @@ def check_files(
 
 # %% ../nbs/00_utils.ipynb 9
 def get_data(
-    fname: (str, Path) # path to the file
+    fname: str|Path # path to the file
     )->str: # returns content of the file
     "Reads from a txt file"
     with open(fname, 'r') as f:
@@ -46,7 +46,7 @@ def get_data(
 
 # %% ../nbs/00_utils.ipynb 10
 def load_pmi(
-    fname: (str, Path)  # name of pmi file
+    fname: str|Path  # name of pmi file
 ) -> np.ndarray:  # pmi matrix
     """
     Loads the PMI matrix
@@ -59,7 +59,7 @@ def load_pmi(
 # %% ../nbs/00_utils.ipynb 11
 @delegates(globtastic)
 def loader(
-    path: [str, pathlib.Path],  # path to a given folder,
+    path: str|Path,  # path to a given folder,
     extension: str,  # extension of the file you want
     **kwargs
 ) -> L:  # returns `L`
