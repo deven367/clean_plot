@@ -10,6 +10,10 @@ website:
       - section: Plot
         contents:
           - 04_plot.utils.ipynb
+      - section: Tutorials
+        contents:
+          - 08_setup.ipynb
+
       # - section: Plots for papers
       #   contents:
       #     - 05_plots_for_papers.ipynb
