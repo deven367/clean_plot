@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "clean_plot"
+  site-url: "https://deven367.github.io/clean_plot/"
+  description: "clean_plot simplifies cleaning text files for creation of embeddings and making plots from it"
+  repo-branch: master
+  repo-url: "https://github.com/deven367/clean_plot/"

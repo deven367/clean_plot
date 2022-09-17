@@ -1,39 +1,21 @@
-ipynb-filters: [nbdev_filter]
-
 project:
   type: website
-  output-dir: _docs
-  preview:
-    port: 3000
-    browser: false
 
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
-    toc-depth: 4
 
 website:
-  title: "clean_plot"
-  site-url: "https://deven367.github.io/clean_plot/"
-  description: "clean_plot simplifies cleaning text files for creation of embeddings and making plots from it"
   twitter-card: true
   open-graph: true
-  reader-mode: true
-  repo-branch: master
-  repo-url: "https://github.com/deven367/clean_plot/tree/master/"
   repo-actions: [issue]
   navbar:
     background: primary
     search: true
-    right:
-      - icon: github
-        href: "https://github.com/deven367/clean_plot/tree/master/"
   sidebar:
-    style: "floating"
-    collapse-level: 1
+    style: floating
+  favicon: favicon.png
 
-metadata-files:
-  - sidebar.yml
-  - custom.yml
+metadata-files: [nbdev.yml, sidebar.yml]
