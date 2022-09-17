@@ -14,6 +14,12 @@ website:
   navbar:
     background: primary
     search: true
+    right:
+      - icon: github
+        href: "https://github.com/deven367/clean_plot"
+      - icon: twitter
+        href: https://twitter.com/deven367
+        aria-label: deven367 Twitter
   sidebar:
     style: floating
   favicon: favicon.png
