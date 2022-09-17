@@ -12,7 +12,7 @@ website:
           - 04_plot.utils.ipynb
       - section: Tutorials
         contents:
-          - 08_setup.ipynb
+          - tutorials/08_setup.ipynb
 
       # - section: Plots for papers
       #   contents:
