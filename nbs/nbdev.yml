@@ -7,3 +7,13 @@ website:
   description: "clean_plot simplifies cleaning text files for creation of embeddings and making plots from it"
   repo-branch: master
   repo-url: "https://github.com/deven367/clean_plot/"
+  navbar:
+    right:
+    - icon: github
+      href: "https://github.com/deven367/clean_plot"
+    - icon: twitter
+      href: https://twitter.com/deven367
+      aria-label: deven367 Twitter
+  sidebar:
+    collapse-level: 1
+  favicon: favicon.png
