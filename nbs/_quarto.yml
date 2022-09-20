@@ -22,6 +22,7 @@ website:
         aria-label: deven367 Twitter
   sidebar:
     style: floating
+    collapse-level: 1
   favicon: favicon.png
 
 metadata-files: [nbdev.yml, sidebar.yml]
