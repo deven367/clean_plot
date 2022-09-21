@@ -94,7 +94,7 @@ To see the various CLI available in the library, use the function
 `cp_help`
 
 ``` python
-!cp_help
+chelp()
 ```
 
     check_len                       Takes name of a txt file and writes the tokenized sentences into a new txt file
