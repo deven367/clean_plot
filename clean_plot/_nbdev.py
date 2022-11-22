@@ -2,51 +2,57 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"get_data": "00_utils.ipynb",
-         "load_pmi": "03_lexical.ipynb",
-         "load_dictionary": "03_lexical.ipynb",
-         "loader": "00_utils.ipynb",
-         "foo": "00_utils.ipynb",
-         "normalize": "01_functions.ipynb",
-         "download_nltk_dep": "01_functions.ipynb",
-         "split_by_newline": "01_functions.ipynb",
-         "rm_useless_spaces": "01_functions.ipynb",
-         "make_sentences": "01_functions.ipynb",
-         "write_to_file_cleaned": "01_functions.ipynb",
-         "clean": "01_functions.ipynb",
-         "get_wordnet_pos": "01_functions.ipynb",
-         "remove_stopwords": "01_functions.ipynb",
-         "remove_punctuations": "01_functions.ipynb",
-         "remove_punc_clean": "01_functions.ipynb",
-         "process": "01_functions.ipynb",
-         "label": "02_pickle.ipynb",
-         "cos_sim": "02_pickle.ipynb",
-         "create_dict_whole_book": "02_pickle.ipynb",
-         "create_label_whole_book": "02_pickle.ipynb",
-         "create_label": "02_pickle.ipynb",
-         "get_embed_method_and_name": "02_pickle.ipynb",
-         "interpolate": "03_lexical.ipynb",
-         "write_to_file_lexical": "03_lexical.ipynb",
-         "process_v2": "03_lexical.ipynb",
-         "plot_novels": "04_heatmaps_novels.ipynb",
-         "ssms_from_pkl": "04_heatmaps_novels.ipynb",
-         "corr_heatmaps": "04_heatmaps_novels.ipynb",
-         "corr_ts": "04_heatmaps_novels.ipynb",
-         "lex_ts": "04_heatmaps_novels.ipynb",
-         "plot_standardized": "04_heatmaps_novels.ipynb",
-         "Plot": "05_plot.utils.ipynb",
-         "Plot.get_normalized": "05_plot.utils.ipynb"}
+index = {
+    "get_data": "00_utils.ipynb",
+    "load_pmi": "03_lexical.ipynb",
+    "load_dictionary": "03_lexical.ipynb",
+    "loader": "00_utils.ipynb",
+    "foo": "00_utils.ipynb",
+    "normalize": "01_functions.ipynb",
+    "download_nltk_dep": "01_functions.ipynb",
+    "split_by_newline": "01_functions.ipynb",
+    "rm_useless_spaces": "01_functions.ipynb",
+    "make_sentences": "01_functions.ipynb",
+    "write_to_file_cleaned": "01_functions.ipynb",
+    "clean": "01_functions.ipynb",
+    "get_wordnet_pos": "01_functions.ipynb",
+    "remove_stopwords": "01_functions.ipynb",
+    "remove_punctuations": "01_functions.ipynb",
+    "remove_punc_clean": "01_functions.ipynb",
+    "process": "01_functions.ipynb",
+    "label": "02_pickle.ipynb",
+    "cos_sim": "02_pickle.ipynb",
+    "create_dict_whole_book": "02_pickle.ipynb",
+    "create_label_whole_book": "02_pickle.ipynb",
+    "create_label": "02_pickle.ipynb",
+    "get_embed_method_and_name": "02_pickle.ipynb",
+    "interpolate": "03_lexical.ipynb",
+    "write_to_file_lexical": "03_lexical.ipynb",
+    "process_v2": "03_lexical.ipynb",
+    "plot_novels": "04_heatmaps_novels.ipynb",
+    "ssms_from_pkl": "04_heatmaps_novels.ipynb",
+    "corr_heatmaps": "04_heatmaps_novels.ipynb",
+    "corr_ts": "04_heatmaps_novels.ipynb",
+    "lex_ts": "04_heatmaps_novels.ipynb",
+    "plot_standardized": "04_heatmaps_novels.ipynb",
+    "Plot": "05_plot.utils.ipynb",
+    "Plot.get_normalized": "05_plot.utils.ipynb",
+}
 
-modules = ["core.py",
-           "utils.py",
-           "functions.py",
-           "pickle.py",
-           "lexical.py",
-           "heatmaps_novels.py",
-           "plot/utils.py"]
+modules = [
+    "core.py",
+    "utils.py",
+    "functions.py",
+    "pickle.py",
+    "lexical.py",
+    "heatmaps_novels.py",
+    "plot/utils.py",
+]
 
 doc_url = "https://deven367.github.io/clean_plot/"
 
 git_url = "https://github.com/deven367/clean_plot/tree/master/"
 
-def custom_doc_links(name): return None
+
+def custom_doc_links(name):
+    return None
