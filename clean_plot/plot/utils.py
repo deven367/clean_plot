@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 import gc
 
 # %% auto 0
-__all__ = ["Plot"]
+__all__ = ['Plot']
 
 # %% ../../nbs/04_plot.utils.ipynb 4
 sns.set_style(style="white")

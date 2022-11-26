@@ -13,26 +13,9 @@ from fastcore.test import test_eq
 from fastcore.script import call_parse
 
 # %% auto 0
-__all__ = [
-    "loader",
-    "get_data",
-    "load_pmi",
-    "load_dictionary",
-    "normalize",
-    "chelp",
-    "download_nltk_dep",
-    "split_by_newline",
-    "rm_useless_spaces",
-    "make_sentences",
-    "write_to_file_cleaned",
-    "clean",
-    "get_wordnet_pos",
-    "remove_stopwords",
-    "remove_punctuations",
-    "remove_punc_clean",
-    "process_for_lexical",
-    "num_words",
-]
+__all__ = ['loader', 'get_data', 'load_pmi', 'load_dictionary', 'normalize', 'chelp', 'download_nltk_dep', 'split_by_newline',
+           'rm_useless_spaces', 'make_sentences', 'write_to_file_cleaned', 'clean', 'get_wordnet_pos',
+           'remove_stopwords', 'remove_punctuations', 'remove_punc_clean', 'process_for_lexical', 'num_words']
 
 # %% ../nbs/00_utils.ipynb 6
 def check_files(

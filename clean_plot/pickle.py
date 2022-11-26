@@ -12,15 +12,8 @@ from fastcore.xtras import *
 from fastcore.script import *
 
 # %% auto 0
-__all__ = [
-    "label",
-    "cos_sim",
-    "successive_similarities",
-    "create_dict_whole_book",
-    "create_label_whole_book",
-    "create_label",
-    "get_embed_method_and_name",
-]
+__all__ = ['label', 'cos_sim', 'successive_similarities', 'create_dict_whole_book', 'create_label_whole_book', 'create_label',
+           'get_embed_method_and_name']
 
 # %% ../nbs/01_pickle.ipynb 4
 def label(method: str):  # name of the method

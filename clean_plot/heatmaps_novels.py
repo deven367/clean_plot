@@ -17,16 +17,8 @@ import pickle
 from scipy.stats import zscore
 
 # %% auto 0
-__all__ = [
-    "heatmap_from_pkl",
-    "plot_novels",
-    "plot_histograms",
-    "ssms_from_pkl",
-    "corr_heatmaps",
-    "corr_ts",
-    "lex_ts",
-    "plot_standardized",
-]
+__all__ = ['heatmap_from_pkl', 'plot_novels', 'plot_histograms', 'ssms_from_pkl', 'corr_heatmaps', 'corr_ts', 'lex_ts',
+           'plot_standardized']
 
 # %% ../nbs/03_heatmaps_novels.ipynb 6
 @call_parse
