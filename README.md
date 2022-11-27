@@ -11,7 +11,9 @@ Pages](https://github.com/deven367/clean_plot/actions/workflows/deploy.yml/badge
 
 The easiest way to install the library is to simply do a `pip` install.
 
-    pip install clean-plot
+``` python
+pip install clean-plot
+```
 
 Another way to install the library would be to build from source. It is
 more likely that the released version may contain bugs. The source would
@@ -19,9 +21,11 @@ get updated more often. If you plan to add features to `clean_plot`
 yourself, or want to be on the cutting edge, you can use an editable
 install.
 
-    git clone https://github.com/deven367/clean_plot.git
-    cd clean_plot
-    pip install -e . 
+``` sh
+git clone https://github.com/deven367/clean_plot.git
+cd clean_plot
+pip install -e . 
+```
 
 ## How to use
 
