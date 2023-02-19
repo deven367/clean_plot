@@ -5,7 +5,7 @@ from __future__ import annotations
 import pickle
 import numpy as np
 from pathlib import Path
-from fastcore.foundation import L
+from fastcore.foundation import L, patch
 from fastcore.xtras import globtastic
 from fastcore.meta import delegates
 import pathlib
@@ -293,3 +293,29 @@ def num_words(
 ) -> int:  # number of words
     "Returns the number of words in a sentence"
     return len(remove_punctuations(sentence).split())
+
+# %% ../nbs/00_utils.ipynb 63
+@patch(as_prop=True)
+def shape(self: Path):
+    name = str(self)
+    if name.endswith('.npy'):
+        return np.load(self).shape
+    raise AssertionError('not a npy array') 
+
+# %% ../nbs/00_utils.ipynb 70
+@patch(as_prop=True)
+def text(self: Path):
+    if str(self).endswith('.txt'):
+        with open(self) as f: return f.read()
+    raise AssertionError('not a txt file') 
+
+# %% ../nbs/00_utils.ipynb 73
+@patch(as_prop=True)
+def sentences(self: Path):
+    name = str(self)
+    if name.endswith('.txt'):
+        if '_cleaned' in name: 
+            return split_by_newline(self.text)
+        else: 
+            return make_sentences(self.text)
+    raise AssertionError('not a txt file') 
