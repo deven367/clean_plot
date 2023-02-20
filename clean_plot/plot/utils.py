@@ -37,6 +37,7 @@ class Plot:
         self.norm = {}
         self.book_name = self.path.stem.split("_cleaned")[0].replace("_", " ").title()
         self.std_ssms = {}
+        self.raw_ssms = {}
 
     @delegates(globtastic)
     def view_all_files(self, **kwargs):
@@ -182,3 +183,28 @@ def get_standardized(self: Plot):
         self.std_ssms[method] = ab1
         del em, sim, n, numerator, denominator
     return self.std_ssms
+
+@patch
+def get_raw_ssms(self: Plot):
+    "Returns the raw ssms"
+    files = self.view_all_files(file_glob="*.npy").map(Path)
+
+    for f in files:
+        fname = f.stem.split("_cleaned_")
+        book, method = fname[0], label(fname[1])
+
+        title = f"{book.title()} {method}"
+
+        em = np.load(f)
+
+        if fname[1] == "lexical_wt_ssm":
+            sim = em
+            print(em.shape)
+            # modifies the input array inplace
+            np.fill_diagonal(sim, 1)
+        else:
+            sim = cosine_similarity(em, em)
+
+        self.raw_ssms[method] = sim
+        del em, sim,
+    return self.raw_ssms
