@@ -6,15 +6,9 @@ website:
       - 01_pickle.ipynb
       - 02_lexical.ipynb
       - 03_heatmaps_novels.ipynb
+      - 04_plot.utils.ipynb
+      - 05_methods.ipynb
       - 07_errors.ipynb
-      - section: Plot
-        contents:
-          - 04_plot.utils.ipynb
-      - section: Tutorials
+      - section: tutorials
         contents:
           - tutorials/08_setup.ipynb
-
-      # - section: Plots for papers
-      #   contents:
-      #     - 05_plots_for_papers.ipynb
-      #     - 06_supplementary_aaai.ipynb
