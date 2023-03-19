@@ -144,3 +144,4 @@ token
 05_*.ipynb
 06_*.ipynb
 _proc/
+test.npy
