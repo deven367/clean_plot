@@ -2,25 +2,42 @@
 
 # %% ../nbs/00_utils.ipynb 4
 from __future__ import annotations
-import pickle
-import numpy as np
-from pathlib import Path
-from fastcore.foundation import L, patch
-from fastcore.xtras import globtastic
-from fastcore.meta import delegates
+
 import pathlib
-from fastcore.test import test_eq
+import pickle
+from pathlib import Path
+
+import numpy as np
+from fastcore.foundation import L, patch
+from fastcore.meta import delegates
 from fastcore.script import call_parse
+from fastcore.test import test_eq
+from fastcore.xtras import globtastic
 
 # %% auto 0
-__all__ = ['loader', 'get_data', 'load_pmi', 'load_dictionary', 'normalize', 'chelp', 'download_nltk_dep', 'split_by_newline',
-           'rm_useless_spaces', 'make_sentences', 'write_to_file_cleaned', 'clean', 'get_wordnet_pos',
-           'remove_stopwords', 'remove_punctuations', 'remove_punc_clean', 'process_for_lexical', 'num_words']
+__all__ = [
+    "loader",
+    "get_data",
+    "load_pmi",
+    "load_dictionary",
+    "normalize",
+    "chelp",
+    "download_nltk_dep",
+    "split_by_newline",
+    "rm_useless_spaces",
+    "make_sentences",
+    "write_to_file_cleaned",
+    "clean",
+    "get_wordnet_pos",
+    "remove_stopwords",
+    "remove_punctuations",
+    "remove_punc_clean",
+    "process_for_lexical",
+    "num_words",
+]
 
 # %% ../nbs/00_utils.ipynb 6
-def check_files(
-    files,  # files to validate
-):
+def check_files(files):  # files to validate
     flen = files.__len__()
     if flen <= 0:
         print(f"Found {flen} files")
@@ -105,7 +122,9 @@ def chelp():
 
 # %% ../nbs/00_utils.ipynb 20
 import re
+
 from fastcore.script import call_parse
+
 
 # %% ../nbs/00_utils.ipynb 22
 def download_nltk_dep():
@@ -144,9 +163,7 @@ def rm_useless_spaces(
 
 
 # %% ../nbs/00_utils.ipynb 29
-def make_sentences(
-    text: str,  # bulk text
-) -> L:  # list of sentences
+def make_sentences(text: str) -> L:  # bulk text  # list of sentences
     """
     Converts given bulk into sentences
     """
@@ -160,8 +177,7 @@ def make_sentences(
 
 # %% ../nbs/00_utils.ipynb 30
 def write_to_file_cleaned(
-    sentences: list,  # list of sentences
-    fname: str,  # name of output file
+    sentences: list, fname: str  # list of sentences  # name of output file
 ) -> None:
     """
     Writes the sentences to a .txt file
@@ -174,9 +190,7 @@ def write_to_file_cleaned(
 
 # %% ../nbs/00_utils.ipynb 31
 @call_parse
-def clean(
-    fname: str,  # name of input txt file
-) -> None:
+def clean(fname: str) -> None:  # name of input txt file
     "Takes name of a txt file and writes the tokenized sentences into a new txt file"
     fname = Path(fname)
     text = get_data(fname)
@@ -187,12 +201,13 @@ def clean(
 
 # %% ../nbs/00_utils.ipynb 32
 import nltk
-from nltk.tokenize import word_tokenize, sent_tokenize
-from nltk.corpus import wordnet, stopwords
-from nltk.stem import WordNetLemmatizer
 
 # %% ../nbs/00_utils.ipynb 37
 import unidecode
+from nltk.corpus import stopwords, wordnet
+from nltk.stem import WordNetLemmatizer
+from nltk.tokenize import sent_tokenize, word_tokenize
+
 
 # %% ../nbs/00_utils.ipynb 40
 def get_wordnet_pos(
@@ -213,10 +228,9 @@ def get_wordnet_pos(
 # %% ../nbs/00_utils.ipynb 41
 from nltk.corpus import stopwords
 
+
 # %% ../nbs/00_utils.ipynb 42
-def remove_stopwords(
-    sentence: str,  # input sentence
-) -> str:  # output sentence
+def remove_stopwords(sentence: str) -> str:  # input sentence  # output sentence
     """
     Takes a sentence and removes stopwords from it
     """
@@ -266,9 +280,7 @@ def remove_punc_clean(
 
 
 # %% ../nbs/00_utils.ipynb 46
-def process_for_lexical(
-    fname: str,  # name of the input txt file
-) -> L:  #
+def process_for_lexical(fname: str) -> L:  # name of the input txt file  #
     "Given an input txt file, return removed sentences"
     fname = Path(fname)
     all_data = get_data(fname)
@@ -288,34 +300,36 @@ def process_for_lexical(
 
 
 # %% ../nbs/00_utils.ipynb 58
-def num_words(
-    sentence: str,  # input sentence
-) -> int:  # number of words
+def num_words(sentence: str) -> int:  # input sentence  # number of words
     "Returns the number of words in a sentence"
     return len(remove_punctuations(sentence).split())
+
 
 # %% ../nbs/00_utils.ipynb 63
 @patch(as_prop=True)
 def shape(self: Path):
     name = str(self)
-    if name.endswith('.npy'):
+    if name.endswith(".npy"):
         return np.load(self).shape
-    raise AssertionError('not a npy array') 
+    raise AssertionError("not a npy array")
+
 
 # %% ../nbs/00_utils.ipynb 70
 @patch(as_prop=True)
 def text(self: Path):
-    if str(self).endswith('.txt'):
-        with open(self) as f: return f.read()
-    raise AssertionError('not a txt file') 
+    if str(self).endswith(".txt"):
+        with open(self) as f:
+            return f.read()
+    raise AssertionError("not a txt file")
+
 
 # %% ../nbs/00_utils.ipynb 73
 @patch(as_prop=True)
 def sentences(self: Path):
     name = str(self)
-    if name.endswith('.txt'):
-        if '_cleaned' in name: 
+    if name.endswith(".txt"):
+        if "_cleaned" in name:
             return split_by_newline(self.text)
-        else: 
+        else:
             return make_sentences(self.text)
-    raise AssertionError('not a txt file') 
+    raise AssertionError("not a txt file")

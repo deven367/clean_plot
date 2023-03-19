@@ -2,22 +2,25 @@
 
 # %% ../../nbs/04_plot.utils.ipynb 3
 from __future__ import annotations
-from fastcore.basics import store_attr, patch_to, patch
-from fastcore.xtras import globtastic
-from fastcore.meta import delegates
-from fastcore.foundation import coll_repr
-from pathlib import Path
+
+import gc
 import os
+from pathlib import Path
+
+import matplotlib.pyplot as plt
 import numpy as np
+import seaborn as sns
+from fastcore.basics import patch, patch_to, store_attr
+from fastcore.foundation import coll_repr
+from fastcore.meta import delegates
+from fastcore.xtras import globtastic
 from sklearn.metrics.pairwise import cosine_similarity
+
 from ..pickle import label
 from ..utils import normalize
-import seaborn as sns
-import matplotlib.pyplot as plt
-import gc
 
 # %% auto 0
-__all__ = ['Plot']
+__all__ = ["Plot"]
 
 # %% ../../nbs/04_plot.utils.ipynb 4
 sns.set_style(style="white")
@@ -25,17 +28,17 @@ sns.set_style(style="white")
 # %% ../../nbs/04_plot.utils.ipynb 5
 import inspect
 
+
 # %% ../../nbs/04_plot.utils.ipynb 6
 class Plot:
     "Plotting module"
 
-    def __init__(
-        self,
-        path: str,  # path to embeddings
-    ):
+    def __init__(self, path: str):  # path to embeddings
         self.path = Path(path)
         self.norm = {}
-        self.book_name = self.path.stem.split("_cleaned")[0].replace("_", " ").title()
+        self.book_name = (
+            self.path.stem.split("_cleaned")[0].replace("_", " ").title()
+        )
         self.std_ssms = {}
         self.raw_ssms = {}
 
@@ -50,7 +53,12 @@ class Plot:
         for method, norm_ssm in self.norm.items():
             title = f"{self.book_name} {method}"
             sns.heatmap(
-                norm_ssm, cmap="hot", vmin=0, vmax=1, square=True, xticklabels=False
+                norm_ssm,
+                cmap="hot",
+                vmin=0,
+                vmax=1,
+                square=True,
+                xticklabels=False,
             )
             length = norm_ssm.shape[0]
             ticks = np.linspace(1, length, 5, dtype=int)
@@ -184,6 +192,7 @@ def get_standardized(self: Plot):
         del em, sim, n, numerator, denominator
     return self.std_ssms
 
+
 @patch
 def get_raw_ssms(self: Plot):
     "Returns the raw ssms"
@@ -206,5 +215,5 @@ def get_raw_ssms(self: Plot):
             sim = cosine_similarity(em, em)
 
         self.raw_ssms[method] = sim
-        del em, sim,
+        del (em, sim)
     return self.raw_ssms

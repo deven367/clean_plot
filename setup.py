@@ -1,6 +1,9 @@
-from pkg_resources import parse_version
+# flake8: noqa
 from configparser import ConfigParser
+
 import setuptools
+from pkg_resources import parse_version
+
 assert parse_version(setuptools.__version__)>=parse_version('36.2')
 
 # note: all settings are in settings.ini; edit there, not here

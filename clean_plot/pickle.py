@@ -2,18 +2,27 @@
 
 # %% ../nbs/01_pickle.ipynb 2
 from __future__ import annotations
+
 import os
-import numpy as np
 import pickle
 import string
+
+import numpy as np
+from fastcore.script import *
+from fastcore.xtras import *
 from numpy import dot
 from numpy.linalg import norm
-from fastcore.xtras import *
-from fastcore.script import *
 
 # %% auto 0
-__all__ = ['label', 'cos_sim', 'successive_similarities', 'create_dict_whole_book', 'create_label_whole_book', 'create_label',
-           'get_embed_method_and_name']
+__all__ = [
+    "label",
+    "cos_sim",
+    "successive_similarities",
+    "create_dict_whole_book",
+    "create_label_whole_book",
+    "create_label",
+    "get_embed_method_and_name",
+]
 
 # %% ../nbs/01_pickle.ipynb 4
 def label(method: str):  # name of the method
@@ -42,10 +51,7 @@ def label(method: str):  # name of the method
 
 
 # %% ../nbs/01_pickle.ipynb 5
-def cos_sim(
-    a: np.ndarray,  # vector 1
-    b: np.ndarray,  # vector 2
-):
+def cos_sim(a: np.ndarray, b: np.ndarray):  # vector 1  # vector 2
     """
     Returns the cosine similarity between 2 vectors.
     """
@@ -54,6 +60,7 @@ def cos_sim(
 
 # %% ../nbs/01_pickle.ipynb 6
 from pathlib import Path
+
 
 # %% ../nbs/01_pickle.ipynb 7
 def successive_similarities(embeddings, k):

@@ -2,23 +2,34 @@
 
 # %% ../nbs/03_heatmaps_novels.ipynb 3
 from __future__ import annotations
-from .utils import *
-from .utils import check_files
-from .pickle import label
+
+import pickle
+from pathlib import Path
+
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.metrics.pairwise import cosine_similarity
 from fastcore.all import *
 from fastcore.xtras import *
-from pathlib import Path
-import pickle
 from scipy.stats import zscore
+from sklearn.metrics.pairwise import cosine_similarity
+
+from .pickle import label
+from .utils import *
+from .utils import check_files
 
 # %% auto 0
-__all__ = ['heatmap_from_pkl', 'plot_novels', 'plot_histograms', 'ssms_from_pkl', 'corr_heatmaps', 'corr_ts', 'lex_ts',
-           'plot_standardized']
+__all__ = [
+    "heatmap_from_pkl",
+    "plot_novels",
+    "plot_histograms",
+    "ssms_from_pkl",
+    "corr_heatmaps",
+    "corr_ts",
+    "lex_ts",
+    "plot_standardized",
+]
 
 # %% ../nbs/03_heatmaps_novels.ipynb 6
 @call_parse
@@ -62,7 +73,16 @@ def heatmap_from_pkl(
                 "XLM",
                 "MiniLM",
             ]
-            sm_labels = ["DC", "I-F", "DB", "RB", "USE", "MPNet", "XLM", "MiniLM"]
+            sm_labels = [
+                "DC",
+                "I-F",
+                "DB",
+                "RB",
+                "USE",
+                "MPNet",
+                "XLM",
+                "MiniLM",
+            ]
 
             df2 = df[organized_labels]
 
@@ -84,7 +104,9 @@ def heatmap_from_pkl(
                     fmt=".2f",
                 )
                 plt.savefig(
-                    corr_path / f"{title}_corr.png", dpi=300, bbox_inches="tight"
+                    corr_path / f"{title}_corr.png",
+                    dpi=300,
+                    bbox_inches="tight",
                 )
                 plt.clf()
 
@@ -169,10 +191,14 @@ def plot_novels(
         arr = np.load(f)
         if "use" in f.stem:
             b = arr.shape[0]
-            assert b > end, f"Incorrect bounds, book only contains {b} sentences"
+            assert (
+                b > end
+            ), f"Incorrect bounds, book only contains {b} sentences"
         elif "xlm" in f.stem:
             b = arr.shape[0]
-            assert b > end, f"Incorrect bounds, book only contains {b} sentences"
+            assert (
+                b > end
+            ), f"Incorrect bounds, book only contains {b} sentences"
 
     for f in files:
         fname = f.stem.split("_cleaned_")
@@ -263,11 +289,11 @@ def plot_novels(
 # %% ../nbs/03_heatmaps_novels.ipynb 11
 from scipy.stats import zscore
 
+
 # %% ../nbs/03_heatmaps_novels.ipynb 12
 @call_parse
 def plot_histograms(
-    path: str,  # path for embeddings
-    std: bool = False,  # flag to standardize
+    path: str, std: bool = False  # path for embeddings  # flag to standardize
 ):
     "Generates histograms for embeddings in the folder"
 
@@ -343,6 +369,7 @@ def plot_histograms(
 # %% ../nbs/03_heatmaps_novels.ipynb 13
 import pandas as pd
 
+
 # %% ../nbs/03_heatmaps_novels.ipynb 14
 @call_parse
 def ssms_from_pkl(
@@ -373,7 +400,9 @@ def ssms_from_pkl(
         for k, v in d.items():
             book = fname[0]
             title = f"{book.title()} {k}"
-            sns.heatmap(v, cmap="hot", vmin=0, vmax=1, square=True, xticklabels=False)
+            sns.heatmap(
+                v, cmap="hot", vmin=0, vmax=1, square=True, xticklabels=False
+            )
             ticks = np.linspace(1, end - start, y, dtype=int)
 
             if start == 0:
@@ -384,7 +413,10 @@ def ssms_from_pkl(
             plt.yticks(ticks, labels, rotation=0)
             plt.ylabel("sentence number")
             plt.savefig(
-                new_path / f"{title}.pdf", format="pdf", dpi=300, bbox_inches="tight"
+                new_path / f"{title}.pdf",
+                format="pdf",
+                dpi=300,
+                bbox_inches="tight",
             )
             print(f"Done plotting {title}")
             plt.clf()
@@ -393,8 +425,7 @@ def ssms_from_pkl(
 # %% ../nbs/03_heatmaps_novels.ipynb 15
 @call_parse
 def corr_heatmaps(
-    path: str,  # path for embeddings
-    std: bool = False,  # standardize or not
+    path: str, std: bool = False  # path for embeddings  # standardize or not
 ):
     "Generates correlation plots from normalized SSMs"
 
@@ -479,9 +510,7 @@ def corr_heatmaps(
 
 # %% ../nbs/03_heatmaps_novels.ipynb 16
 @call_parse
-def corr_ts(
-    path: str,  # path for embeddings
-):
+def corr_ts(path: str):  # path for embeddings
     "Generates correlation plots from time series"
     files = loader(path, ".pkl")
     curr = Path.cwd()
@@ -499,9 +528,7 @@ def corr_ts(
 
 # %% ../nbs/03_heatmaps_novels.ipynb 17
 @call_parse
-def lex_ts(
-    path: str,  # path for embeddings
-):
+def lex_ts(path: str):  # path for embeddings
     "Generate lexical TS from Lexical SSM"
 
     files = loader(path, "wt_ssm.npy")
