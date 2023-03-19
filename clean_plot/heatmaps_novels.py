@@ -17,19 +17,10 @@ import pickle
 from scipy.stats import zscore
 
 # %% auto 0
-__all__ = ['normalize_df', 'heatmap_from_pkl', 'plot_novels', 'plot_histograms', 'ssms_from_pkl', 'corr_heatmaps', 'corr_ts',
-           'lex_ts', 'plot_standardized']
+__all__ = ['heatmap_from_pkl', 'plot_novels', 'plot_histograms', 'ssms_from_pkl', 'corr_heatmaps', 'corr_ts', 'lex_ts',
+           'plot_standardized']
 
 # %% ../nbs/03_heatmaps_novels.ipynb 6
-def normalize_df(df):
-    result = df.copy()
-    for feature_name in df.columns:
-        max_value = df[feature_name].max()
-        min_value = df[feature_name].min()
-        result[feature_name] = (df[feature_name] - min_value) / (max_value - min_value)
-    return result
-
-# %% ../nbs/03_heatmaps_novels.ipynb 7
 @call_parse
 def heatmap_from_pkl(
     path: str = ".",  # path to pkl files
@@ -48,8 +39,6 @@ def heatmap_from_pkl(
     for f in files:
         title = f.stem.split("_whole")[0].replace("_", " ").title()
         print(title)
-        t = title.split()
-        _type = t[-1] if len(t) > 1 else ''
         data = load_pickle(f)
         for i in range(len(data)):
             try:
@@ -62,7 +51,6 @@ def heatmap_from_pkl(
                 norm = zscore(normalize(vals))
             else:
                 norm = normalize(vals)
-                df = normalize_df(df)
 
             organized_labels = [
                 "DeCLUTR Base",
@@ -95,10 +83,8 @@ def heatmap_from_pkl(
                     annot=True,
                     fmt=".2f",
                 )
-                plt.yticks(rotation=90)
-                plt.xticks(rotation=0)
                 plt.savefig(
-                    corr_path / f"{title}_{_type}_corr.png", dpi=300, bbox_inches="tight"
+                    corr_path / f"{title}_corr.png", dpi=300, bbox_inches="tight"
                 )
                 plt.clf()
 
@@ -127,12 +113,12 @@ def heatmap_from_pkl(
             labels = np.linspace(1, len(df), 5, dtype=int)
             plt.xticks(ticks, labels, rotation=0)
             plt.yticks(rotation=0)
-            plt.savefig(ts / f"{title}_{_type}_ts.png", dpi=300, bbox_inches="tight")
+            plt.savefig(ts / f"{title}_ts.png", dpi=300, bbox_inches="tight")
             plt.clf()
         print("-" * 45)
 
 
-# %% ../nbs/03_heatmaps_novels.ipynb 11
+# %% ../nbs/03_heatmaps_novels.ipynb 9
 @call_parse
 def plot_novels(
     path: str = None,  # path for embeddings
@@ -274,10 +260,10 @@ def plot_novels(
         del em, sim, n
 
 
-# %% ../nbs/03_heatmaps_novels.ipynb 13
+# %% ../nbs/03_heatmaps_novels.ipynb 11
 from scipy.stats import zscore
 
-# %% ../nbs/03_heatmaps_novels.ipynb 14
+# %% ../nbs/03_heatmaps_novels.ipynb 12
 @call_parse
 def plot_histograms(
     path: str,  # path for embeddings
@@ -354,10 +340,10 @@ def plot_histograms(
     print(f"Done plotting {title}.png")
 
 
-# %% ../nbs/03_heatmaps_novels.ipynb 15
+# %% ../nbs/03_heatmaps_novels.ipynb 13
 import pandas as pd
 
-# %% ../nbs/03_heatmaps_novels.ipynb 16
+# %% ../nbs/03_heatmaps_novels.ipynb 14
 @call_parse
 def ssms_from_pkl(
     path: str,  # path for pkl file
@@ -404,7 +390,7 @@ def ssms_from_pkl(
             plt.clf()
 
 
-# %% ../nbs/03_heatmaps_novels.ipynb 17
+# %% ../nbs/03_heatmaps_novels.ipynb 15
 @call_parse
 def corr_heatmaps(
     path: str,  # path for embeddings
@@ -491,7 +477,7 @@ def corr_heatmaps(
 #     plt.clf()
 
 
-# %% ../nbs/03_heatmaps_novels.ipynb 18
+# %% ../nbs/03_heatmaps_novels.ipynb 16
 @call_parse
 def corr_ts(
     path: str,  # path for embeddings
@@ -511,7 +497,7 @@ def corr_ts(
         _plot(embedding_path, data, name)
 
 
-# %% ../nbs/03_heatmaps_novels.ipynb 19
+# %% ../nbs/03_heatmaps_novels.ipynb 17
 @call_parse
 def lex_ts(
     path: str,  # path for embeddings
@@ -535,7 +521,7 @@ def lex_ts(
         print(len(z))
 
 
-# %% ../nbs/03_heatmaps_novels.ipynb 20
+# %% ../nbs/03_heatmaps_novels.ipynb 18
 @call_parse
 def plot_standardized(
     path: str,  # path for embeddings

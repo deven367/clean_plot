@@ -12,8 +12,8 @@ from fastcore.xtras import *
 from fastcore.script import *
 
 # %% auto 0
-__all__ = ['label', 'cos_sim', 'cos_dist', 'successive_similarities', 'create_dict_whole_book', 'create_label_whole_book',
-           'create_label', 'get_embed_method_and_name']
+__all__ = ['label', 'cos_sim', 'successive_similarities', 'create_dict_whole_book', 'create_label_whole_book', 'create_label',
+           'get_embed_method_and_name']
 
 # %% ../nbs/01_pickle.ipynb 4
 def label(method: str):  # name of the method
@@ -53,20 +53,9 @@ def cos_sim(
 
 
 # %% ../nbs/01_pickle.ipynb 6
-def cos_dist(
-    a: np.ndarray,  # vector 1
-    b: np.ndarray,  # vector 2
-):
-    """
-    Returns the cosine distance between 2 vectors.
-    """
-    return 1 - dot(a, b) / (norm(a) * norm(b))
-
-
-# %% ../nbs/01_pickle.ipynb 7
 from pathlib import Path
 
-# %% ../nbs/01_pickle.ipynb 8
+# %% ../nbs/01_pickle.ipynb 7
 def successive_similarities(embeddings, k):
     successive = []
     for i in range(len(embeddings) - k):
@@ -74,7 +63,7 @@ def successive_similarities(embeddings, k):
     return successive
 
 
-# %% ../nbs/01_pickle.ipynb 9
+# %% ../nbs/01_pickle.ipynb 8
 @call_parse
 def create_dict_whole_book(
     embedding_path: str = ".",  # path to the embeddings
@@ -139,7 +128,7 @@ def create_dict_whole_book(
     print(f"Saved pkl at {new_path}")
 
 
-# %% ../nbs/01_pickle.ipynb 10
+# %% ../nbs/01_pickle.ipynb 9
 def create_label_whole_book(method, parent_dir):
     # returns only the method name
     return label(method)
@@ -148,13 +137,13 @@ def create_label_whole_book(method, parent_dir):
     # return parent_dir.title() + ' ' + label(method)
 
 
-# %% ../nbs/01_pickle.ipynb 11
+# %% ../nbs/01_pickle.ipynb 10
 def create_label(index, method, parent_dir):
     met = label(method)
     return "Book " + str(index + 1) + " " + parent_dir.title() + " " + met
 
 
-# %% ../nbs/01_pickle.ipynb 12
+# %% ../nbs/01_pickle.ipynb 11
 def get_embed_method_and_name(
     fname,  # name of the file
 ) -> (str, str):  # name of file, embeddding method
