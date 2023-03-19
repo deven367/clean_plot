@@ -314,7 +314,7 @@ def text(self: Path):
 def sentences(self: Path):
     name = str(self)
     if name.endswith('.txt'):
-        if '_cleaned' in name: 
+        if name.endswith('_cleaned.txt'): 
             return split_by_newline(self.text)
         else: 
             return make_sentences(self.text)

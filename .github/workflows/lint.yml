@@ -1,0 +1,25 @@
+name: Lint
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v3
+
+      - name: Set up python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+
+      - name: Install linters
+        run: pip install flake8
+
+      - name: flake8
+        run: flake8 clean_plot/ 

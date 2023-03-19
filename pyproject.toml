@@ -1,0 +1,10 @@
+[tool.black]
+line-length = 80
+target-version = ['py36', 'py37', 'py38', 'py39']
+
+[tool.isort]
+profile = "black"
+
+[tool.flake8]
+max-line-length = 80
+extend-ignore=E203

@@ -9,12 +9,13 @@ from fastcore.foundation import coll_repr
 from pathlib import Path
 import os
 import numpy as np
-from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.metrics.pairwise import cosine_similarity, cosine_distances
 from ..pickle import label
 from ..utils import normalize
 import seaborn as sns
 import matplotlib.pyplot as plt
 import gc
+import pickle
 
 # %% auto 0
 __all__ = ['Plot']
@@ -38,6 +39,7 @@ class Plot:
         self.book_name = self.path.stem.split("_cleaned")[0].replace("_", " ").title()
         self.std_ssms = {}
         self.raw_ssms = {}
+        self.cos_dist = {}
 
     @delegates(globtastic)
     def view_all_files(self, **kwargs):
@@ -208,3 +210,58 @@ def get_raw_ssms(self: Plot):
         self.raw_ssms[method] = sim
         del em, sim,
     return self.raw_ssms
+
+# %% ../../nbs/04_plot.utils.ipynb 9
+@patch
+def get_cos_distances(self:Plot):
+    files = self.view_all_files(file_glob="*.npy").map(Path)
+
+    for f in files:
+        fname = f.stem.split("_cleaned_")
+        book, method = fname[0], label(fname[1])
+
+        title = f"{book.title()} {method}"
+
+        em = np.load(f)
+
+        if fname[1] == "lexical_wt_ssm":
+            sim = em
+            print(em.shape)
+            # modifies the input array inplace
+            np.fill_diagonal(sim, 1)
+        else:
+            sim = cosine_distances(em, em)
+
+        self.cos_dist[method] = sim
+        del em, sim,
+    return self.cos_dist
+
+# %% ../../nbs/04_plot.utils.ipynb 10
+@patch
+def mean_distance_from_all_others(self:Plot):
+    d = {}
+    mdict = {}
+    for key, ssm in self.cos_dist.items():
+        vals = []
+        for i, val in enumerate(ssm):  
+            if i == 0:
+                row1 = val[i+1: ]
+                v = (1 - np.mean( row1))/2
+                vals.append(v)
+            elif i == len(ssm) - 1:
+                row1 = val[:i]
+                v = (1- np.mean( row1))/2
+                vals.append(v)
+            else:
+                row1, row2 = val[0:i], val[i+1: ] 
+                v = np.mean( np.concatenate([ row1, row2 ], 0))
+                v = (1- v)/2
+                vals.append(v)
+        d[key] = vals
+    mdict[0] = d
+    new_path = self.path / "pkl"
+    new_path.mkdir(exist_ok=True)
+    
+    pickle.dump(mdict, open(new_path / f"{self.book_name}_mdfa.pkl", "wb"))
+    print("-" * 45)
+    print(f"Saved pkl at {new_path}")
