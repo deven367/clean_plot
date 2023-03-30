@@ -3,15 +3,15 @@
 # %% ../nbs/00_utils.ipynb 4
 from __future__ import annotations
 
-import pathlib
 import pickle
+import re
 from pathlib import Path
 
+import nltk
 import numpy as np
 from fastcore.foundation import L, patch
 from fastcore.meta import delegates
 from fastcore.script import call_parse
-from fastcore.test import test_eq
 from fastcore.xtras import globtastic
 
 # %% auto 0
@@ -36,12 +36,13 @@ __all__ = [
     "num_words",
 ]
 
+
 # %% ../nbs/00_utils.ipynb 6
 def check_files(files):  # files to validate
-    flen = files.__len__()
+    flen = len(files)
     if flen <= 0:
         print(f"Found {flen} files")
-        print(f"Check `path` and try again")
+        print("Check `path` and try again")
         return False
 
     if isinstance(files[0], str):
@@ -61,7 +62,8 @@ def loader(
     extension: str,  # extension of the file you want
     **kwargs,
 ) -> L:  # returns `L`
-    "Given a Path and an extension, returns all files with the extension in the path"
+    """Given a Path and an extension, returns all files with the extension
+    in the path"""
     files = globtastic(path, file_glob=f"*{extension}", **kwargs).map(Path)
 
     return files
@@ -78,7 +80,7 @@ def get_data(
 
 
 # %% ../nbs/00_utils.ipynb 11
-def load_pmi(fname: str | Path) -> np.ndarray:  # name of pmi file  # pmi matrix
+def load_pmi(fname: str | Path) -> np.ndarray:  # name of pmi file matrix
     """
     Loads the PMI matrix
     """
@@ -88,7 +90,7 @@ def load_pmi(fname: str | Path) -> np.ndarray:  # name of pmi file  # pmi matrix
     return pmi
 
 
-# %% ../nbs/00_utils.ipynb 14
+# %% ../nbs/00_utils.ipynb 15
 def load_dictionary(
     fname: str,  # path to the pkl file
 ) -> dict:  # returns the contents
@@ -101,7 +103,7 @@ def load_dictionary(
     return data
 
 
-# %% ../nbs/00_utils.ipynb 15
+# %% ../nbs/00_utils.ipynb 16
 def normalize(
     data: np.ndarray,  # input array
 ) -> np.ndarray:  # normalized array
@@ -111,19 +113,13 @@ def normalize(
     return (data - np.min(data)) / (np.max(data) - np.min(data))
 
 
-# %% ../nbs/00_utils.ipynb 17
+# %% ../nbs/00_utils.ipynb 18
 @call_parse
 def chelp():
     "Show help for all console scripts"
     from fastcore.xtras import console_help
 
     console_help("clean_plot")
-
-
-# %% ../nbs/00_utils.ipynb 20
-import re
-
-from fastcore.script import call_parse
 
 
 # %% ../nbs/00_utils.ipynb 22
@@ -191,7 +187,8 @@ def write_to_file_cleaned(
 # %% ../nbs/00_utils.ipynb 31
 @call_parse
 def clean(fname: str) -> None:  # name of input txt file
-    "Takes name of a txt file and writes the tokenized sentences into a new txt file"
+    """Takes name of a txt file and writes the tokenized sentences into a
+    new txt file"""
     fname = Path(fname)
     text = get_data(fname)
     sentences = make_sentences(text)
@@ -199,17 +196,14 @@ def clean(fname: str) -> None:  # name of input txt file
     write_to_file_cleaned(sentences, fname)
 
 
-# %% ../nbs/00_utils.ipynb 32
-import nltk
-
-# %% ../nbs/00_utils.ipynb 37
+# %% ../nbs/00_utils.ipynb 35
 import unidecode
 from nltk.corpus import stopwords, wordnet
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import sent_tokenize, word_tokenize
 
 
-# %% ../nbs/00_utils.ipynb 40
+# %% ../nbs/00_utils.ipynb 38
 def get_wordnet_pos(
     word: str,  # input word token
 ) -> str:  # POS of the given word
@@ -225,12 +219,30 @@ def get_wordnet_pos(
     return tag_dict.get(tag, wordnet.NOUN)
 
 
-# %% ../nbs/00_utils.ipynb 41
+# %% ../nbs/00_utils.ipynb 39
+def get_wordnet_pos(
+    word: str,  # input word token
+) -> str:  # POS of the given word
+    """Map POS tag to first character lemmatize() accepts"""
+    tag = nltk.pos_tag([word])[0][1][0].upper()
+    tag_dict = {
+        "J": wordnet.ADJ,
+        "N": wordnet.NOUN,
+        "V": wordnet.VERB,
+        "R": wordnet.ADV,
+    }
+
+    return tag_dict.get(tag, wordnet.NOUN)
+
+
+# %% ../nbs/00_utils.ipynb 40
 from nltk.corpus import stopwords
 
 
-# %% ../nbs/00_utils.ipynb 42
-def remove_stopwords(sentence: str) -> str:  # input sentence  # output sentence
+# %% ../nbs/00_utils.ipynb 41
+def remove_stopwords(
+    sentence: str,  # input sentence
+) -> str:  # output sentence
     """
     Takes a sentence and removes stopwords from it
     """
@@ -242,15 +254,15 @@ def remove_stopwords(sentence: str) -> str:  # input sentence  # output sentence
     return " ".join(sentences)
 
 
-# %% ../nbs/00_utils.ipynb 43
+# %% ../nbs/00_utils.ipynb 42
 def remove_punctuations(
     sentence: str,  # input sentence
 ) -> str:  # output sentence
     """
     Takes a sentence and removes punctuations from it
     """
-    pat2 = re.compile("[^a-zA-Z0-9 ]+")
-    pat1 = re.compile("[\s]+")
+    pat2 = re.compile(r"[^a-zA-Z0-9 ]+")
+    pat1 = re.compile(r"[\s]+")
 
     doc = pat2.sub(" ", sentence)
     doc = pat1.sub(" ", doc)
@@ -258,7 +270,7 @@ def remove_punctuations(
     return doc
 
 
-# %% ../nbs/00_utils.ipynb 44
+# %% ../nbs/00_utils.ipynb 43
 def remove_punc_clean(
     sentence: str,  # input sentence
     lemmatize: bool = False,  # flag to `lemmatize`
@@ -279,7 +291,7 @@ def remove_punc_clean(
     return doc
 
 
-# %% ../nbs/00_utils.ipynb 46
+# %% ../nbs/00_utils.ipynb 44
 def process_for_lexical(fname: str) -> L:  # name of the input txt file  #
     "Given an input txt file, return removed sentences"
     fname = Path(fname)
@@ -299,13 +311,13 @@ def process_for_lexical(fname: str) -> L:  # name of the input txt file  #
     return L(removed_sentences)
 
 
-# %% ../nbs/00_utils.ipynb 58
+# %% ../nbs/00_utils.ipynb 56
 def num_words(sentence: str) -> int:  # input sentence  # number of words
     "Returns the number of words in a sentence"
     return len(remove_punctuations(sentence).split())
 
 
-# %% ../nbs/00_utils.ipynb 63
+# %% ../nbs/00_utils.ipynb 61
 @patch(as_prop=True)
 def shape(self: Path):
     name = str(self)
@@ -314,7 +326,7 @@ def shape(self: Path):
     raise AssertionError("not a npy array")
 
 
-# %% ../nbs/00_utils.ipynb 70
+# %% ../nbs/00_utils.ipynb 68
 @patch(as_prop=True)
 def text(self: Path):
     if str(self).endswith(".txt"):
@@ -323,12 +335,12 @@ def text(self: Path):
     raise AssertionError("not a txt file")
 
 
-# %% ../nbs/00_utils.ipynb 73
+# %% ../nbs/00_utils.ipynb 71
 @patch(as_prop=True)
 def sentences(self: Path):
     name = str(self)
     if name.endswith(".txt"):
-        if "_cleaned" in name:
+        if name.endswith("_cleaned.txt"):
             return split_by_newline(self.text)
         else:
             return make_sentences(self.text)

@@ -9,8 +9,6 @@ __all__ = [
     "process_v2",
 ]
 
-import os
-
 # %% ../nbs/02_lexical.ipynb 3
 import re
 from collections import OrderedDict

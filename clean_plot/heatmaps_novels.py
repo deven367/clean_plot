@@ -507,7 +507,6 @@ def corr_heatmaps(
 
 #     plt.clf()
 
-
 # %% ../nbs/03_heatmaps_novels.ipynb 16
 @call_parse
 def corr_ts(path: str):  # path for embeddings

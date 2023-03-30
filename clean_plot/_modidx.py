@@ -134,6 +134,10 @@ d = {
                 "plot.utils.html#plot.get_normalized",
                 "clean_plot/plot/utils.py",
             ),
+            "clean_plot.plot.utils.Plot.get_raw_ssms": (
+                "plot.utils.html#plot.get_raw_ssms",
+                "clean_plot/plot/utils.py",
+            ),
             "clean_plot.plot.utils.Plot.get_sectional_ssms": (
                 "plot.utils.html#plot.get_sectional_ssms",
                 "clean_plot/plot/utils.py",
