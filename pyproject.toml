@@ -7,4 +7,3 @@ profile = "black"
 
 [tool.flake8]
 max-line-length = 80
-extend-ignore=E203
