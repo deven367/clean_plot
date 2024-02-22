@@ -3,7 +3,8 @@
 ## How to get started
 
 Before anything else, please install the git hooks that run automatic scripts during each commit and merge to strip the notebooks of superfluous metadata (and avoid merge conflicts). After cloning the repository, run the following command inside it:
-```
+
+```sh
 nbdev_install_git_hooks
 ```
 
@@ -13,7 +14,7 @@ nbdev_install_git_hooks
 * If you're unable to find an open issue addressing the problem, open a new one. Be sure to include a title and clear description, as much relevant information as possible, and a code sample or an executable test case demonstrating the expected behavior that is not occurring.
 * Be sure to add the complete error messages.
 
-#### Did you write a patch that fixes a bug?
+### Did you write a patch that fixes a bug?
 
 * Open a new GitHub pull request with the patch.
 * Ensure that your PR includes a test that fails without your patch, and pass with it.
@@ -30,4 +31,3 @@ nbdev_install_git_hooks
 ## Do you want to contribute to the documentation?
 
 * Docs are automatically created from the notebooks in the nbs folder.
-
