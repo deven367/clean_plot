@@ -121,7 +121,7 @@ def download_nltk_dep():
     nltk.download("omw-1.4")
 
 
-# %% ../nbs/00_utils.ipynb 25
+# %% ../nbs/00_utils.ipynb 23
 def split_by_newline(
     text: str,  # sentences separated by \n
 ) -> L:  # list of sentences
@@ -132,7 +132,7 @@ def split_by_newline(
     return L([line for line in text.split("\n") if len(line) > 0])
 
 
-# %% ../nbs/00_utils.ipynb 27
+# %% ../nbs/00_utils.ipynb 25
 def rm_useless_spaces(
     t: str,  # sentence with extra spaces
 ) -> str:  # sentence without extra spaces
@@ -143,7 +143,7 @@ def rm_useless_spaces(
     return _re_space.sub(" ", t).lstrip().rstrip()
 
 
-# %% ../nbs/00_utils.ipynb 29
+# %% ../nbs/00_utils.ipynb 27
 def make_sentences(
     text: str,  # bulk text
 ) -> L:  # list of sentences
@@ -158,7 +158,7 @@ def make_sentences(
     return L(sentences)
 
 
-# %% ../nbs/00_utils.ipynb 30
+# %% ../nbs/00_utils.ipynb 28
 def write_to_file_cleaned(
     sentences: list,  # list of sentences
     fname: str,  # name of output file
@@ -172,7 +172,7 @@ def write_to_file_cleaned(
     f.close()
 
 
-# %% ../nbs/00_utils.ipynb 31
+# %% ../nbs/00_utils.ipynb 29
 @call_parse
 def clean(
     fname: str,  # name of input txt file
@@ -185,16 +185,16 @@ def clean(
     write_to_file_cleaned(sentences, fname)
 
 
-# %% ../nbs/00_utils.ipynb 32
+# %% ../nbs/00_utils.ipynb 30
 import nltk
 from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk.corpus import wordnet, stopwords
 from nltk.stem import WordNetLemmatizer
 
-# %% ../nbs/00_utils.ipynb 37
+# %% ../nbs/00_utils.ipynb 35
 import unidecode
 
-# %% ../nbs/00_utils.ipynb 40
+# %% ../nbs/00_utils.ipynb 38
 def get_wordnet_pos(
     word: str,  # input word token
 ) -> str:  # POS of the given word
@@ -210,10 +210,10 @@ def get_wordnet_pos(
     return tag_dict.get(tag, wordnet.NOUN)
 
 
-# %% ../nbs/00_utils.ipynb 41
+# %% ../nbs/00_utils.ipynb 39
 from nltk.corpus import stopwords
 
-# %% ../nbs/00_utils.ipynb 42
+# %% ../nbs/00_utils.ipynb 40
 def remove_stopwords(
     sentence: str,  # input sentence
 ) -> str:  # output sentence
@@ -228,7 +228,7 @@ def remove_stopwords(
     return " ".join(sentences)
 
 
-# %% ../nbs/00_utils.ipynb 43
+# %% ../nbs/00_utils.ipynb 41
 def remove_punctuations(
     sentence: str,  # input sentence
 ) -> str:  # output sentence
@@ -244,7 +244,7 @@ def remove_punctuations(
     return doc
 
 
-# %% ../nbs/00_utils.ipynb 44
+# %% ../nbs/00_utils.ipynb 42
 def remove_punc_clean(
     sentence: str,  # input sentence
     lemmatize: bool = False,  # flag to `lemmatize`
@@ -265,7 +265,7 @@ def remove_punc_clean(
     return doc
 
 
-# %% ../nbs/00_utils.ipynb 46
+# %% ../nbs/00_utils.ipynb 44
 def process_for_lexical(
     fname: str,  # name of the input txt file
 ) -> L:  #
@@ -287,35 +287,35 @@ def process_for_lexical(
     return L(removed_sentences)
 
 
-# %% ../nbs/00_utils.ipynb 58
+# %% ../nbs/00_utils.ipynb 56
 def num_words(
     sentence: str,  # input sentence
 ) -> int:  # number of words
     "Returns the number of words in a sentence"
     return len(remove_punctuations(sentence).split())
 
-# %% ../nbs/00_utils.ipynb 63
+# %% ../nbs/00_utils.ipynb 61
 @patch(as_prop=True)
 def shape(self: Path):
     name = str(self)
     if name.endswith('.npy'):
         return np.load(self).shape
-    raise AssertionError('not a npy array') 
+    raise AssertionError('not a npy array')
 
-# %% ../nbs/00_utils.ipynb 70
+# %% ../nbs/00_utils.ipynb 68
 @patch(as_prop=True)
 def text(self: Path):
     if str(self).endswith('.txt'):
         with open(self) as f: return f.read()
-    raise AssertionError('not a txt file') 
+    raise AssertionError('not a txt file')
 
-# %% ../nbs/00_utils.ipynb 73
+# %% ../nbs/00_utils.ipynb 71
 @patch(as_prop=True)
 def sentences(self: Path):
     name = str(self)
     if name.endswith('.txt'):
-        if '_cleaned' in name: 
+        if '_cleaned' in name:
             return split_by_newline(self.text)
-        else: 
+        else:
             return make_sentences(self.text)
-    raise AssertionError('not a txt file') 
+    raise AssertionError('not a txt file')
