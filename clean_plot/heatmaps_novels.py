@@ -64,7 +64,10 @@ def heatmap_from_pkl(
             ]
             sm_labels = ["DC", "I-F", "DB", "RB", "USE", "MPNet", "XLM", "MiniLM"]
 
-            df2 = df[organized_labels]
+            # df2 = df[organized_labels]
+            df2 = pd.DataFrame(norm, columns=df.columns)
+            df2 = df2[organized_labels]
+
 
             if min_labels:
                 df2.columns = sm_labels
@@ -276,10 +279,10 @@ def plot_histograms(
     files = loader(path, ".npy")
     curr = Path.cwd()
     if std:
-        new_path = curr / f"histogram_std"
+        new_path = curr / "histogram_std"
         new_path.mkdir(exist_ok=True)
     else:
-        new_path = curr / f"histogram"
+        new_path = curr / "histogram"
         new_path.mkdir(exist_ok=True)
 
     for f in files:
@@ -401,7 +404,7 @@ def corr_heatmaps(
     files = loader(path, ".npy")
     curr = Path.cwd()
 
-    new_path = curr / f"corr_ssm"
+    new_path = curr / "corr_ssm"
     new_path.mkdir(exist_ok=True)
 
     d = {}
@@ -486,10 +489,9 @@ def corr_ts(
     files = loader(path, ".pkl")
     curr = Path.cwd()
 
-    new_path = curr / f"corr_ts"
+    new_path = curr / "corr_ts"
     new_path.mkdir(exist_ok=True)
 
-    d = {}
     for f in files:
         fname = f.stem.split("_cleaned_")
         fname = open(f, "rb")
@@ -505,7 +507,7 @@ def lex_ts(
     "Generate lexical TS from Lexical SSM"
 
     files = loader(path, "wt_ssm.npy")
-    curr = Path.cwd()
+    Path.cwd()
 
     for f in files:
         em = np.load(f)
